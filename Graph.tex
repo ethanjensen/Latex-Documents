@@ -1,0 +1,94 @@
+\documentclass[10pt]{exam}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage[simplified]{pgf-umlcd}
+%\usepackage{ulem}
+\usepackage{url}
+
+
+% listings:  format code samples
+\lstset{
+  language=Java,
+  basicstyle=\small\ttfamily,
+  commentstyle=\ttfamily,
+  columns=flexible,
+  breaklines=true,
+  breakatwhitespace=true,
+  keepspaces=true,
+}
+
+% pgf-umlcd:  use guillemets for interfaces & abstract classes
+\renewenvironment{interface}[3][]{\begin{classAndInterfaceCommon}{#1}{#2}{#3}}{%
+  \calcuateNumberOfParts{}
+  \node[this umlcd style, anchor=north] (\umlcdClassName) at (\umlcdClassPos) {%
+    \footnotesize\guillemotleft\,interface\,\guillemotright\normalsize \\ \textbf{\umlcdClassName}
+    \insertAttributesAndOperations{}
+  };
+  \end{classAndInterfaceCommon}
+}
+\renewenvironment{abstractclass}[3][]{\begin{classAndInterfaceCommon}{#1}{#2}{#3}}{%
+  \calcuateNumberOfParts{}
+  \node[this umlcd style, anchor=north] (\umlcdClassName) at (\umlcdClassPos) {%
+    \footnotesize\guillemotleft\,abstract\,\guillemotright\normalsize \\ \textbf{\umlcdClassName}
+    \insertAttributesAndOperations{}
+  };
+  \end{classAndInterfaceCommon}
+}
+
+% pgf-umlcd:  template parameters
+\tikzset{
+  template parameter/.style={
+    append after command={
+      node [draw, densely dashed, umlcolor, font=\ttfamily] at (\tikzlastnode.north east) {\footnotesize#1\normalsize}
+    }
+  }
+}
+
+% pgf-umlcd:  inner class associations
+\usetikzlibrary{arrows.meta}
+\pgfdeclarearrow{
+  name=Contains,
+  parameters={\the\pgfarrowlength},
+  setup code={
+   \pgfarrowssettipend{0pt}
+   \pgfarrowssetlineend{-\pgfarrowlength}
+   \pgfarrowlinewidth=\pgflinewidth
+   \pgfarrowssavethe\pgfarrowlength
+  },
+  drawing code={
+   \pgfpathcircle{\pgfpoint{-0.5\pgfarrowlength}{0pt}}{0.5\pgfarrowlength}
+   \pgfpathmoveto{\pgfpoint{0.0\pgfarrowlength}{0.0\pgfarrowlength}}
+   \pgfpathlineto{\pgfpoint{-1.0\pgfarrowlength}{0.0\pgfarrowlength}}
+   \pgfpathmoveto{\pgfpoint{-0.5\pgfarrowlength}{0.5\pgfarrowlength}}
+   \pgfpathlineto{\pgfpoint{-0.5\pgfarrowlength}{-0.5\pgfarrowlength}}
+   \pgfusepathqstroke
+  },
+  defaults={length=7pt}
+}
+\tikzstyle{umlcd style associationinner}=[<-,>=Contains, umlcolor, >=angle 90]
+\newcommand{\associationinner}[6]{
+  \draw [<-,>=Contains] (#1) -- (#4)
+  node[near start, above]{#2}
+  node[near start, below]{#3}
+  node[near end, above]{#5}
+  node[near end, below]{#6};
+}
+
+
+% pgf-umlcd:  make readable for b&w printout
+\renewcommand{\umltextcolor}{black}
+\renewcommand{\umldrawcolor}{black}
+\renewcommand{\umlfillcolor}{white}
+\tikzset{every node/.append style={font=\ttfamily}}
+
+% ulem:  set underline depth
+%\renewcommand{\ULdepth}{3pt}
+
+\begin{document}
+
+\section{Program 6}
+
+\end{document}
