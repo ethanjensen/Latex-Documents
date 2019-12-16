@@ -1,3 +1,5 @@
+% All the following setup code was written by Brian Snider, Computer Science and Information Systems professor at George Fox University.
+
 \documentclass[10pt]{exam}
 
 \usepackage[T1]{fontenc}
@@ -89,6 +91,105 @@
 
 \begin{document}
 
-\section{Program 6}
+\section*{Graph Implementation}
+\subsection*{Class Diagram}
 
+\begin{tikzpicture}
+
+\begin{interface}[template parameter={V}, text width=3cm]{Iterable}{-1,-8.5}
+%\operation[0]{+ iterator(): Iterator<T>}
+\end{interface}
+
+\begin{class}[template parameter={V}, text width=6.5cm]{Vertex}{9.5,3}
+  \operation{+ Vertex(label: V)}
+  \operation{+ Vertex(label: V, weight: int)}
+  \operation{+ getLabel(): V}
+  \operation{+ getWeight(): int}
+  \operation{+ setLabel(label: V)}
+  \operation{+ setWeight(weight: int)}
+  \operation{+ equals(other: Vertex<V>): boolean}
+  \operation{+ toString(): String}
+\end{class}
+
+\begin{class}[template parameter={V, E}, text width=8.5cm]{Edge}{8,-2}
+  \operation{Edge(v1: Vertex<V>, v2: Vertex<V>, label: E)}
+  \operation{Edge(v1: Vertex<V>, v2: Vertex<V>, lable: E, weight: int)}
+  \operation{getVertex1(): Vertex<V>}
+  \operation{getVertex2(): Vertex<V>}
+  \operation{getLabel(): E}
+  \operation{getWeight(): int}
+  \operation{setVertex1(v: Vertex<V>)}
+  \operation{setVertex2(v: Vertex<V>)}
+  \operation{setLabel(label: E)}
+  \operation{setWeight(weight: int)}
+  \operation{equals(other: Edge<V, E>): boolean}
+  \operation{toString(): String}
+\end{class}
+
+\begin{class}[template parameter={V, E}, text width=9.5cm]{Graph}{0,11}
+  \operation{+ Graph()}
+  \operation{+ clear()}
+  \operation{+ clearEdges()}
+  \operation{+ vertexCount(): int}
+  \operation{+ edgeCount(): int}
+  \operation{+ addVertex(v: Vertex<V>)}
+  \operation{+ addVertices(vertices: ArrayList<Vertex<V$\textup{>}$>)}
+  \operation{+ containsVertex(v: Vertex<V>): boolean}
+  \operation{+ addEdge(e: Edge<V, E>)}
+  \operation{+ addEdges(edges: ArrayList<Edge<V, E$\textup{>}$>)}
+  \operation{+ containsEdge(e: Edge<V, E>): boolean}
+  \operation{+ removeVertex(v: Vertex<V>): ArrayList<Edge<V, E$\textup{>}$>}
+  \operation{+ removeEdge(e: Edge<V, E>)}
+  \operation{+ adjacentCount(v: Vertex<V>): int}
+  \operation{+ vertices(): ArrayList<Vertex<V$\textup{>}$>}
+  \operation{+ adjacent(v: Vertex<V>): ArrayList<Vertex<V$\textup{>}$>}
+  \operation{+ edges(): ArrayList<Edge<V, E$\textup{>}$>}
+  \operation{+ minSpanningTree(v: Vertex<V>): Tree<V, E>}
+  \operation{+ totalVertexWeight(): int}
+  \operation{+ totalEdgeWeight(): int}
+  \operation{+ hasCycle(): boolean}
+\end{class}
+
+\begin{class}[template parameter={V, E}, text width=7.5cm]{Tree}{-1,0}
+  \implement{Iterable}
+  \inherit{Graph}
+  \operation{+ BinaryTree()}
+  \operation{+ getParent(): Tree<V, E>}
+  \operation{+ getVertex(): Vertex<V>}
+  \operation{+ isChild(): boolean}
+  \operation{+ isParent(): boolean}
+  \operation{+ isRoot(): boolean}
+  \operation{+ isLeaf(): boolean}
+  \operation{+ isDegenerate(): boolean}
+  \operation{+ height(): int}
+  \operation{+ depth(): int}
+  \operation{+ isSuperTreeOf(t: Tree<V, E>) boolean}
+  \operation{+ isSubtreeOf(t: Tree<V, E>) boolean}
+  \operation{+ isSiblingOf(): boolean}
+  \operation{+ isChildOf(): boolean}
+  \operation{+ isParentOf(): boolean}
+  \operation{+ makeNewRoot(t: Tree<V, E>)}
+  \operation{+ iterator(): iterator<V>}
+\end{class}
+
+\begin{class}[text width=5cm]{DuplicateVertexException}{9,9}
+\end{class}
+
+\begin{class}[text width=5cm]{DuplicateEdgeException}{9,7.5}
+\end{class}
+
+\begin{class}[text width=5cm]{NoSuchVertexException}{9,6}
+\end{class}
+
+\begin{class}[text width=5cm]{NoSuchEdgeException}{9,4.5}
+\end{class}
+
+\association{Graph}{}{}{Edge}{}{}
+\association{Graph}{}{}{Vertex}{}{}
+\association{Graph}{}{}{DuplicateVertexException}{}{}
+\association{Graph}{}{}{DuplicateEdgeException}{}{}
+\association{Graph}{}{}{NoSuchVertexException}{}{}
+\association{Graph}{}{}{NoSuchEdgeException}{}{}
+
+\end{tikzpicture}
 \end{document}
