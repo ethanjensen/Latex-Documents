@@ -107,26 +107,26 @@
 \begin{class}[template parameter={V}, text width=6.5cm]{Vertex}{9.5,3}
   \implement{Comparable}
   \operation{+ Vertex(label: V)}
-  \operation{+ Vertex(label: V, weight: int)}
+  \operation{+ Vertex(label: V, weight: double)}
   \operation{+ getLabel(): V}
-  \operation{+ getWeight(): int}
+  \operation{+ getWeight(): double}
   \operation{+ setLabel(label: V)}
-  \operation{+ setWeight(weight: int)}
+  \operation{+ setWeight(weight: double)}
   \operation{+ compareTo(other: Vertex<V>): int}
   \operation{+ toString(): String}
 \end{class}
 
 \begin{class}[template parameter={V, E}, text width=8.5cm]{Edge}{8,-2}
   \operation{Edge(v1: Vertex<V>, v2: Vertex<V>, label: E)}
-  \operation{Edge(v1: Vertex<V>, v2: Vertex<V>, lable: E, weight: int)}
+  \operation{Edge(v1: Vertex<V>, v2: Vertex<V>, lable: E, weight: double)}
   \operation{getVertex1(): Vertex<V>}
   \operation{getVertex2(): Vertex<V>}
   \operation{getLabel(): E}
-  \operation{getWeight(): int}
+  \operation{getWeight(): double}
   \operation{setVertex1(v: Vertex<V>)}
   \operation{setVertex2(v: Vertex<V>)}
   \operation{setLabel(label: E)}
-  \operation{setWeight(weight: int)}
+  \operation{setWeight(weight: double)}
   \operation{equals(other: Edge<V, E>): boolean}
   \operation{toString(): String}
 \end{class}
@@ -152,8 +152,9 @@
   \operation{+ edges(): ArrayList<Edge<V, E$\textup{>}$>}
   \operation{+ iterator(): Iterator<Vertex<V$\textup{>}$>}
   \operation{+ minSpanningTree(v: Vertex<V>): Tree<V, E>}
-  \operation{+ totalVertexWeight(): int}
-  \operation{+ totalEdgeWeight(): int}
+  \operation{+ totalVertexWeight(): double}
+  \operation{+ totalEdgeWeight(): double}
+  \operation{+ canReach(v1: Vertex<V>, v2: Vertex<V>): boolean}
   \operation{+ hasCycle(): boolean}
 \end{class}
 
@@ -169,8 +170,6 @@
   \operation{+ isDegenerate(): boolean}
   \operation{+ height(): int}
   \operation{+ depth(): int}
-  \operation{+ isSuperTreeOf(t: Tree<V, E>) boolean}
-  \operation{+ isSubtreeOf(t: Tree<V, E>) boolean}
   \operation{+ isSiblingOf(): boolean}
   \operation{+ isChildOf(): boolean}
   \operation{+ isParentOf(): boolean}

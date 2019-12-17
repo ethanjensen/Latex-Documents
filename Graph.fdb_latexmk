@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1576549352 "Graph.tex" "Graph.pdf" "Graph" 1576549371
-  "Graph.aux" 1576549355 305 75ce8811c39f6bf7f37768e91812d2f4 "pdflatex"
-  "Graph.tex" 1576549369 6850 cf3b30f6fb5f977610f85e66962bbae1 ""
+["pdflatex"] 1576557522 "Graph.tex" "Graph.pdf" "Graph" 1576557527
+  "Graph.aux" 1576557526 305 75ce8811c39f6bf7f37768e91812d2f4 "pdflatex"
+  "Graph.tex" 1576557520 6833 70a51daa106229e46f3f8b5b246b0b00 ""
   "c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1570773553 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1570774438 3332 103109f5612ad95229751940c61aada0 ""
   "c:/texlive/2019/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1570774100 3584 402da0b29eafbad07963b1224b222f18 ""
