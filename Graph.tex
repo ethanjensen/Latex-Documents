@@ -96,18 +96,23 @@
 
 \begin{tikzpicture}
 
-\begin{interface}[template parameter={V}, text width=3cm]{Iterable}{-1,-8.5}
+\begin{interface}[template parameter={V}, text width=3cm]{Iterable}{8,10}
 %\operation[0]{+ iterator(): Iterator<T>}
 \end{interface}
 
+\begin{interface}[template parameter={V}, text width=3cm]{Comparable}{9.5,5}
+%\operation[0]{+ compareTo(): int}
+\end{interface}
+
 \begin{class}[template parameter={V}, text width=6.5cm]{Vertex}{9.5,3}
+  \implement{Comparable}
   \operation{+ Vertex(label: V)}
   \operation{+ Vertex(label: V, weight: int)}
   \operation{+ getLabel(): V}
   \operation{+ getWeight(): int}
   \operation{+ setLabel(label: V)}
   \operation{+ setWeight(weight: int)}
-  \operation{+ equals(other: Vertex<V>): boolean}
+  \operation{+ compareTo(other: Vertex<V>): int}
   \operation{+ toString(): String}
 \end{class}
 
@@ -127,6 +132,7 @@
 \end{class}
 
 \begin{class}[template parameter={V, E}, text width=9.5cm]{Graph}{0,11}
+  \implement{Iterable}
   \operation{+ Graph()}
   \operation{+ clear()}
   \operation{+ clearEdges()}
@@ -144,16 +150,14 @@
   \operation{+ vertices(): ArrayList<Vertex<V$\textup{>}$>}
   \operation{+ adjacent(v: Vertex<V>): ArrayList<Vertex<V$\textup{>}$>}
   \operation{+ edges(): ArrayList<Edge<V, E$\textup{>}$>}
+  \operation{+ iterator(): Iterator<Vertex<V$\textup{>}$>}
   \operation{+ minSpanningTree(v: Vertex<V>): Tree<V, E>}
   \operation{+ totalVertexWeight(): int}
   \operation{+ totalEdgeWeight(): int}
   \operation{+ hasCycle(): boolean}
-  \operation{+ maxVertexWeight(): int}
-  \operation{+ minVertexWeight(): int}
 \end{class}
 
-\begin{class}[template parameter={V, E}, text width=7.5cm]{Tree}{-1,0}
-  \implement{Iterable}
+\begin{class}[template parameter={V, E}, text width=7.5cm]{Tree}{-1,-1}
   \inherit{Graph}
   \operation{+ BinaryTree()}
   \operation{+ getParent(): Tree<V, E>}
@@ -171,19 +175,18 @@
   \operation{+ isChildOf(): boolean}
   \operation{+ isParentOf(): boolean}
   \operation{+ makeNewRoot(t: Tree<V, E>)}
-  \operation{+ iterator(): iterator<V>}
 \end{class}
 
-\begin{class}[text width=5cm]{DuplicateVertexException}{9,9}
+\begin{class}[text width=5cm]{DuplicateVertexException}{9,8.5}
 \end{class}
 
 \begin{class}[text width=5cm]{DuplicateEdgeException}{9,7.5}
 \end{class}
 
-\begin{class}[text width=5cm]{NoSuchVertexException}{9,6}
+\begin{class}[text width=5cm]{NoSuchVertexException}{9,6.75}
 \end{class}
 
-\begin{class}[text width=5cm]{NoSuchEdgeException}{9,4.5}
+\begin{class}[text width=5cm]{NoSuchEdgeException}{9,6}
 \end{class}
 
 \association{Graph}{}{}{Edge}{}{}

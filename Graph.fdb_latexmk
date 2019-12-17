@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1576540757 "Graph.tex" "Graph.pdf" "Graph" 1576540761
-  "Graph.aux" 1576540760 305 75ce8811c39f6bf7f37768e91812d2f4 "pdflatex"
-  "Graph.tex" 1576540752 6752 e83f401ae9ee65554f09ff4763640d92 ""
+["pdflatex"] 1576549352 "Graph.tex" "Graph.pdf" "Graph" 1576549371
+  "Graph.aux" 1576549355 305 75ce8811c39f6bf7f37768e91812d2f4 "pdflatex"
+  "Graph.tex" 1576549369 6850 cf3b30f6fb5f977610f85e66962bbae1 ""
   "c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1570773553 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1570774438 3332 103109f5612ad95229751940c61aada0 ""
   "c:/texlive/2019/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1570774100 3584 402da0b29eafbad07963b1224b222f18 ""
@@ -131,6 +131,6 @@
   "c:/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1570778110 4289463 d81178ecbce03d734ea9d2bd9c16199e ""
   "c:/texlive/2019/texmf.cnf" 1570777927 673 4ae7b2f49cee444c5343a45b5d0f169c ""
   (generated)
+  "Graph.log"
   "Graph.pdf"
   "Graph.aux"
-  "Graph.log"
