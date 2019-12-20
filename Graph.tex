@@ -158,21 +158,25 @@
   \operation{+ hasCycle(): boolean}
 \end{class}
 
-\begin{class}[template parameter={V, E}, text width=7.5cm]{Tree}{-1,-1}
-  \inherit{Graph}
+\begin{class}[template parameter={V, E}, text width=7.5cm]{Tree}{-1,0}
   \operation{+ Tree()}
+  \operation{- setParent(parent: Tree<V, E>)}
   \operation{+ getParent(): Tree<V, E>}
   \operation{+ getVertex(): Vertex<V>}
-  \operation{+ isChild(): boolean}
-  \operation{+ isParent(): boolean}
   \operation{+ isRoot(): boolean}
   \operation{+ isLeaf(): boolean}
-  \operation{+ isDegenerate(): boolean}
+  \operation{+ isAncestorOf(tree: Tree<V, E>): boolean}
+  \operation{+ isSiblingOf(tree: Tree<V, E>): boolean}
+  \operation{+ childCount(): int}
+  \operation{+ size(): int}
+  \operation{+ clear()}
   \operation{+ height(): int}
-  \operation{+ depth(): int}
-  \operation{+ isSiblingOf(t: Treev<V, E>): boolean}
-  \operation{+ isChildOf(t: Tree<V, E>): boolean}
-  \operation{+ isParentOf(t: Tree<V, E>): boolean}
+  \operation{+ level(): int}
+  \operation{+ add(child: Tree<V, E>)}
+  \operation{+ remove(child: Tree<V, E>)}
+  \operation{+ isBalanced(): boolean}
+  \operation{+ pathCost(tree: Tree<V, E>): double}
+  \operation{+ isDegenerate(): boolean}
   \operation{+ makeNewRoot(t: Tree<V, E>)}
 \end{class}
 
