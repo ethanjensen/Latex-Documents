@@ -200,4 +200,55 @@
 \association{Graph}{}{}{NoSuchEdgeException}{}{}
 
 \end{tikzpicture}
+\newpage
+\section{Graph and Tree Example}
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+    \node[draw, shape = circle] (v1) at (0,3) {$v1$};
+    \node[draw, shape = circle] (v2) at (2,4) {$v2$};
+    \node[draw, shape = circle] (v3) at (4,3) {$v3$};
+    \node[draw, shape = circle] (v4) at (1,1.5) {$v4$};
+    \node[draw, shape = circle] (v5) at (3,1.5) {$v5$};
+    \node[draw, shape = circle] (v6) at (0,0) {$v6$};
+    \node[draw, shape = circle] (v7) at (2,0) {$v7$};
+    \node[draw, shape = circle] (v8) at (4,0) {$v8$};
+
+    \draw
+      (v1) edge[above] node{$25$} (v2)
+      (v1) edge[right] node{$18$} (v4)
+      (v1) edge[left] node{$30$} (v6)
+      (v4) edge[above] node{$19\ $} (v6)
+      (v4) edge[right] node{$28$} (v7)
+      (v4) edge[above] node{$15$} (v5)
+      (v4) edge[right] node{$23$} (v2)
+      (v6) edge[below] node{$31$} (v7)
+      (v7) edge[right] node{$27$} (v5)
+      (v7) edge[below] node{$35$} (v8)
+      (v5) edge[above] node{$\ 32$} (v8)
+      (v5) edge[right] node{$21$} (v3)
+      (v8) edge[right] node{$33$} (v3)
+      (v2) edge[right] node{$22$} (v5)
+      (v2) edge[above] node{$17$} (v3);
+
+    \node[draw, shape = circle] (v11) at (8,3) {$v1$};
+    \node[draw, shape = circle] (v12) at (10,4) {$v2$};
+    \node[draw, shape = circle] (v13) at (12,3) {$v3$};
+    \node[draw, shape = circle] (v14) at (9,1.5) {$v4$};
+    \node[draw, shape = circle] (v15) at (11,1.5) {$v5$};
+    \node[draw, shape = circle] (v16) at (8,0) {$v6$};
+    \node[draw, shape = circle] (v17) at (10,0) {$v7$};
+    \node[draw, shape = circle] (v18) at (12,0) {$v8$};
+
+    \draw
+      (v11) edge[right] node{$18$} (v14)
+      (v14) edge[above] node{$19\ $} (v16)
+      (v14) edge[above] node{$15$} (v15)
+      (v17) edge[right] node{$27$} (v15)
+      (v15) edge[above] node{$\ 32$} (v18)
+      (v15) edge[right] node{$21$} (v13)
+      (v12) edge[above] node{$17$} (v13);
+  \end{tikzpicture}
+  \caption{A graph and its minimum spanning tree.}
+\end{figure}
 \end{document}
