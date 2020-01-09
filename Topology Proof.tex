@@ -1,0 +1,40 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning, shapes}
+\addtolength{\topmargin}{-1.75in}
+\addtolength{\textheight}{1.75in}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+
+\title{Topology Homework}
+\author{Ethan Jensen}
+\date{January 8, 2020}
+
+\begin{document}
+	\maketitle
+  \section[20pt]{Exercise 1.27 a}
+  The \textbf{infinite comb} C is the subset of the plane illustrated
+  in Figure 1.17 and defined by
+  \[C=\{(x,0)\ |\ 0\leq x \leq 1\}\ \cup \ \{(\frac{1}{2^n}, y)\ |\ n=0,1,2,... \textup{ and } 0 \leq y \leq 1\}\]
+	\textbf{(a)}\ \ Prove that C is not closed in the standard topology on \(\mathbb{R}^2\).\newline \newline
+	\textbf{(a)  Proof.} \newline
+	Suppose C is closed in the standard topology on \(\mathbb{R}^2\). \newline
+	By Def. 1.14, C' is open in the standard topology on \(\mathbb{R}^2\). \newline
+	Since \((0,\frac{1}{2}) \notin C,\ (0,\frac{1}{2}) \in C'\). Thus, there must exist an open ball \newline \(B((x,y), r + \epsilon)\) containing \((0,\frac{1}{2})\), where \(r=d((x,y),(0,\frac{1}{2})),\ \epsilon > 0\). \newline
+	For all \(\epsilon \in \mathbb{R}, \exists n \in \mathbb{Z}_+ \textup{ such that } 0 < \frac{1}{2^{n}} < \epsilon \)
+	\[\frac{2}{2^n}<2\epsilon,\ \ \ \frac{1}{2^{2n}}<\epsilon\]
+	\[x^2 + (y-\frac{1}{2})^2 + \frac{2}{2^n}\sqrt{x^2+(y-\frac{1}{2})^2}+\frac{1}{2^{2n}} < x^2 + (y-\frac{1}{2})^2 + 2\epsilon \sqrt{x^2+(y-\frac{1}{2})^2} + \epsilon^2\]
+	\[x^2+\frac{2}{2^n}x +\frac{1}{2^{2n}} + (y-\frac{1}{2})^2 < (r+\epsilon)^2\]
+	\[d\left((x,y),(\frac{1}{2^n}, \frac{1}{2})\right)^2 < (r+\epsilon)^2\]
+	\[d\left((x,y),(\frac{1}{2^n}, \frac{1}{2})\right) < r+\epsilon\]
+	Thus, the point \((\frac{1}{2^n},\frac{1}{2})\) is contained in \(B\).
+	\newline
+	Thus, \((\frac{1}{2^n},\frac{1}{2})\) is contained in C'. But it is also contained in C by definition. This is a contradiction. \newline
+	\(\therefore\) C is not closed in the standard topology on \(\mathbb{R}^2\). \newline
+	\blacksquare
+\end{document}
