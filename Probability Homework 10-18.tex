@@ -1,0 +1,249 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\addtolength{\topmargin}{-0.875in}
+\addtolength{\textheight}{1.75in}
+
+\title{Math 331 A - Probability}
+\author{Ethan Jensen}
+\date{October 18th, 2019}
+
+\begin{document}
+	
+	\maketitle HW p.130 \#40 \ p.151 \#1,2 \ p.171 \#40,42,44,50,58,60
+	\section[20pt]{p. 130 \#40}
+	Given the moment-generating function \(M_X(t) = e^{3t+8t^2}\), find the moment-generating function of the random variable \(Z=\frac{1}{4}(X-3)\), and use it to determine the mean and the variance of Z.
+	\newline
+	\newline
+	\[M_Z(t)=M_{\frac{1}{4}(X-3)}(t)\]
+	By Thm. 4.10
+	\[M_{\frac{1}{4}(X-3)}(t)=e^{\frac{-3}{4}t}M_X\left(\frac{t}{4}\right)\]
+	\[M_Z(t)=e^{\frac{-3}{4}t}e^{\frac{3}{4}t+\frac{1}{2}t^2}\]
+	\[M_Z(t)=e^{\frac{1}{2}t^2}\]
+	\boxed{\textup{The moment-generating function for the R.V. Z is } M_Z(t)=e^{\frac{1}{2}t^2}}
+	\[M_Z'(t)=te^{\frac{1}{2}t^2}\]
+	\[M_Z''(t)=(1+t^2)e^{\frac{1}{2}t^2}\]
+	By Thm. 4.9
+	\[\mu=M_Z'(0)=0e^{\frac{1}{2}0^2}=0\]
+	\[\mu_2'=M_Z''(0)=(1+0^2)e^{\frac{1}{2}0^2}=1\]
+	By Thm. 4.6
+	\[\sigma^2=\mu_2'-\mu^2=1-0^2=1\]
+	\boxed{
+		\begin{array}{ccc}
+		\mu=0	 \\ \sigma^2=1
+	\end{array}}
+	\newpage
+	\maketitle HW p.130 \#40 \ p.151 \#1,2 \ p.171 \#40,42,44,50,58,60
+	\section[20pt]{p. 151 \#1}
+	If X has the discrete uniform distribution \(f(x)=\frac{1}{k}\) for \(x=1,2,3,...,k\), show that
+	\newline
+	\textbf{(a)} its mean is \(\mu=\frac{k+1}{2}\);
+	\newline
+	\textbf{(b)} its variance is \(\sigma^2=\frac{k^2-1}{12}\).
+	\newline
+	\newline
+	\textbf{(a)} By Def. 4.2
+	\[\mu=\sum_xxf(x)=\sum_{x=1}^k\frac{x}{k}\]
+	\[\mu=\frac{1}{k}\sum_{x=1}^kx\]
+	\[\mu=\frac{1}{k}\left(\frac{1}{2}k^2+\frac{1}{2}k\right)\]
+	\boxed{\mu=\frac{k+1}{2}}
+	\newline
+	\newline
+	\textbf{(b)} By Def. 4.2
+	\[\mu_2'=\sum_xx^2f(x)=\sum_{x=1}^k\frac{x^2}{k}\]
+	\[\mu_2'=\frac{1}{k}\sum_{x=1}^kx^2\]
+	\[\mu_2'=\frac{1}{k}\left(\frac{1}{3}k^3+\frac{1}{2}k^2+\frac{1}{6}k\right)\]
+	By Thm. 4.6
+	\[\sigma^2=\mu_2'-\mu^2\]
+	\[\sigma^2=\frac{1}{k}\left(\frac{1}{3}k^3+\frac{1}{2}k^2+\frac{1}{6}k\right)-\left(\frac{1}{4}k^2+\frac{1}{2}k+\frac{1}{4}\right)\]
+	\[\sigma^2=\left(\frac{1}{3}k^2+\frac{1}{2}k+\frac{1}{6}-\frac{1}{4}k^2-\frac{1}{2}k-\frac{1}{4}\right)\]
+	\[\sigma^2=\left(\frac{1}{3}k^2-\frac{1}{4}k^2+\frac{1}{6}-\frac{1}{4}\right)\]
+	\boxed{\sigma^2=\frac{k^2-1}{12}}
+	\newpage
+	\maketitle HW p.130 \#40 \ p.151 \#1,2 \ p.171 \#40,42,44,50,58,60
+	\section[20pt]{p. 151 \#2}
+	If X has the discrete uniform distribution \(f(x)=\frac{1}{k}\) for \(x=1,2,...k\), show that its moment-generating function is given by
+	\newline
+	\[M_X(t)=\frac{e^t(1-e^{kt})}{k(1-e^t)}\]
+	\newline
+	\newline
+	By Def. 4.6
+	\[M_X(t)=\sum_xe^{tx}f(x)=\sum_{x=1}^k\frac{e^{tx}}{k}\]
+	\[M_X(t)=\frac{1}{k}\sum_{x=1}^k(e^t)^x\]
+	\[M_X(t)=-\frac{1}{k}+\frac{1}{k}\sum_{x=0}^k(e^t)^x\]
+	\[M_X(t)=-\frac{1}{k}+\frac{1}{k}\left(\frac{1-e^{(k+1)t}}{1-e^t}\right)\]
+	\[M_X(t)=\frac{1}{k}\left(\frac{1-e^{kt}e^t-1+e^t}{1-e^t}\right)\]
+	\boxed{M_X(t)=\frac{e^t(1-e^{kt})}{k(1-e^t)}}
+	\newpage
+	\maketitle HW p.130 \#40 \ p.151 \#1,2 \ p.171 \#40,42,44,50,58,60
+	\section[20pt]{p. 171 \#40}
+	A multiple-choice test consists of eight questions and three answers to each question (of which only one is correct). If a student answers each question by rolling a balanced die and checking the first answer if he gets a 1 or 2, the second answer if he gets a 3 or 4, and the third answer if he gets a 5 or 6, what is the probability he will get exactly four correct answers?
+	\newline
+	\newline
+	
+	Let R.V. X be the number of correct answers. At each trial we have either a Success(correct answer) or a Fail(incorrect answer).Thus, X has a binomial distribution.\newline
+	By Def. 5.3, X's probability distribution is given by \(\left(\begin{array}{ccc}
+	n \\ x
+	\end{array}\right)\theta^x(1-\theta)^{n-x}\)
+	
+	From the scenario we have
+	\[\theta=\frac{1}{3},\ n=8\]
+	Plugging the parameters in we have
+	\[P(X=x)=\left(\begin{array}{ccc}
+	8 \\ x
+	\end{array}\right)\left(\frac{1}{3}\right)^x\left(1-\frac{1}{3}\right)^{8-x}\]
+	\[P(X=4)=\left(\begin{array}{ccc}
+	8 \\ 4
+	\end{array}\right)\left(\frac{1}{3}\right)^4\left(\frac{2}{3}\right)^{4}\]
+	\[P(X=4)=\frac{1120}{3^8}\approx0.1707\]
+	\boxed{\textup{The probability he will get exactly four correct answers is about 0.1707}}
+	\newpage
+	\maketitle HW p.130 \#40 \ p.151 \#1,2 \ p.171 \#40,42,44,50,58,60
+	\section[20pt]{p. 171 \#42}
+	In a certain city, incompatability is given as the legal reason in 70 percent of all divorce cases. Find the probability that five of the next six divorce cases filed in this city will claim incompatability using \newline
+	\textbf{(a)} the formula for the binomial distribution. \newline
+	\textbf{(b)} Table I.
+	\newline
+	\newline
+	\textbf{(a)} The formula for the binomial distribution given by Def. 5.3 is
+	\[b(x;
+	\theta,n)=\left(\begin{array}{ccc}
+	n \\ x
+	\end{array}\right)\theta^x(1-\theta)^{n-x}\]
+	Substituting 0.7 for \(\theta\), 6 for n, and 5 for x we have
+	\[b(5;0.7,6)=\left(\begin{array}{ccc}
+	6 \\ 5
+	\end{array}\right)0.7^50.3^1\]
+	\[b(5;0.7,6)=\frac{302526}{1000000}=0.302526\]
+	\boxed{\begin{array}{ccc}
+			\textup{The probability that five of the next six divorce cases filed in this city will} \\
+			\textup{claim incompatability is 0.302526\%.}
+	\end{array}}
+	\newline
+	\newline
+	\textbf{(b)} Table I does not allow us to use values greater than 0.5 for the parameter \(\theta\). Thus, we must calculate the probability of exactly 1 failure with \(\theta=0.3\). \newline
+	Using 0.3 for \(\theta\), 6 for n, and 1 for x, Table I gives us the value 0.3025. \newline
+	\newline
+	This validates our result from part \textbf{(a)}.
+	\newpage
+	\maketitle HW p.130 \#40 \ p.151 \#1,2 \ p.171 \#40,42,44,50,58,60
+	\section[20pt]{p. 171 \#44}
+	A social scientist claims that only 50 percent of all high school seniors capable of doing college work actually go to college. Assuming that this claim is true, use Table I to find the probabilities that among 18 high school seniors capable of doing college work \newline
+	\textbf{(a)} exactly 10 will go to college;
+	\newline
+	\textbf{(b)} at least 10 will go to college;
+	\newline
+	\textbf{(c)} at most 8 will go to college;
+	\newline
+	\newline
+	The probability is represented with a binomial distribution \(P(X=x) = b(x;n,\theta)\) with \(n=18, \theta = 0.5, \textup{where } x=1,2,3...18\).\newline
+	\newline
+	\textbf{(a)} By table I, \(b(10;18;0.5)=0.1669\)
+	\newline
+	\boxed{\textup{The probability that exactly 10 will go to college is 0.1669 or 16.69\%}}
+	\newline
+	\newline
+	\textbf{(b)} We need to find \(P(X\geq 10)\)
+	\[P(X\geq 10)=\sum_{x=10}^{18}b(x;18;0.5)\]
+	By Table 1,
+	\[P(X\geq10)=0.1669+0.1214+0.0708+0.321+0.0117+0.0031+0.0006+0.0001+0.000\]
+	\[P(X\geq10)=0.4067\]
+	\boxed{\textup{The probability that at least 10 will go to college is about 41\%}}
+	\newline
+	\newline
+	\textbf{(c)} We need to find \(P(X\leq 8)\). \newline
+	The probability at most 8 students going to college is the same as the probability that at least 10 students do not go to college because the describe the same scenario. \newline
+	\newline
+	The probability of a student going to college and a student not going to college are equal. Thus, the probability that at least 10 students do not go to college is equal to the probability that at least 10 students do go to college.
+	\newline
+	\newline
+	This is the scenario from part (b). Thus, the probabilities are equal.
+	\newline
+	\newline
+	\boxed{\textup{The probability at most 8 will go to college is about 41\%}}
+	\newpage
+	\maketitle HW p.130 \#40 \ p.151 \#1,2 \ p.171 \#40,42,44,50,58,60
+	\section[20pt]{p. 171 \#50}
+	\textbf{(a)} To reduce the standard deviation of the binomial distribution by half, what change must be made in the number of trials? \newline
+	\textbf{(b)} If n is multiplied by the factor k in the binomial distribution having the parameters n and \(\theta\), what statement can be made about the standard deviation of the resulting distribution?
+	\newline
+	\newline
+	\textbf{(a)} By Thm. 5.2 The standard deviation \(\sigma\) for a binomial distribution \(b(x;n;\theta)\) is \(n\theta(1-\theta)\). \newline
+	Therefore, \[\frac{\sigma}{2}=\frac{n}{2}\theta(1-\theta)\]
+	\newline
+	\boxed{\textup{To reduce the standard deviation by half, the number of trials must be halved.}}
+	\newline
+	\newline
+	\textbf{(b)} By Thm. 5.2 The standard deviation \(\sigma\) for a binomial distribution \(b(x;n;\theta)\) is \(n\theta(1-\theta)\). \newline
+	Therefore,
+	\[k\sigma=(kn)\theta(1-\theta)\]
+	\boxed{\textup{When n is multiplied by k, the standard deviation is multiplied by k.}}
+	\newpage
+	\maketitle HW p.130 \#40 \ p.151 \#1,2 \ p.171 \#40,42,44,50,58,60
+	\section[20pt]{p. 171 \#58}
+	If the probability is 0.75 that a person will beleive a rumor about the transgressions of a certain politician, find the probabilities that \newline
+	\textbf{(a)} the eight person to hear the rumor will be the fifth to believe it; \newline
+	\textbf{(b)} the fifteenth person to hear the rumor will be the tenth to believe it.
+	\newline
+	\newline
+	Both of these scenarios can be modeled with a negative binomial distribution. \(b^*(x;k,\theta)\). \newline
+	\textbf{(a)} From the problem we know:
+	\[x=8,k=5,\theta=0.75\]
+	By Def. 5.4
+	\[P(X=8)=b^*(8;5,0.75)=\left(
+	\begin{array}{ccc}
+	8-1\\ 5-1
+	\end{array}\right)0.75^5(1-0.75)^{8-5}\]
+	\[P(X=8)=\left(\begin{array}{ccc}
+	7\\ 4
+	\end{array}\right)0.75^50.25^{3}=\frac{8505}{65536} \approx 0.1298\]
+	\boxed{\textup{The probability is about 0.1298 or 12.98\%}}
+	\newline
+	\newline
+	\textbf{(b)} From the problem we know:
+	\[x=15,k=10,\theta=0.75\]
+	By Def. 5.4
+	\[P(X=15)=b^*(15;10,0.75)=\left(
+	\begin{array}{ccc}
+	15-1\\ 10-1
+	\end{array}\right)0.75^{15}(1-0.75)^{15-10}\]
+	\[P(X=15)=\left(\begin{array}{ccc}
+	14 \\ 9
+	\end{array}\right)0.75^{10}0.25^{5}=\frac{2002*3^{10}}{4^{15}} \approx 0.0110\]
+	\boxed{\textup{The probability is about 0.0110 or 1.10\%}}
+	\newpage
+	\maketitle HW p.130 \#40 \ p.151 \#1,2 \ p.171 \#40,42,44,50,58,60
+	\section[20pt]{p. 171 \#60}
+	An expert sharpshooter misses a target 5 percent of the time. Find the probability that she will miss the target for the second time on the fifteenth shot using \newline
+	\textbf{(a)} the formula for the negative binomial distribution; \newline
+	\textbf{(b)} Theorem 5.5 and Table I.
+	\newline
+	\newline
+	\textbf{(a)} By Def. 5.4, The formula for the negative binomial distribution is \[b^*(x;k,\theta)=\left(\begin{array}{ccc}
+	x-1\\ k-1
+	\end{array}\right)\theta^k(1-\theta)^{x-k}\]
+	From the problem we know:
+	\[x=15,k=2,\theta=0.05\]
+	\[P(X=15)=\left(\begin{array}{ccc}
+	15-1\\ 2-1
+	\end{array}\right)0.05^2(1-0.05)^{15-2}\]
+	\[P(X=15)=\left(\begin{array}{ccc}
+	14\\ 1
+	\end{array}\right)0.05^2(0.95)^{13}\approx 0.0180\]
+	\boxed{\textup{The probability the 15th shot is the 2nd miss is 0.0180 or 1.80\%}}
+	\newline
+	\newline
+	\textbf{(b)} From the problem we know:
+	\[x=15,k=2,\theta=0.05\]
+	By Theorem 5.5
+	\[P(X=x)=\frac{k}{x}b(k;x,\theta)\]
+	Plugging in our values we have
+	\[P(X=15)=\frac{2}{15}b(2;15,0.05)\]
+	By Table I we have
+	\[P(X=15)=\frac{2}{15}0.3658\approx 0.0180\]
+	This validates our result from part \textbf{(a)}.
+
+\end{document}

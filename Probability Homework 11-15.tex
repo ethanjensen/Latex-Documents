@@ -1,0 +1,237 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning, arrows, shapes}
+\addtolength{\topmargin}{-0.875in}
+\addtolength{\textheight}{1.75in}
+
+\title{Math 331 A - Probability}
+\author{Ethan Jensen}
+\date{November 15th, 2019}
+
+\begin{document}
+	\maketitle HW p.183 \#3,10,11,12,17,20, \ p.184 \#23,26 \ p.202 \#54,56,60
+	\section[20pt]{p. 183 \#3}
+	If a random variable X has a uniform density with the parameters \(\alpha\) and \(\beta\), find its distribution function. \newline \newline
+	By Defintion 6.1 the probability density of X is
+	\[u(x,\alpha,\beta)=\left\{\begin{array}{ccc}
+	\frac{1}{\beta-\alpha} \textup{for}\ \alpha<x<\beta\\0\ \ \  \textup{elsewhere}\ \ \ \ \ 
+	\end{array}\right.\]
+	By Def. 3.5 we have the distribution function.
+	\[F(x)=\int_{-\infty}^xf(x)dx=\int_{\alpha}^{x}\frac{1}{\beta-\alpha}dx,\ \alpha<x<\beta\]
+	\boxed{F(x)=\frac{x-\alpha}{\beta-\alpha},\ \alpha<x<\beta}
+	\newpage
+	\maketitle HW p.183 \#3,10,11,12,17,20, \ p.184 \#23,26 \ p.202 \#54,56,60
+	\section[20pt]{p. 183 \#10}
+	Find the probabilities that a random variable will exceed 4 if it has a gamma distribution with \newline
+	\textbf{(a)}\ \(\alpha=2\) and \(\beta=3\) \newline
+	\textbf{(b)}\ \(\alpha=3\) and \(\beta=4\) \newline
+	\newline
+	Let X be the random variable with  \(\alpha=2\) and \(\beta=3\). \newline
+	Let Y be the random variable with  \(\alpha=3\) and \(\beta=4\). \newline
+	By Definition 6.2
+	\[P(X=x)=g(x;2,3)=\left\{\begin{array}{ccc}
+	\frac{1}{3^2 \Gamma(2)}x^{2-1}e^{-x/3}\textup{ for }x>0\\0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \textup{elsewhere}
+	\end{array}\right.\]
+	\[P(Y=y)=g(y;3,4)=\left\{\begin{array}{ccc}
+	\frac{1}{4^3 \Gamma(3)}y^{3-1}e^{-y/4}\textup{ for }y>0\\0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \textup{elsewhere}
+	\end{array}\right.\]
+	\[P(X>4)=\int_{4}^{\infty}\frac{1}{3^2 \Gamma(2)}x^{2-1}e^{-x/3}dx\]
+	\boxed{\textbf{(a)}\ P(X>4)=\frac{7}{3}e^{-\frac{4}{3}}\approx 0.61506}
+	\[P(Y>4)=\int_{4}^{\infty}\frac{1}{4^3 \Gamma(3)}y^{3-1}e^{-y/4}dy\]
+	\boxed{\textbf{(b)}\ P(X>4)=\frac{5}{2}e^{-1}\approx 0.91970}
+	\newpage
+	\maketitle HW p.183 \#3,10,11,12,17,20, \ p.184 \#23,26 \ p.202 \#54,56,60
+	\section[20pt]{p. 183 \#11}
+	Show that the gamma distribution with \(\alpha>1\) has a relative maximum at \(x=\beta(\alpha-1)\). What happens when \(0<\alpha<1\) and when \(\alpha=1\)? \newline
+	\newline
+	By Def. 6.2, for \(x>0\) the gamma distribution is defined as follows
+	\[g(x;\alpha,\beta)=\frac{1}{\beta^\alpha\Gamma(\alpha)}x^{\alpha-1}e^{-x/\beta}\]
+	\[g'(x;\alpha,\beta)=\frac{\alpha-1-\frac{x}{\beta}}{\beta^\alpha\Gamma(\alpha)}x^{\alpha-2}e^{-x/\beta}\]
+	To find critical points, we set \(g'(x;\alpha,\beta)\) equal to 0.
+	\[\frac{\alpha-1-\frac{x}{\beta}}{\beta^\alpha\Gamma(\alpha)}x^{\alpha-2}e^{-x/\beta}=0\]
+	\[(\alpha-1-\frac{x}{\beta})x^{\alpha-2}=0\]
+	By the zero product property, and the fact that g is non-differentiable at \(x=0\) we have
+	\[\alpha-1-\frac{x}{\beta}=0\]
+	\[x=\beta(\alpha-1)\]
+	These are our critical points.
+	\[g'(0)=0, g'(\alpha\beta)=\frac{-1}{\beta^\alpha\Gamma(\alpha)}(\alpha\beta)^{\alpha-2}e^{-\alpha}<0\]
+	Thus, \(g(\beta(\alpha-1))\) has negative concavity.
+	\newline
+	\newline
+	There is a local maximum at \(x=\beta(\alpha-1)\).
+	\newline
+	\newline
+	Note that when \(0<\alpha<1\), the x-value for the local maximum, which is at \(x=\beta(\alpha-1)\) must be negative. But since x is never negative, there is no local maximum anywhere for the function. \newline \newline
+	When \(\alpha=1\), the x-value for the local maximum, which is at \(x=\beta(1-1)=0\).
+	
+	\newpage
+	\maketitle HW p.183 \#3,10,11,12,17,20, \ p.184 \#23,26 \ p.202 \#54,56,60
+	\section[20pt]{p. 183 \#12}
+	Prove Theorem 6.4, making the substitution \(y=x\left(\frac{1}{\beta}-t\right)\) in the integral defining \(M_X(t)\). \newline \newline
+	\textbf{Theorem 6.4.} The moment-generating function for the gamma distribution is given by
+	\(M_X(t) = (1-\beta t)^{-\alpha}\) \newline
+	\textbf{Proof.} \newline
+	By Def. 6.2, for \(x>0\) the gamma distribution is defined as follows
+	\[g(x;\alpha,\beta)=\frac{1}{\beta^\alpha\Gamma(\alpha)}x^{\alpha-1}e^{-x/\beta}\]
+	By Definition 4.6 we have
+	\[M_X(t)=\int_{0}^{\infty}e^{tx}\frac{1}{\beta^\alpha\Gamma(\alpha)}x^{\alpha-1}e^{-x/\beta}dx\]
+	\[M_X(t)=\frac{1}{\beta^\alpha\Gamma(\alpha)}\int_{0}^{\infty}e^{tx}x^{\alpha-1}e^{-x/\beta}dx\]
+	\[M_X(t)=\frac{1}{\beta^\alpha\Gamma(\alpha)}\int_{0}^{\infty}x^{\alpha-1}e^{x(t-1/\beta)}dx\]
+	Let \(y=x\left(\frac{1}{\beta}-t\right)\). \(dx = \left(\frac{\beta}{1-\beta t}\right)dy\)
+	\[M_X(t)=\frac{1}{\beta^\alpha\Gamma(\alpha)}\int_{0}^{\infty}(\frac{y\beta}{1-\beta t})^{\alpha-1}e^{-y}\left(\frac{\beta}{1-\beta t}\right)dx\]
+	\[M_X(t)=\frac{\beta^{\alpha}}{(1-\beta t)^{\alpha}\beta^\alpha\Gamma(\alpha)}\int_{0}^{\infty}y^{\alpha-1}e^{-y}dx\]
+	By the definition of the Gamma function we have
+	\[M_X(t)=\frac{\Gamma(\alpha)\beta^{\alpha}}{(1-\beta t)^{\alpha}\beta^\alpha\Gamma(\alpha)}\]
+	\boxed{M_X(t) = (1-\beta t)^{-\alpha}}
+	\newline
+	\newline
+	\(\blacksquare\)
+	\newpage
+	\maketitle HW p.183 \#3,10,11,12,17,20, \ p.184 \#23,26 \ p.202 \#54,56,60
+	\section[20pt]{p. 183 \#17}
+	If X is a random variable having an exponential distribution with the parameter \(\theta\), use Theorems 4.10 on page 128 and 6.4 to find the moment-generating function of the random variable \(Y=X-\theta\).
+	\newline \newline
+	By Theorem 6.4, the moment-generating function for the gamma distribution is given by
+	\[M_X(t)=(1-\beta t)^{-\alpha}\]
+	An exponential random variable is a special case of a gamma random variable, where  \(\alpha=1\) and \(\beta=\theta\). Thus, the moment generating function for an exponential random variable must be given by
+	\[M_X(t)=(1-\theta t)^{-1}=\frac{1}{1-\theta t}\]
+	By Theorem 4.10 we have
+	\[M_Y(t)=M_{X-\theta}(t)=\frac{e^{-\theta t}}{1-\theta t}\]
+	\boxed{M_Y(t)=\frac{e^{-\theta t}}{1-\theta t}}
+	\newpage
+	\maketitle HW p.183 \#3,10,11,12,17,20, \ p.184 \#23,26 \ p.202 \#54,56,60
+	\section[20pt]{p. 183 \#20}
+	A random variable X has a \textbf{Rayleigh distribution} if and only if its probability distribution is given by
+	\[f(x) = \left\{\begin{array}{ccc}
+	2\alpha xe^{-\alpha x^2} \textup{ for } x>0\\0 \ \ \ \ \ \ \ \ \ \ \ \textup{elsewhere}
+	\end{array}\right.\]
+	where \(\alpha > 0\). Show that for this distribution \newline
+	\textbf{(a)} \(\mu=\frac{1}{2}\sqrt{\frac{\pi}{\alpha}}\);
+	\newline
+	\textbf{(b)} \(\sigma^2=\frac{1}{\alpha}\left(1-\frac{\pi}{4}\right)\).
+	\newline \newline
+	By Def. 4.2
+	\[\mu_r'=\int_{-\infty}^{\infty}2\alpha x^{r+1}e^{-\alpha x^2}dx\]
+	Let \(y=\alpha x^2,\ dy=2\alpha xdx\)
+	\[\mu_r'=\int_{0}^{\infty} \left(\frac{y}{\alpha}\right)^{\frac{r}{2}}e^{-y}dy\]
+	\[\mu_r'=\frac{1}{\sqrt{\alpha^r}}\int_{0}^{\infty} y^{\frac{r}{2}}e^{-y}dy\]
+	By the definition of the Gamma function, we have
+	\[\mu_r'=\frac{1}{\sqrt{\alpha^r}}\Gamma\left(\frac{r}{2}+1\right)\]
+	\[\mu_1'=\frac{1}{\sqrt{\alpha^1}}\Gamma\left(\frac{3}{2}\right)=\frac{1}{\sqrt{\alpha}}\frac{1}{2}\Gamma\left(\frac{1}{2}\right)=\frac{1}{2}\frac{\sqrt{\pi}}{\sqrt{\alpha}}\]
+	\[\mu_2'=\frac{1}{\sqrt{\alpha^2}}\Gamma\left(2\right)=\frac{1}{\alpha}1!=\frac{1}{\alpha}\]
+	By Def. 4.3 \newline
+	\boxed{\textbf{(a)}\ \mu=\frac{1}{2}\sqrt{\frac{\pi}{\alpha}}}
+	\newline
+	\newline
+	By Theorem 4.6 we have
+	\[\sigma^2=\mu_2'-{\mu_1'}^2\]
+	\[\sigma^2=\frac{1}{\alpha}-\frac{\pi}{4\alpha}\]
+	\boxed{\textbf{(b)}\ \sigma^2=\frac{1}{\alpha}\left(1-\frac{\pi}{4}\right)}\\
+	\newpage
+	\maketitle HW p.183 \#3,10,11,12,17,20, \ p.184 \#23,26 \ p.202 \#54,56,60
+	\section[20pt]{p. 184 \#23}
+	A random variable X has a \textbf{Weibull distribution} if and only if its probability density is given by
+	\[ f(x)=\left\{\begin{array}{ccc}
+	kx^{\beta-1}e^{-\alpha x^\beta} \textup{ for } x>0\\ 0 \ \ \ \ \ \ \ \ \ \ \ \ \textup{elsewhere}
+	\end{array}\right. \]
+	where \(\alpha>0\) and \(\beta>0\). \newline
+	\textbf{(a)} Express k in terms of \(\alpha\) and \(\beta\). \newline
+	\textbf{(b)} Show that \(\mu=\alpha^{-1/\beta}\Gamma\left(1+\frac{1}{\beta}\right)\) \newline \newline
+	Since f(x) is a probability distribution, integrating over its full range results in 1. (Theorem 3.5)
+	\[\int_0^{\infty}kx^{\beta-1}e^{-\alpha x^\beta}dx=1\]
+	Let \(y=\alpha x^\beta \implies dy = \alpha x^{\beta-1}\)
+	\[\int_0^{\infty}\frac{k}{\alpha}e^{-y}dy=\frac{k}{\alpha}=1\]
+	\boxed{\textbf{(a)}\ k=\alpha} \newline \newline
+	By Def. 4.2 and 4.3 
+	\[\mu=\int_0^{\infty}x\cdot \alpha x^{\beta-1}e^{-\alpha x^\beta}dx=\int_0^{\infty}\alpha x^{\beta}e^{-\alpha x^\beta}dx\]
+	Let \(y=\alpha x^\beta\implies dy = \alpha x^{\beta-1}, \ x = y^{1/\beta}\alpha^{-1/\beta}\)
+	\[\mu=\int_0^{\infty}y^{1/\beta}\alpha^{-1/\beta}e^{-y}dy=\alpha^{-1/\beta}\int_0^{\infty}y^{1/\beta}e^{-y}dy\]
+	By the integral definition of the Gamma function we have
+	\newline \boxed{\textbf{(b)}\  \mu=\alpha^{-1/\beta}\Gamma\left(1+\frac{1}{\beta}\right)}
+	\newpage
+	\maketitle HW p.183 \#3,10,11,12,17,20, \ p.184 \#23,26 \ p.202 \#54,56,60
+	\section[20pt]{p. 184 \#26}
+	Show that if \(\alpha>1\) and \(\beta>1\), the beta density has a relative maximum at
+	\[x=\frac{\alpha-1}{\alpha+\beta-2}\]
+	\newline
+	By Def. 6.5 the Beta distribution is given by
+	\[f(x;\alpha,\beta)=\left\{\begin{array}{ccc}
+	\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha-1}(1-x)^{\beta-1} \textup{ for }0<x<1\\0 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textup{elsewhere} \ \ \ \ 
+	\end{array}\right.\]
+	where \(\alpha>0\) and \(\beta>0\).
+	\newline \newline
+	Taking the derivative of the Beta distribution we have
+	\[f'(x;\alpha,\beta)=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\left((\alpha-1)x^{\alpha-2}(1-x)^{\beta-1}-(\beta-1)x^{\alpha-1}(1-x)^{\beta-2}\right)\]
+	\[f'(x;\alpha,\beta)=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\left(((\alpha-1)(1-x)-(\beta-1)x)x^{\alpha-2}(1-x)^{\beta-2}\right)\]
+	\[f'(x;\alpha,\beta)=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\left((\alpha-1+(2-\alpha-\beta)x)x^{\alpha-2}(1-x)^{\beta-2}\right)\]
+	Since \(0<x<1\) and \( \lim_{x\rightarrow 0}f(x;\alpha,\beta)=\lim_{x\rightarrow 1}f(x;\alpha,\beta)=0\) We know that if at least one relative maximum exists for some value of x between 0 and 1. \newline \newline
+	We find said critical point by letting \(f'(x;\alpha,\beta)=0\)
+	\[f'(x;\alpha,\beta)=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\left((\alpha-1+(2-\alpha-\beta)x)x^{\alpha-2}(1-x)^{\beta-2}\right)=0\]
+	Once again because \(0<x<1\) we can safely divide out by several terms.
+	\[\alpha-1+(2-\alpha-\beta)x=0\]
+	\boxed{x=\frac{\alpha-1}{\alpha+\beta-2}\textup{ is a relative maximum.}} \newline \newline
+	\(\blacksquare\)
+	\newpage
+	\maketitle HW p.183 \#3,10,11,12,17,20, \ p.184 \#23,26 \ p.202 \#54,56,60
+	\section[20pt]{p. 202 \#54}
+	The amount of time that a watch will run without having to be reset is a random variable having an exponential distribution with \(\theta\)=120 days. Find the probabilities that the watch will \newline
+	\textbf{(a)} have to be reset in less than 24 days;
+	\newline
+	\textbf{(b)} not have to be reset in at least 180 days.
+	By Def. 6.3 an exponential distribution is given by
+	\[f(x)=\left\{\begin{array}{ccc}
+	\frac{1}{\theta}e^{-x/\theta}\ \textup{ for } x>0\\ 0 \ \ \ \ \ \ \ \ \textup{elsewhere}
+	\end{array}\right.\]
+	where \(\theta>0.\)
+	\newline \newline
+	Thus, by Def. 3.4 we have
+	\[P(X<24)=\int_0^{24}\frac{1}{120}e^{-x/120}\]
+	\[P(X<24)=1-e^{-\frac{1}{5}} \approx 0.18127\]
+	\boxed{\textbf{(a)}\ \textup{The probability the watch will have to be reset in less than 24 days is}\approx 0.18127}
+	\newline \newline
+	By Def. 3.4 we have
+	\[P(X>180)=\int_{180}^{\infty}\frac{1}{120}e^{-x/120}\]
+	\[P(X>180)=e^{-3/2}\approx 0.22313\]
+	\boxed{\textbf{(b)}\ \textup{The probability it will not have to be reset in at least 180 days is}\approx 0.22313}
+	\newpage
+	\maketitle HW p.183 \#3,10,11,12,17,20, \ p.184 \#23,26 \ p.202 \#54,56,60
+	\section[20pt]{p. 202 \#56}
+	The number of bad checks that a bank receives during a 5-hour business day is a Poisson random variable with \(\lambda=2\). What is the probability that it will not receive a bad check on any one day during the first 2 hours of business? \newline \newline
+	The exponential random variable can describe the \textbf{waiting time} of a Poisson process, with \(\theta=\frac{2}{5\lambda}\) by scaling the time interval appropriately. \newline \newline
+	Let random variable X represent the time before the bank receives a bad check on any one day. From our analysis above, we have
+	\[P(X=x)=2e^{-2x} \textbf{ for }x>0\]
+	Thus, by Def. 3.4 we have
+	\[P(X>2)=\int_2^{\infty}\frac{4}{5}e^{-\frac{4}{5}x}\]
+	\[P(X>2)=e^{-\frac{8}{5}}\approx0.20190\]
+	\boxed{\begin{array}{ccc}
+			\textup{The probability that the bank will not receive a bad check on}\\ \textup{any one day during the first 2 hours of business is}\approx0.20190
+		\end{array}}
+	\newpage
+	\maketitle HW p.183 \#3,10,11,12,17,20, \ p.184 \#23,26 \ p.202 \#54,56,60
+	\section[20pt]{p. 202 \#60}
+	If the annual proportion of new restaurants that fail in a given city may be looked upon as a random variable having a beta distribution with \(\alpha=1\) and \(\beta=4\), find \newline
+	\textbf{(a)}\ the mean of this distribution, that is, the annual proportion of new restaurants that can be expected to fail in the given city; \newline
+	\textbf{(b)}\ the probability that at least 25 percent of all the new restaurants will fail in the given city in any one year. \newline \newline
+	By Def. 6.5 the Beta distribution is given by
+	\[f(x;\alpha,\beta)=\left\{\begin{array}{ccc}
+	\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha-1}(1-x)^{\beta-1} \textup{ for }0<x<1\\0 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textup{elsewhere} \ \ \ \ 
+	\end{array}\right.\]
+	where \(\alpha>0\) and \(\beta>0\).
+	\newline \newline
+	Since \(P(X=x)=f(x;1,4)\), for \(x>0\),
+	\[P(X=x)=\frac{\Gamma(1+4)}{\Gamma(1)\Gamma(4)}x^{1-1}(1-x)^{4-1}\]
+	\[P(X=x)=\frac{4\cdot3\cdot2\cdot1\Gamma(1)}{\Gamma(1)3\cdot2\cdot1\Gamma(1)}(1-x)^{3}\]
+	\[P(X=x)=4(1-x)^{3}\]
+	By Def. 4.2 and 4.3 we have
+	\[\mu=\int_0^1x\cdot4(1-x)^{3}=\frac{1}{5}\]
+	\boxed{\textbf{(a)}\ \textup{The proportion of new restaurants that can be expected to fail is }\frac{1}{5}}
+	\newline \newline
+	By Def. 3.4 we have
+	\[P(X>\frac{1}{4})=\int_{\frac{1}{4}}^{1}4(1-x)^{3}=\frac{81}{256}\approx 0.31641\]
+	\boxed{\textbf{(b)}\ \textup{The probability that at least 25\% of the new restaurants will fail is}\approx 0.31641}
+\end{document}
