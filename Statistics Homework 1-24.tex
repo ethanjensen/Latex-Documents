@@ -1,0 +1,146 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning, arrows, shapes}
+\addtolength{\topmargin}{-0.875in}
+\addtolength{\textheight}{1.75in}
+
+\title{Math 332 A - Mathematical Statistics}
+\author{Ethan Jensen}
+\date{January 24, 2020}
+
+\begin{document}
+	\maketitle HW p.240 \#16 \ p.249 \#21,23 \ p. 256\#60,61,62 \ p. 257\#78
+	\section[20pt]{p. 240 \#16}
+	Find the mean and the variance of the finite population that consists of the 10 numbers 15, 13, 18, 10, 6, 21, 7, 11, 20, and 9.
+	\newline \newline
+	By Definition 8.5 the sample mean is defined by
+	\[\mu = \sum_{i=1}^Nc_i\frac{1}{N}\]
+	For our population, \(N = 10\).
+	By a simple calculation,
+	\[\sum_{i=1}^{11}c_i = 130\]
+	\boxed{\mu = 13}
+	\newline
+	\newline
+	By Definition 8.5 the sample variance is defined by
+	\[\sigma^2 = \sum_{i=1}^N(c_i-\mu)^2\frac{1}{N}\]
+	By a simple calculation,
+	\[\sum_{i=1}^{11}(c_i-\mu)^2 = 256\]
+	\newline
+	\boxed{\sigma^2 = \frac{256}{13} \approx 19.6923}
+	\newline
+	\newpage
+
+	\maketitle HW p.240 \#16 \ p.249 \#21,23 \ p. 256\#60,61,62 \ p. 257\#78
+	\section[20pt]{p. 249 \#21}
+	Prove Theorem 8.10.
+	\newline \newline
+	\textbf{Theorem 8.10. } If \(X_1\) and \(X_2\) are indepenedent random variables, \(X_1\) has a chi-square distribution with \(\nu_1\) degrees of freedom, and \(X_1+X_2\) has a chi-square distribution with \(\nu > \nu_1\) degrees of freedom, then \(X_2\) has a chi-square distribution with \(\nu - \nu_1\) degrees of freedom. \newline
+	\textbf{Proof.}
+	\newline
+	This proof uses the moment-generating function technique.
+	\newline
+	By Theorem 7.3. We have
+	\[M_{X_1 + X_2}(t) = M_{X_1}(t)M_{X_2}(t)\]
+	The moment generating functions of \(X_1\) and \(X_2\) are:
+	\[M_{X_1}(t)=(1-2t)^{-\nu_1/2} \textup{ and } M_{X_1 + X_2}(t)=(1-2t)^{-\nu/2}\]
+	Plugging them into the first equation, we have
+	\[(1-2t)^{-\nu/2}=(1-2t)^{-\nu_1/2}M_{X_2}(t)\]
+	\[M_{X_2}(t)=(1-2t)^{-\nu/2}(1-2t)^{\nu_1/2}\]
+	\[M_{X_2}(t)=(1-2t)^{-(\nu - \nu_1)/2}\]
+	We recognise this as the moment generating function for a chi-square random variable with \(\nu - \nu_1\) degrees of freedom. \newline \newline
+	Random variables can be uniquely identified by their moment-generating functions.
+	\newline
+	\(\therefore X_2\) is a chi-square random variable with \(\nu - \nu_1\) degrees of freedom.
+	\newline \(\blacksquare\) \newline
+
+	\newpage
+	\maketitle HW p.240 \#16 \ p.249 \#21,23 \ p. 256\#60,61,62 \ p. 257\#78
+	\section[20pt]{p. 249 \#23}
+	Use Theorem 8.11 to show that, for random samples of size \(n\) from a normal population with the variance \(\sigma^2\), the sampling distribution of \(S^2\) has the mean \(\sigma^2\) and the variance \(\frac{2\sigma^4}{n-1}\).
+	\newline \newline
+	By Theorem 8.11
+	\[X=\frac{(n-1)S^2}{\sigma^2} \textup{ has a chi-square distribution with } n-1 \textup{ degrees of freedom.}\]
+	\[\frac{(n-1)S^2}{\sigma^2} \textup{has the moment-generating function }M_X(t) = (1-2t)^{(n-1)/2}\]
+	Note that \(S^2=\frac{\sigma^2}{n-1}X\). By Theorem 4.10,
+	\[S^2 \textup{ has the moment generating function } M_{S^2}(t)=\left(1-\frac{2\sigma^2}{n-1}t\right)^{-(n-1)/2}\]
+	\[\frac{d}{dt}\left(1-\frac{2\sigma^2}{n-1}t\right)^{-(n-1)/2}=\sigma^2\left(1-\frac{2\sigma^2}{n-1}t\right)^{-(n+1)/2}\]
+	\[\frac{d^2}{dt^2}=\left(1-\frac{2\sigma^2}{n-1}t\right)^{-(n-1)/2}=\frac{\sigma^2(n+1)}{n-1}\left(1-\frac{2\sigma^2}{n-1}t\right)^{-(n+3)/2}\]
+	By the definition of the moment-generating function,
+	\[\mu_{S^2}=\mu_1'=M'(0)=\sigma^2, \mu_2'=M''(0)=\frac{\sigma^2(n+1)}{n-1}\]
+	By Theorem 4.6,
+	\[\sigma^2_{S^2}=\mu_2'-{\mu_1'}^2\]
+	\[\sigma^2_{S^2}=\frac{\sigma^2(n+1)}{n-1}-\sigma^4=\frac{2\sigma^4}{n-1}\]
+	\boxed{\mu_{S^2}=\sigma^2,\ \ \sigma^2_{S^2}=\frac{2\sigma^4}{n-1}}
+	\newpage
+
+	\maketitle HW p.240 \#16 \ p.249 \#21,23 \ p. 256\#60,61,62 \ p. 257\#78
+	\section[20pt]{p. 256 \#60}
+	How many different samples of size \(n=3\) can be drawn from a finite population of size \newline
+	\textbf{(a)}\ \(N=12\);\ \ \ \ \textbf{(b)}\ \(N=20\);\ \ \ \ \textbf{(c)}\ \(N=50\)? \newline \newline
+	The number of samples that can be drawn is simply \(\left(\begin{matrix}
+	N\\n
+	\end{matrix}\right)\).
+	\[\left(\begin{matrix}
+	12\\3
+	\end{matrix}\right)=220,\ \left(\begin{matrix}
+	20\\3
+	\end{matrix}\right)=1540,\ \left(\begin{matrix}
+	50\\3
+	\end{matrix}\right)=22100;\]
+	\boxed{\textbf{(a)}\ N=12: 220,\ \ \textbf{(b)}\ N=20: 1540,\ \ \textbf{(c)}\ N=50: 22100}
+	\newpage
+
+	\maketitle HW p.240 \#16 \ p.249 \#21,23 \ p. 256\#60,61,62 \ p. 257\#78
+	\section[20pt]{p. 256 \#61}
+	What is the probability of each possible sample if \newline
+	\textbf{(a)}\ a random sample of size \(n=4\) is to be drawn from a finite population of size \(N=12\);
+	\newline
+	\textbf{(b)}\ a random sample of size \(n=5\) is to be drawn from a finite population of size \(N=22\)?
+	\newline
+	\newline
+	\textbf{(a)}\ In this instance, there are \(\left(\begin{matrix}
+	12\\4
+\end{matrix}\right)=495\) possible choices for the random sample.
+The probability of picking any particular sample satisfying those conditions is therefore \(1/495\).
+\newline
+\boxed{\textbf{(a)}\ \textup{The probability of that sample is } \frac{1}{495}}
+\newline
+\newline
+\textbf{(b)}\ In this instance, there are \(\left(\begin{matrix}
+22\\5
+\end{matrix}\right)=26334\) possible choices for the random sample.
+The probability of picking any particular sample satisfying those conditions is therefore \(1/26334\).
+\newline
+\boxed{\textbf{(b)}\ \textup{The probability of that sample is } \frac{1}{26334}}
+\newline
+\newpage
+
+\maketitle HW p.240 \#16 \ p.249 \#21,23 \ p. 256\#60,61,62 \ p. 257\#78
+\section[20pt]{p. 256 \#62}
+If a random sample of size \(n = 3\) is drawn from a finite population of size \(N = 50\), what is the probability that a particular element of the population will be included in the sample?
+\newline \newline
+\boxed{\begin{array}{ccc}\textup{The probability that a particular element will be included}\\\textup{in the sample is } \frac{3}{50}.
+\end{array}}
+\newpage
+
+\maketitle HW p.240 \#16 \ p.249 \#21,23 \ p. 256\#60,61,62 \ p. 257\#78
+\section[20pt]{p. 257 \#78}
+The claim that the variance of a normal population is \(\sigma^2=25\) is to be rejected if the variance of a random sample of size 16 exceeds 54.668 or is less that 12.102. What is the probability that this claim will be rejected even though \(\sigma^2=25\)?
+\newline \newline
+In mathematical terms, the question is asking for the value of \(E= 1 - P(12.102 \leq S^2 \leq 54.668)\).
+\newline
+Note that \(\frac{n-1}{\sigma^2}=\frac{15}{25}=\frac{3}{5}\).
+\[P(12.102 \leq S^2 \leq 54.668)=P(7.2612 \leq \frac{n-1}{\sigma^2}S^2 \leq 32.8008)\]
+By Theorem 8.1, \(\frac{n-1}{\sigma^2}S^2\) has a chi-square distribution with \(\nu = n-1 = 15\). Thus,
+\[P(7.2612 \leq \frac{n-1}{\sigma^2}S^2 \leq 32.8008)=\int_{7.2612}^{32.8008}\frac{1}{2^{7.5}\Gamma(7.5)}x^{6.5}e^{-x/2}dx\]
+This integral can be computed by hand by doing integration by parts, u-substitutions and converting to a polar integral. By Wolfram Alpha,
+\[P(7.2612 \leq \frac{n-1}{\sigma^2}S^2 \leq 32.8008)\approx 0.944991\]
+\[1 - P(12.102 \leq S^2 \leq 54.668)\approx1-0.944991=0.055009\]
+\boxed{\textup{The probability the claim will be rejected is about 0.055009 or 5.5009\%}}
+
+\end{document}

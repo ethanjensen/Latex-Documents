@@ -1,0 +1,356 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{tikz}
+\usepackage{changepage}
+\usetikzlibrary{automata, positioning, shapes}
+\addtolength{\topmargin}{-0.75in}
+\addtolength{\textheight}{1.75in}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+
+\title{Topology Homework}
+\author{Ethan Jensen, Luke Lemaitre, Kasandra Lassagne}
+\date{January 16, 2020}
+
+\begin{document}
+	\maketitle
+  \section[20pt]{Proof of Theorem 0.9}
+	\textbf{THEOREM 0.9.} \textit{For sets A, B, and C, the following laws hold:}
+	\newline
+	\newline
+	\textit{Distributive Laws:}
+	\begin{adjustwidth}{-2cm}{0cm}
+		\begin{flushleft}
+		\[(i)\ A \cap (B \cup C) = (A \cap B) \cup (A \cap C) \]
+		\[(ii)\ A \cup (B \cap C) = (A \cup B) \cap (A \cup C) \]
+		\[(iii)\ A \times (B \cup C) = (A \times B) \cup (A \times C) \]
+		\[(iv)\ A \times (B \cap C) = (A \times B) \cap (A \times C) \]
+		\[(v)\ A \times (B - C) = (A \times B) - (A \times C) \]
+	\end{flushleft}
+	\end{adjustwidth}
+	\textit{DeMorgan's Laws:}
+	\begin{adjustwidth}{-2cm}{0cm}
+		\[(vi)\ A - (B \cup C) = (A - B) \cap (A - C) \]
+		\[(vii)\ A - (B \cap C) = (A - B) \cup (A - C) \]
+	\end{adjustwidth}
+	\[\ \]
+	\textbf{(i)\ Proof.}
+	\newline
+	Assume \(x \in A \cap (B \cup C)\). \newline
+	\(x \in A \textup{ and } x \in (B \cup C)\) by the Definition of \(\cap\)
+	\newline
+	\(x \in A \textup{ and } (x \in B \textup{ or } x \in C)\) by the Definition of \(\cup\)
+	\newline
+	\((x \in A \textup{ and } x \in B) \textup{ or } (x \in A \textup{ and } x \in C)\) by the Distributive Law
+	\newline
+	\(x \in A \cap B \textup{ or } x \in A \cap C\) by the Definition of \(\cap\)
+	\newline
+	\(x \in (A \cap B) \cup (A \cap C)\) by the Definition of \(\cup\)
+	\newline
+	\(\therefore A \cap (B \cup C) \subseteq (A \cap B) \cup (A \cap C)\)
+	\newline \(\square\) \newline
+	Each step is reversible.
+	\newline
+	\((A \cap B) \cup (A \cap C) \subseteq A \cap (B \cup C)\)
+	\newline
+	\(\therefore A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)
+	\newline \(\blacksquare\)
+	\newpage
+
+	\section[20pt]{Proof of Theorem 0.9 cont.}
+	\textbf{(ii)\ Proof.}
+	\newline
+	Assume \(x \in A \cup (B \cap C)\). \newline
+	\(x \in A \textup{ and } x \in (B \cap C)\) by the Definition of \(\cup\)
+	\newline
+	\(x \in A \textup{ or } (x \in B \textup{ and } x \in C)\) by the Definition of \(\cap\)
+	\newline
+	\((x \in A \textup{ or } x \in B) \textup{ and } (x \in A \textup{ or } x \in C)\) by the Distributive Law
+	\newline
+	\(x \in A \cup B \textup{ and } x \in A \cup C\) by the Definition of \(\cup\)
+	\newline
+	\(x \in (A \cup B) \cap (A \cup C)\) by the Definition of \(\cap\)
+	\newline
+	\(\therefore A \cup (B \cap C) \subseteq (A \cup B) \cap (A \cup C)\)
+	\newline \(\square\) \newline
+	Each step is reversible.
+	\newline
+	\((A \cup B) \cap (A \cup C) \subseteq A \cup (B \cap C)\)
+	\newline
+	\(\therefore A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)
+	\newline \(\blacksquare\)
+	\newline
+	\newline
+	\textbf{(iii)\ Proof.}
+	\newline
+	Assume \((x,y) \in A \times (B \cup C)\). \newline
+	\(x \in A \textup{ and } y \in (B \cup C)\) by the Definition of \(\times\)
+	\newline
+	\(x \in A \textup{ and } (y \in B \textup{ or } y \in C)\) by the Definition of \(\cup\)
+	\newline
+	\((x \in A \textup{ and } y \in B) \textup{ or } (x \in A \textup{ and } y \in C)\) by the Distributive Law
+	\newline
+	\((x,y) \in A \times B \textup{ or } (x,y) \in A \times C\) by the Definition of \(\times\)
+	\newline
+	\((x,y) \in (A \times B) \cup (A \times C)\) by the Definition of \(\cup\)
+	\newline
+	\(\therefore A \times (B \cup C) \subseteq (A \times B) \cup (A \times C)\)
+	\newline \(\square\) \newline
+	Each step is reversible.
+	\newline
+	\((A \times B) \cup (A \times C) \subseteq A \times (B \cup C)\)
+	\newline
+	\(\therefore A \times (B \cup C) = (A \times B) \cup (A \times C)\)
+	\newline \(\blacksquare\)
+	\newline
+	\newline
+	\textbf{(iv)\ Proof.}
+	\newline
+	Assume \((x,y) \in A \times (B \cap C)\). \newline
+	\(x \in A \textup{ and } y \in (B \cap C)\) by the Definition of \(\times\)
+	\newline
+	\(x \in A \textup{ and } (y \in B \textup{ and } y \in C)\) by the Definition of \(\cap\)
+	\newline
+	\((x \in A \textup{ and } y \in B) \textup{ and } (x \in A \textup{ and } y \in C)\) by the Associative Law
+	\newline
+	\((x,y) \in A \times B \textup{ and } (x,y) \in A \times C\) by the Definition of \(\times\)
+	\newline
+	\((x,y) \in (A \times B) \cap (A \times C)\) by the Definition of \(\cap\)
+	\newline
+	\(\therefore A \times (B \cap C) \subseteq (A \times B) \cap (A \times C)\)
+	\newline \(\square\) \newline
+	Each step is reversible.
+	\newline
+	\((A \times B) \cap (A \times C) \subseteq A \times (B \cap C)\)
+	\newline
+	\(\therefore A \times (B \cap C) = (A \times B) \cap (A \times C)\)
+	\newline \(\blacksquare\)
+	\newpage
+
+	\section[20pt]{Proof of Theorem 0.9 cont.}
+	\textbf{(v)\ Proof.}
+	Assume \((x,y) \in A \times (B - C)\).
+	\newline
+	\(x \in A \textup{ and } y \in (B - C)\) by the Definition of \(\times\)
+	\newline
+	\(x \in A \textup{ and } (y \in B \textup{ and } \sim y \in C)\) by the Definition of \(-\)
+	\newline
+	\((x \in A \textup{ and } y \in B) \textup{ and } \sim(x \in A \textup{ and } y \in C)\) by the Annullment Law.
+	\newline
+	\((x,y) \in A \times B \textup{ and } \sim (x,y) \in A \times C\) by the Definition of \(\times\)
+	\newline
+	\((x,y) \in (A \times B) - (A \times C)\) by the Definition of \(-\)
+	\newline
+	\(\therefore A \times (B - C) \subseteq (A \times B) - (A \times C) \)
+	\newline \(\square\) \newline
+	Assume \((x,y) \in (A \times B) - (A \times C)\)
+	\newline
+	\((x,y) \in (A \times B) \textup{ and } \sim (x,y) \in (A \times C)\) by the Definition of \(-\)
+	\newline
+	\(x \in A \textup{ and } y \in B \textup{ and } \sim(x \in A \textup{ and } y \in C)\) by the Definition of \(\times\)
+	\newline
+	\(x \in A \textup{ and } y \in B \textup{ and } (\sim x \in A \textup{ or } \sim y \in C)\) by DeMorgan's Law
+	\newline
+	\(x \in A \textup{ and } y \in B \textup{ and } \sim y \in C\) by Elimination
+	\newline
+	\(x \in A \textup{ and } y \in (B - C)\) by the Definition of \(-\)
+	\newline
+	\((x,y) \in A \times (B - C)\) by the Definition of \(\times\)
+	\newline
+	\((A \times B) - (A \times C) \subseteq A \times (B - C) \)
+	\newline
+	\(\therefore A \times (B - C) = (A \times B) - (A \times C)\)
+	\newline \(\blacksquare\) \newline
+	\textbf{(v)\ Proof.}
+	Assume \(x \in A - (B \cup C)\).
+	\newline
+	\(x \in A \textup{ and } \sim x \in (B \cup C)\) by the Definition of \(-\)
+	\newline
+	\(x \in A \textup{ and } \sim (x \in B \textup{ or } x \in C)\)
+	\newline
+	\(x \in A \textup{ and } (\sim x \in B \textup{ and } \sim x \in C)\) by Demorgan's Law
+	\newline
+	\((x \in A \textup{ and } \sim x \in B) \textup{ and } (x \in A \textup{ and } \sim x \in C)\) by the Associative law
+	\newline
+	\(x \in A - B \textup{ and } x \in A - C\) by the Definition of -
+	\newline
+	\(x \in (A - B) \cap (A - C)\) by the Definition of \(\cap\)
+	\newline
+	\(\therefore A - (B \cup C) \subseteq (A - B) \cap (A - C)\)
+	\newline \(\square\) \newline
+	Each step is reversible.
+	\newline
+	\((A - B) \cap (A - C) \subseteq A - (B \cup C)\)
+	\newline
+	\(\therefore A - (B \cup C) = (A - B) \cap (A - C)\)
+	\newline \(\blacksquare\)
+	\newline
+	\textbf{(vi)\ Proof.}
+	Assume \(x \in A - (B \cap C)\).
+	\newline
+	\(x \in A \textup{ and } \sim x \in (B \cap C)\) by the Definition of \(-\)
+	\newline
+	\(x \in A \textup{ and } \sim (x \in B \textup{ and } x \in C)\)
+	\newline
+	\(x \in A \textup{ and } (\sim x \in B \textup{ or } \sim x \in C)\) by Demorgan's Law
+	\newline
+	\((x \in A \textup{ and } \sim x \in B) \textup{ or } (x \in A \textup{ and } \sim x \in C)\) by the Associative law
+	\newline
+	\(x \in A - B \textup{ or } x \in A - C\) by the Definition of -
+	\newline
+	\(x \in (A - B) \cup (A - C)\) by the Definition of \(\cup\)
+	\newline
+	\(\therefore A - (B \cap C) \subseteq (A - B) \cup (A - C)\)
+	\newline \(\square\) \newline
+	Each step is reversible.
+	\newline
+	\((A - B) \cup (A - C) \subseteq A - (B \cap C)\)
+	\newline
+	\(\therefore A - (B \cap C) = (A - B) \cup (A - C)\)
+	\newline \(\blacksquare\)
+	\newpage
+
+	\maketitle
+  \section[20pt]{Proof of Theorem 0.21}
+	\textbf{THEOREM 0.21} \textit{If} \(f:X \rightarrow Y\) \textit{is a function and A and B are subsets of X, then}
+	\begin{adjustwidth}{-2cm}{0cm}
+		\begin{flushleft}
+		\[(i)\ f(A\cup B) = f(A) \cup f(B). \]
+		\[(ii)\ f(A \cap B) \subseteq f(A) \cap f(B). \]
+		\[(iii)\ f(A) - f(B) \subseteq f(A - B) \]
+	\end{flushleft}
+	\end{adjustwidth}
+	\(\ \) \newline
+	\textbf{(i)\ Proof.}
+	\newline
+	Assume \(y \in f(A\cup B)\)
+	\newline
+	\(\exists x \in A \cup B \ni y = f(x)\)
+	\newline
+	\(\exists x \in A \textup{ or }\exists x \in B \ni y = f(x)\)
+	\newline
+	\(y \in f(A) \textup{ or }y \in f(B)\)
+	\newline
+	\(y \in f(A) \cup f(B)\)
+	\newline
+	\(f(A \cup B) \subseteq f(A) \cup f(B)\)
+	\newline
+	Assume \(y \in f(A) \cup f(B)\)
+	\newline
+	\(\exists x \in A \ni y = f(x)\textup{ or } \exists x \in B\ni y = f(x)\)
+	\newline
+	\(\exists x \in A \cup B\ni y = f(x)\) since \(A\) and \(B\) are both subsets of \(A \cup B\)
+	\newline
+	\(y \in f(A \cup B)\)
+	\newline
+	\(f(A) \cup f(B) \subseteq f(A \cup B)\)
+	\newline
+	\(\therefore f(A \cup B) = f(A) \cup f(B)\)
+	\newline \(\blacksquare\) \newline \newline
+	\textbf{(ii)\ Proof.}
+	\newline
+	Assume \(y \in f(A\cap B)\)
+	\newline
+	\(\exists x \in A\cap B\ni y = f(x)\)
+	\newline
+	\(\exists x \in A \ni y = f(x)\textup{ and } \exists x \in B\ni y = f(x)\) since \(A\cap B\) is a subset of both \(A\) and \(B\).
+	\newline
+	\(y \in f(A) \textup{ and } y \in f(B)\)
+	\newline
+	\(y \in f(A) \cap f(B)\)
+	\newline
+	\(\therefore f(A \cap B) \subseteq f(A) \cap f(B)\)
+	\newline \(\blacksquare\) \newline \newline
+	\textbf{(iii)\ Proof.}
+	\newline
+	Assume \(y \in f(A) - f(B)\)
+	\newline
+	\(y \in f(A) \textup{ and }\sim y \in f(B) \)
+	\newline
+	\(\exists x \in A \ni y = f(x)\textup{ and }\sim \exists x \in B\ni y = f(x)\)
+	\newline
+	\(\exists x \in A\cap B'\ni y = f(x)\) since \(x \in A\), but it cannot be in \(B\).
+	\newline
+	\(y \in f(A\cap B')\)
+	\newline
+	\(y \in f(A-B)\), which is a different way to write the same thing.
+	\newline
+	\(\therefore f(A)-f(B) \subseteq f(A-B)\)
+	\newline \(\blacksquare\)
+	\newpage
+	\maketitle
+  \section[20pt]{Proof of Theorem 0.22}
+	\textbf{THEOREM 0.22. }\textit{if }\(f:X\rightarrow Y\) \textit{ is a function and V and W are subsets of Y, then}
+	\begin{adjustwidth}{-2cm}{0cm}
+		\begin{flushleft}
+		\[(i)\ f^{-1}(V\cup W)=f^{-1}(V)\cup f^{-1}(W).\]
+		\[(ii)\ f^{-1}(V\cap W)=f^{-1}(V)\cap f^{-1}(W).\]
+		\[(iii)\ f^{-1}(V - W)=f^{-1}(V) - f^{-1}(W).\]
+	\end{flushleft}
+	\end{adjustwidth}
+	\(\ \) \newline
+	\textbf{(i)\ Proof.}
+	Assume \(x \in f^{-1}(V \cup W)\)
+	\newline
+	\(f(x) \in V \cup W\)
+	\newline
+	\(f(x) \in V \textup{ or } f(x) \in W\)
+	\newline
+	\(x \in f^{-1}(V) \textup{ or } x \in f^{-1}(W)\)
+	\newline
+	\(x \in f^{-1}(V) \cup f^{-1}(W)\)
+	\newline
+	\(f^{-1}(V) \cup f^{-1}(W) \subseteq f^{-1}(V \cup W)\)
+	\newline \(\square\) \newline
+	Each step is reversible.
+	\newline
+	\(f^{-1}(V \cup W)\subseteq f^{-1}(V) \cup f^{-1}(W)\)
+	\newline
+	\(\therefore f^{-1}(V\cup W)=f^{-1}(V)\cup f^{-1}(W)\)
+	\newline \(\blacksquare\) \newline
+	\newline
+	\textbf{(ii)\ Proof.}
+	Assume \(x \in f^{-1}(V \cap W)\)
+	\newline
+	\(f(x) \in V \cap W\)
+	\newline
+	\(f(x) \in V \textup{ and } f(x) \in W\)
+	\newline
+	\(x \in f^{-1}(V) \textup{ and } x \in f^{-1}(W)\)
+	\newline
+	\(x \in f^{-1}(V) \cap f^{-1}(W)\)
+	\newline
+	\(f^{-1}(V) \cap f^{-1}(W) \subseteq f^{-1}(V \cap W)\)
+	\newline \(\square\) \newline
+	Each step is reversible.
+	\newline
+	\(f^{-1}(V \cap W)\subseteq f^{-1}(V) \cap f^{-1}(W)\)
+	\newline
+	\(\therefore f^{-1}(V\cap W)=f^{-1}(V)\cap f^{-1}(W)\)
+	\newline \(\blacksquare\) \newline
+	\newline
+	\textbf{(iii)\ Proof.}
+	Assume \(x \in f^{-1}(V-W)\)
+	\newline
+	\(f(x) \in V-W\)
+	\newline
+	\(f(x) \in V \textup{ and }\sim f(x) \in W\)
+	\newline
+	\(x \in f^{-1}(V) \textup{ and }\sim x \in f^{-1}(W)\)
+	\newline
+	\(x \in f^{-1}(V) - f^{-1}(W)\)
+	\newline
+	\(f^{-1}(V-W) \subseteq f^{-1}(V) - f^{-1}(W)\)
+	\newline \(\square\) \newline
+	Each step is reversible
+	\newline
+	\(f^{-1}(V) - f^{-1}(W) \subseteq f^{-1}(V-W)\)
+	\newline
+	\(\therefore f^{-1}(V - W)=f^{-1}(V) - f^{-1}(W)\)
+	\newline \(\blacksquare\)
+	\newpage
+\end{document}

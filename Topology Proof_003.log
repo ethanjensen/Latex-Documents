@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.11)  14 JAN 2020 13:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.11)  23 JAN 2020 19:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"Zeta Disjoint Partition.tex"
-(./Zeta Disjoint Partition.tex
+**"Topology Proof_003.tex"
+(./Topology Proof_003.tex
 LaTeX2e <2019-10-01>
 (c:/texlive/2019/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
@@ -356,7 +356,11 @@ File: pgfmodulematrix.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \tikz@expandcount=\count128
  (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-))) (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautomata.code.tex
+))) (c:/texlive/2019/texmf-dist/tex/latex/changepage/changepage.sty
+Package: changepage 2009/10/20 v1.0c check page and change page layout
+\c@cp@cntr=\count129
+\cp@tempcnt=\count130
+) (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautomata.code.tex
 File: tikzlibraryautomata.code.tex 2019/08/03 v3.1.4b (3.1.4b)
  (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
 File: tikzlibraryshapes.multipart.code.tex 2019/08/03 v3.1.4b (3.1.4b)
@@ -386,10 +390,10 @@ File: pgflibraryshapes.multipart.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 File: tikzlibrarypositioning.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 ) (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
 File: tikzlibraryshapes.code.tex 2019/08/03 v3.1.4b (3.1.4b)
- (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
-File: tikzlibraryshapes.geometric.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 
-(c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+(c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+ (c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
 File: pgflibraryshapes.geometric.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )) (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex
 File: tikzlibraryshapes.misc.code.tex 2019/08/03 v3.1.4b (3.1.4b)
@@ -403,35 +407,35 @@ File: pgflibraryshapes.symbols.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 File: tikzlibraryshapes.arrows.code.tex 2019/08/03 v3.1.4b (3.1.4b)
  (c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
 File: pgflibraryshapes.arrows.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-)) (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex (c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex))) (./Zeta Disjoint Partition.aux)
-\openout1 = `"Zeta Disjoint Partition.aux"'.
+)) (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex
+(c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex))) (./Topology Proof_003.aux)
+\openout1 = `"Topology Proof_003.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-\Hy@linkcounter=\count129
- ABD: EveryShipout initializing macros
-(c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+\Hy@linkcounter=\count131
+ ABD: EveryShipout initializing macros (c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count130
+\scratchcounter=\count132
 \scratchdimen=\dimen182
 \scratchbox=\box62
-\nofMPsegments=\count131
-\nofMParguments=\count132
+\nofMPsegments=\count133
+\nofMParguments=\count134
 \everyMPshowfont=\toks34
-\MPscratchCnt=\count133
+\MPscratchCnt=\count135
 \MPscratchDim=\dimen183
-\MPnumerator=\count134
-\makeMPintoPDFobject=\count135
+\MPnumerator=\count136
+\makeMPintoPDFobject=\count137
 \everyMPtoPDFconversion=\toks35
 ) (c:/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -469,166 +473,64 @@ Package grfext Info: Graphics extension search list:
  (c:/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 17.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
  (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
  (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 26--28
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--36
+Underfull \hbox (badness 10000) in paragraph at lines 22--26
 
  []
 
 [1
 
 {c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (56.01355pt too wide) detected at line 42
-[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = [] + [] + [] + []\OML/cmm/m/it/12 ::: \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 x [] [] [] [] [] :::
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--50
+Underfull \hbox (badness 10000) in paragraph at lines 65--132
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--59
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 52--59
+Underfull \hbox (badness 10000) in paragraph at lines 65--132
 
  []
 
 [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 185--194
+Underfull \hbox (badness 10000) in paragraph at lines 227--284
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--194
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 185--194
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 185--194
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 185--194
-
- []
-
-
-Overfull \hbox (18.75076pt too wide) detected at line 198
-\OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; x[]; x[]; x[]\OT1/cmr/m/n/12 ) : \OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 x[]\OMS/cmsy/m/n/12 g [ f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; x[]; x[]; x[]\OT1/cmr/m/n/12 ) : \OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 x[]\OMS/cmsy/m/n/12 g
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--202
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--202
+Underfull \hbox (badness 10000) in paragraph at lines 227--284
 
  []
 
 [4]
-Overfull \hbox (15.57777pt too wide) detected at line 227
-[] \OT1/cmr/m/n/12 = [] [][]\OML/cmm/m/it/12 :::[];  a \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; x[]; :::x[]\OT1/cmr/m/n/12 ) : \OML/cmm/m/it/12 x[] < x[]::: < x[]\OMS/cmsy/m/n/12 g
- []
-
-[5]
-Overfull \hbox (11.46768pt too wide) in paragraph at lines 282--283
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 260--285
-
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 289--291
-
- []
-
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 292.
-(c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 292.
- [7]
-Overfull \hbox (21.06728pt too wide) in paragraph at lines 424--425
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 345--429
+Underfull \hbox (badness 10000) in paragraph at lines 295--355
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--429
+Underfull \hbox (badness 10000) in paragraph at lines 295--355
 
  []
 
-[8]
-Overfull \hbox (21.06728pt too wide) in paragraph at lines 577--578
- [][] 
- []
-
-
-Overfull \hbox (7.40283pt too wide) in paragraph at lines 433--582
-\OT1/cmr/m/n/12 Determine the num-ber of ways of dis-tribut-ing the col-lec-tion of Blocks [1,1,1,2,3]
- []
-
-[9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 589--599
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 589--599
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 589--599
-
- []
-
-[11] (./Zeta Disjoint Partition.aux) ) 
+[5] (./Topology Proof_003.aux) ) 
 Here is how much of TeX's memory you used:
- 15815 strings out of 492166
- 327017 string characters out of 6129146
- 425209 words of memory out of 5000000
- 19870 multiletter control sequences out of 15000+600000
+ 15658 strings out of 492166
+ 324238 string characters out of 6129146
+ 403965 words of memory out of 5000000
+ 19712 multiletter control sequences out of 15000+600000
  12443 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,9n,71p,452b,741s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
-2.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Zeta Disjoint Partition.pdf" (11 pages, 181035 bytes).
+ 60i,6n,71p,424b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on "Topology Proof_003.pdf" (5 pages, 101976 bytes).
 PDF statistics:
- 107 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
+ 59 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

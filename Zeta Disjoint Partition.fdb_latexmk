@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1576132788 "Zeta Disjoint Partition.tex" "Zeta Disjoint Partition.pdf" "Zeta Disjoint Partition" 1578531362
-  "Zeta Disjoint Partition.aux" 1576132792 2334 3608d1e33caff278ef0329fc6486e4a8 "pdflatex"
-  "Zeta Disjoint Partition.tex" 1578531359 29125 947705dc0a88e425de9f20597d3a4180 ""
+["pdflatex"] 1579038331 "Zeta Disjoint Partition.tex" "Zeta Disjoint Partition.pdf" "Zeta Disjoint Partition" 1579107368
+  "Zeta Disjoint Partition.aux" 1579038334 2334 3608d1e33caff278ef0329fc6486e4a8 "pdflatex"
+  "Zeta Disjoint Partition.tex" 1579107367 29125 947705dc0a88e425de9f20597d3a4180 ""
   "c:/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1570774438 3332 103109f5612ad95229751940c61aada0 ""
   "c:/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1570772778 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1570772778 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -160,6 +160,6 @@
   "c:/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1570778110 4289463 d81178ecbce03d734ea9d2bd9c16199e ""
   "c:/texlive/2019/texmf.cnf" 1570777927 673 4ae7b2f49cee444c5343a45b5d0f169c ""
   (generated)
-  "Zeta Disjoint Partition.aux"
   "Zeta Disjoint Partition.pdf"
   "Zeta Disjoint Partition.log"
+  "Zeta Disjoint Partition.aux"
