@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.11)  23 JAN 2020 19:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.11)  26 JAN 2020 22:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -356,36 +356,44 @@ File: pgfmodulematrix.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \tikz@expandcount=\count128
  (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-))) (c:/texlive/2019/texmf-dist/tex/latex/changepage/changepage.sty
+))) (c:/texlive/2019/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip50
+\enit@outerparindent=\dimen182
+\enit@toks=\toks34
+\enit@inbox=\box42
+\enit@count@id=\count129
+\enitdp@description=\count130
+) (c:/texlive/2019/texmf-dist/tex/latex/changepage/changepage.sty
 Package: changepage 2009/10/20 v1.0c check page and change page layout
-\c@cp@cntr=\count129
-\cp@tempcnt=\count130
+\c@cp@cntr=\count131
+\cp@tempcnt=\count132
 ) (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautomata.code.tex
 File: tikzlibraryautomata.code.tex 2019/08/03 v3.1.4b (3.1.4b)
  (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
 File: tikzlibraryshapes.multipart.code.tex 2019/08/03 v3.1.4b (3.1.4b)
  (c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgfnodepartlowerbox=\box42
-\pgfnodeparttwobox=\box43
-\pgfnodepartthreebox=\box44
-\pgfnodepartfourbox=\box45
-\pgfnodeparttwentybox=\box46
-\pgfnodepartnineteenbox=\box47
-\pgfnodeparteighteenbox=\box48
-\pgfnodepartseventeenbox=\box49
-\pgfnodepartsixteenbox=\box50
-\pgfnodepartfifteenbox=\box51
-\pgfnodepartfourteenbox=\box52
-\pgfnodepartthirteenbox=\box53
-\pgfnodeparttwelvebox=\box54
-\pgfnodepartelevenbox=\box55
-\pgfnodeparttenbox=\box56
-\pgfnodepartninebox=\box57
-\pgfnodeparteightbox=\box58
-\pgfnodepartsevenbox=\box59
-\pgfnodepartsixbox=\box60
-\pgfnodepartfivebox=\box61
+\pgfnodepartlowerbox=\box43
+\pgfnodeparttwobox=\box44
+\pgfnodepartthreebox=\box45
+\pgfnodepartfourbox=\box46
+\pgfnodeparttwentybox=\box47
+\pgfnodepartnineteenbox=\box48
+\pgfnodeparteighteenbox=\box49
+\pgfnodepartseventeenbox=\box50
+\pgfnodepartsixteenbox=\box51
+\pgfnodepartfifteenbox=\box52
+\pgfnodepartfourteenbox=\box53
+\pgfnodepartthirteenbox=\box54
+\pgfnodeparttwelvebox=\box55
+\pgfnodepartelevenbox=\box56
+\pgfnodeparttenbox=\box57
+\pgfnodepartninebox=\box58
+\pgfnodeparteightbox=\box59
+\pgfnodepartsevenbox=\box60
+\pgfnodepartsixbox=\box61
+\pgfnodepartfivebox=\box62
 ))) (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 ) (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
@@ -423,20 +431,20 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
-\Hy@linkcounter=\count131
+\Hy@linkcounter=\count133
  ABD: EveryShipout initializing macros (c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count132
-\scratchdimen=\dimen182
-\scratchbox=\box62
-\nofMPsegments=\count133
-\nofMParguments=\count134
-\everyMPshowfont=\toks34
-\MPscratchCnt=\count135
-\MPscratchDim=\dimen183
-\MPnumerator=\count136
-\makeMPintoPDFobject=\count137
-\everyMPtoPDFconversion=\toks35
+\scratchcounter=\count134
+\scratchdimen=\dimen183
+\scratchbox=\box63
+\nofMPsegments=\count135
+\nofMParguments=\count136
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count137
+\MPscratchDim=\dimen184
+\MPnumerator=\count138
+\makeMPintoPDFobject=\count139
+\everyMPtoPDFconversion=\toks36
 ) (c:/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
  (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
@@ -481,56 +489,374 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
  (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 22--26
+Underfull \hbox (badness 10000) in paragraph at lines 21--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--52
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--52
 
  []
 
 [1
 
 {c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 65--132
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 103.
+ (c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <17.28> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 103.
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--112
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--132
+Underfull \hbox (badness 10000) in paragraph at lines 53--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--112
 
  []
 
 [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 227--284
+Underfull \hbox (badness 10000) in paragraph at lines 120--125
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 227--284
-
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 295--355
+Underfull \hbox (badness 10000) in paragraph at lines 120--125
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--355
+Underfull \hbox (badness 10000) in paragraph at lines 137--306
 
  []
 
-[5] (./Topology Proof_003.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--306
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--306
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--306
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--306
+
+ []
+
+[4] [5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 315--372
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 315--372
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 381--441
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--441
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 451--491
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 451--491
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 451--491
+
+ []
+
+
+Overfull \hbox (18.06012pt too wide) in paragraph at lines 451--491
+\OT1/cmr/m/n/12 Since each $\OML/cmm/m/it/12 A[]$ \OT1/cmr/m/n/12 are fi-nite and nonempty, there ex-ist bi-jec-tive func-tions $\OML/cmm/m/it/12 f[]; f[]; :::f[] \OMS/cmsy/m/n/12 3
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 451--491
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 451--491
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 451--491
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 451--491
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 491--555
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--555
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--555
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--555
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--555
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--555
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--555
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--555
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--555
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--555
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--555
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--555
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--555
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--555
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 555--586
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 555--586
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 555--586
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 555--586
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 555--586
+
+ []
+
+[11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 587--610
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 587--610
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 587--610
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 587--610
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 587--610
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 587--610
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 611--630
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 611--630
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 611--630
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 611--630
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 611--630
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 611--630
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 611--630
+
+ []
+
+[14] (./Topology Proof_003.aux) ) 
 Here is how much of TeX's memory you used:
- 15658 strings out of 492166
- 324238 string characters out of 6129146
- 403965 words of memory out of 5000000
- 19712 multiletter control sequences out of 15000+600000
- 12443 words of font info for 48 fonts, out of 8000000 for 9000
+ 16001 strings out of 492166
+ 329950 string characters out of 6129146
+ 420490 words of memory out of 5000000
+ 20046 multiletter control sequences out of 15000+600000
+ 14562 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,6n,71p,424b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on "Topology Proof_003.pdf" (5 pages, 101976 bytes).
+ 60i,9n,71p,422b,197s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+am10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "Topology Proof_003.pdf" (14 pages, 181742 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
- 42 compressed objects within 1 object stream
+ 113 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

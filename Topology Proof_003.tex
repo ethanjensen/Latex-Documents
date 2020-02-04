@@ -5,35 +5,132 @@
 \usepackage{amssymb}
 \usepackage{empheq}
 \usepackage{tikz}
+\usepackage{enumitem}
 \usepackage{changepage}
 \usetikzlibrary{automata, positioning, shapes}
 \addtolength{\topmargin}{-0.75in}
 \addtolength{\textheight}{1.75in}
-\addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 
 \title{Topology Homework}
 \author{Ethan Jensen, Luke Lemaitre, Kasandra Lassagne}
-\date{January 16, 2020}
+\date{January 27, 2020}
 
 \begin{document}
 	\maketitle
-  \section[20pt]{Proof of Theorem 0.9}
+	The following proofs were done by recalling previous Real Analysis notes, in which, similar theorems regarding countability were proved. \newline \newline
+	A complete collection of the proofs required is provided on later pages.
+	\newline
+	\newline
+	\textbf{Lemma 1: The union of two countable sets is countable}
+	\newline \newline
+	\textbf{Proof. } \newline
+	Let S and T be countable sets.
+	Thm\(^*\) tells us that  \(\exists f:\mathbb{N}\rightarrow S \textup{ and } g:\mathbb{N}\rightarrow T \ni f \textup{ and } g \textup{ are surjective.}\) \newline
+	\[\textup{Consider } \left\{ \begin{array}{ccc} f\left(\frac{n+1}{2}\right) \textup{ if n is odd}\\ g\left(\frac{n}{2}\right) \textup{ if n is even }\
+	\end{array}\right.\]
+	so \(h:\mathbb{N}\rightarrow S \cup T\) is a surjection
+	\newline
+	so, by thm *, \(S \cup T\) is countable. //
+	\newline \newline
+	\textbf{Lemma 2: The product of two countable sets is countable}
+	\newline \newline
+	\textbf{Proof. } \newline
+	Let S and T be countable sets. \newline
+	thm * \(\exists\) injections \(f:S \rightarrow \mathbb{N}\) and \(g: T \rightarrow \mathbb{N}\). \newline
+	define \(h(s,t)=2^{f(s)}3^{g(t)}, h: S \times T \rightarrow \mathbb{N}\) \newline
+	let \(h(s,t)=h(u,v)\) \newline
+	so \(2^{f(s)}3^{g(t)}=2^{f(u)}3^{g(v)}\) \newline
+	Since prime factorization is unique, \newline
+	\(2^{f(s)=2^{f(u)}}\) so \(s=u\) \newline
+	and \(3^{g(t)}=3^{g(v)}\) so \(t=v\) \newline
+	because f and g are injective. \newline
+	so \(s,t) = (u,v))\) \newline
+	\(\therefore\) h is injective from \(S \times T \rightarrow N\)
+	\newline
+	\(\therefore\) by thm * \(S \times T\) is countable. //
+	\newline \(\blacksquare\) \newpage
+	\(\ \) \newline
+	\textbf{THEOREM 0.29. (iv)} \textit{A subset of a countable set is a countable set.} \newline \newline
+	\textbf{Proof. } \newline
+	Let S be a countable set and let \(T \subseteq S\) \newline
+	Case I: T is finite, then T is countable \newline
+	Case II: T is not finite or infinite \newline
+	so S must be infinite and thus, S is denumerable \newline
+	So \(\exists\) a bijection \(f:\mathbb{N}\rightarrow S\) and we can write \newline
+	\(S=\{s_1,s_2,s_3,...\}\) so \(f(n)=s_n\) \newline
+	Let \(A = \{n \in \mathbb{N}|\ s_n \in T\}\) \newline
+	since A is a non empty subset of \(\mathbb{N}\)  it has a least element. call it \(a_1\). \newline
+	so \(A-\{a_1\}\) has a least element. call it \(a_2\) \newline
+	so \(A-\{a_1,a_2,...a_{k-1}\}\) has a least element. call it \(a_k\) \newline
+	define \(g: \mathbb{N} \rightarrow \mathbb{N} \ni g(n) = a_n\) \newline
+	Since \(a_{n+1} \notin \{a_1,a_2,...a_n\}\) g is injective \newline
+	so \(f=g: \mathbb{N}\rightarrow S\) is injective \newline
+	since every element of T is included in \(S_1\) \newline
+	\(g(\mathbb{N})\) includes all subscripts of T \newline
+	so \(f \circ g\) is a bijection from \(\mathbb{N}\rightarrow T\) \newline
+	so T is denumerable and thus countable. //
+	\newline \newline
+	\textbf{THEOREM 0.29. (v)} \textit{A countable union of countable sets is a countable set.} \newline \newline
+	\textbf{Proof. } \newline
+	Let \(A_1, A_2, A_3,...\) be countable sets. \newline
+	\textbf{Basis step: } \(A_1\) is countable by Lemma 1.
+	\newline \(\square\) \newline
+	\textbf{Induction hypothesis: } Suppose \(\bigcup_{i=1}^{k} A_i\) is countable for some \(k \in \mathbb{Z}_+\). \newline
+	\textbf{Induction step: } Consider some set \(S = \bigcup_{i=1}^{k+1} A_i\). \newline \newline
+	S can be written as \(S = A_{k+1} \cup \bigcup_{i=1}^{k} A_i\) \newline
+	By the induction hypothesis, \(\bigcup_{i=1}^{k} A_i\) is a countable set. Thus, S is a union of two countable sets, so it is a countable set by Lemma 1. \newline \newline
+	\(\therefore \bigcup_{i=1}^{n} A_i \) is a countable set for \(n=1,2,3...\), a countable union. \newline
+	\(\blacksquare\) \newline \newline
+	\textbf{THEOREM 0.29. (vi)} \textit{A product of countable sets is a countable set.} \newline \newline
+	\textbf{Proof. } \newline
+	Let \(A_1, A_2, A_3,...\) be countable sets. \newline
+	\textbf{Basis step: } \(A_1\) is countable by Lemma 2.
+	\newline \(\square\) \newline
+	\textbf{Induction hypothesis: } Suppose \(A_1 \times A_2 \times ...\times A_k\) is countable for some \(k \in \mathbb{Z}_+\). \newline
+	\textbf{Induction step: } Consider some set \(S = A_1 \times A_2 \times ...\times A_k \times A_{k+1}\). \newline \newline
+	S can be written as \(S = A_{k+1} \times (A_1 \times A_2 \times ...\times A_k\) \newline
+	By the induction hypothesis, \((A_1 \times A_2 \times ...\times A_k\) is a countable set. Thus, S is a product of two countable sets, so it is a countable set by Lemma 2. \newline \newline
+	\((A_1 \times A_2 \times ...\times A_n\) is a countable set for \(n=1,2,3...\), a countable product. \newline
+	\(\blacksquare\) \newline \newline
+	\textbf{THEOREM: The set of real numbers is uncountable}
+	\newline \newline
+	\textbf{Proof: } \newline
+	let \(J=(0,1)\) \newline
+	NTS: J is uncountable \newline
+	Suppose J is countable \newline
+	J can be wrriten as \newline
+	\(x_1 = 0.\){\Large \textcircled{\small\(a_{11}\)}}\(a_{12}a_{13}a_{14}\) \newline
+	\(x_2 = 0.a_{21}\){\Large \textcircled{\small\(a_{22}\)}}\(a_{23}a_{24}\) \newline
+	\(x_3 = 0.a_{31}a_{32}\){\Large \textcircled{\small\(a_{33}\)}}\(a_{34}\) \newline
+	\(x_4 = 0.a_{41}a_{42}a_{43}\){\Large \textcircled{\small\(a_{44}\)}}
+	\newline \(\vdots \) \newline
+	Where each \(a_{ij}\in\{1,2,...9\}\) \newline
+	construct the number \newline
+	\(y = 0.b_1b_2b_3b_4...\) by
+	\newline
+	\[b_1 =\left\{ \begin{array}{ccc} 3 \textup{ if } a_{ii} \neq 3\\ 7 \textup{ if } a_{ii} = 3
+	\end{array}\right.\]
+	We know \(y \in J\) but \(y \neq x_i \forall i \in \mathbb{N}\) so \(y \notin J\ \ \rightarrow \leftarrow\)
+	\newline
+	\(\therefore\) J is uncountable \newline
+	\(\therefore\) since \(J \in \mathbb{R},\ \mathbb{R}\) is uncountable (thm) //
+	\newpage
+
+	The following proofs is what our group came up with independent of any notes from Real Analysis. \newline \newline
 	\textbf{THEOREM 0.9.} \textit{For sets A, B, and C, the following laws hold:}
 	\newline
 	\newline
 	\textit{Distributive Laws:}
-	\begin{adjustwidth}{-2cm}{0cm}
-		\begin{flushleft}
+	\begin{adjustwidth}{-3cm}{0cm}
 		\[(i)\ A \cap (B \cup C) = (A \cap B) \cup (A \cap C) \]
 		\[(ii)\ A \cup (B \cap C) = (A \cup B) \cap (A \cup C) \]
 		\[(iii)\ A \times (B \cup C) = (A \times B) \cup (A \times C) \]
 		\[(iv)\ A \times (B \cap C) = (A \times B) \cap (A \times C) \]
 		\[(v)\ A \times (B - C) = (A \times B) - (A \times C) \]
-	\end{flushleft}
 	\end{adjustwidth}
 	\textit{DeMorgan's Laws:}
-	\begin{adjustwidth}{-2cm}{0cm}
+	\begin{adjustwidth}{-3cm}{0cm}
 		\[(vi)\ A - (B \cup C) = (A - B) \cap (A - C) \]
 		\[(vii)\ A - (B \cap C) = (A - B) \cup (A - C) \]
 	\end{adjustwidth}
@@ -58,10 +155,7 @@
 	\((A \cap B) \cup (A \cap C) \subseteq A \cap (B \cup C)\)
 	\newline
 	\(\therefore A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)
-	\newline \(\blacksquare\)
-	\newpage
-
-	\section[20pt]{Proof of Theorem 0.9 cont.}
+	\newline \(\blacksquare\) \newline \newline
 	\textbf{(ii)\ Proof.}
 	\newline
 	Assume \(x \in A \cup (B \cap C)\). \newline
@@ -128,10 +222,7 @@
 	\((A \times B) \cap (A \times C) \subseteq A \times (B \cap C)\)
 	\newline
 	\(\therefore A \times (B \cap C) = (A \times B) \cap (A \times C)\)
-	\newline \(\blacksquare\)
-	\newpage
-
-	\section[20pt]{Proof of Theorem 0.9 cont.}
+	\newline \(\blacksquare\) \newline \newline
 	\textbf{(v)\ Proof.}
 	Assume \((x,y) \in A \times (B - C)\).
 	\newline
@@ -164,7 +255,7 @@
 	\((A \times B) - (A \times C) \subseteq A \times (B - C) \)
 	\newline
 	\(\therefore A \times (B - C) = (A \times B) - (A \times C)\)
-	\newline \(\blacksquare\) \newline
+	\newline \(\blacksquare\) \newline \newline
 	\textbf{(v)\ Proof.}
 	Assume \(x \in A - (B \cup C)\).
 	\newline
@@ -213,9 +304,6 @@
 	\(\therefore A - (B \cap C) = (A - B) \cup (A - C)\)
 	\newline \(\blacksquare\)
 	\newpage
-
-	\maketitle
-  \section[20pt]{Proof of Theorem 0.21}
 	\textbf{THEOREM 0.21} \textit{If} \(f:X \rightarrow Y\) \textit{is a function and A and B are subsets of X, then}
 	\begin{adjustwidth}{-2cm}{0cm}
 		\begin{flushleft}
@@ -282,10 +370,8 @@
 	\(\therefore f(A)-f(B) \subseteq f(A-B)\)
 	\newline \(\blacksquare\)
 	\newpage
-	\maketitle
-  \section[20pt]{Proof of Theorem 0.22}
 	\textbf{THEOREM 0.22. }\textit{if }\(f:X\rightarrow Y\) \textit{ is a function and V and W are subsets of Y, then}
-	\begin{adjustwidth}{-2cm}{0cm}
+	\begin{adjustwidth}{-3cm}{0cm}
 		\begin{flushleft}
 		\[(i)\ f^{-1}(V\cup W)=f^{-1}(V)\cup f^{-1}(W).\]
 		\[(ii)\ f^{-1}(V\cap W)=f^{-1}(V)\cap f^{-1}(W).\]
@@ -353,4 +439,192 @@
 	\(\therefore f^{-1}(V - W)=f^{-1}(V) - f^{-1}(W)\)
 	\newline \(\blacksquare\)
 	\newpage
+	\textbf{THEOREM 0.29. }
+	\begin{adjustwidth}{1cm}{0cm}
+		\textit{(i) A subset of a finite set is a finite set} \newline
+		\textit{(ii) A finite union of finite sets is a finite set} \newline
+		\textit{(iii) A product of finite sets is a finite set} \newline
+		\textit{(iv) A subset of a countable set is a countable set} \newline
+		\textit{(v) A countable union of countable sets is a countable set} \newline
+		\textit{(vi) A product of countable sets is a countable set}
+	\end{adjustwidth}
+	\(\ \) \newline
+	\textbf{(i)\ Proof.} Consider some finite set A. \newline
+	A is empty or there exists a bijection \(f:\{1,2,...n\}\rightarrow A\)
+	\newline
+	If A is empty, any subset of A is empty, and is therefore finite.
+	\newline
+	If A is non empty, f gives a way to order elements in A.
+	\newline \newline
+	Consider some subset S of A. Since S is a subset of A, elements in S can also be ordered by f. \newline \newline
+	Let \(g:\{1,2,3,...k\}\rightarrow S\) where \(g(a)\) is the ath smallest element in \(f^{-1}(S)\). Every element in \(S\) has a unique element in \(\{1,2,3,...k\}\) that g maps to it, so g is bijective. \newline
+	Thus, S is finite. \newline
+	\(\therefore\) A subset of a finite set is a finite set.
+	\newline \(\blacksquare\) \newline \newline
+	\textbf{(ii)\ Proof.} Consider the union of finite sets \(\bigcup_{i=1}^m A_i\).
+	\newline
+	The union of any set A and the empty set is A. Thus, if any of the \(A_i\) are empty, then we can construct an equivalent finite union \(\bigcup_{i=1}^n A_i\) such that no \(A_i\) is empty.
+	\newline
+	Next, assume all \(A_i\) are mutually disjoint.
+	\newline
+	Since each \(A_i\) are finite and nonempty, there exist bijective functions
+	\(f_1,f_2,...f_n\ni\ f_i:\{1,2,...k_i\}\rightarrow A_i\) for some values \(k_i\in \mathbb{Z}_+\) \newline \newline
+	Let \(P = \{2,3,5,...p_n\}\) be the set of the first n primes.
+	\newline
+	Let \(S = \{p_i^q| i \leq n, 1 \leq q \leq k_i\}\) be a subset of all prime powers.
+	\newline \newline
+	Let \(g: S \rightarrow \bigcup_{i=1}^n A_i\) where \(g(p_i^q)=f_i^{-1}(q)\)
+	\newline
+	By the Fundamental Theorem of Arithmetic, and the fact that all \(A_i\) are mutually disjoint, every element in \(\bigcup_{i=1}^n A_i\) has a unique element in \(S\) that g maps to it, so g is bijective.
+	\newline \newline
+	S is a subset of the integers, so can be ordered.
+	\newline
+	Let \(h: \{1,2,...(k_1+k_2+...k_n)\} \rightarrow S\) where \(h(a)\) is the ath smallest element in S.
+	\newline
+	Every element in S gets a unique element in \(\{1,2,...(k_1+k_2+...k_n)\}\), that h maps to it, so h is bijective.
+	\newline \newline
+	h and g are both bijective so \(g \circ h : \{1,2,...(k_1+k_2+...k_n)\} \rightarrow \bigcup_{i=1}^n A_i\) is also bijective.
+	\newline
+	So any finite union of mutually disjoint finite sets is finite.
+	\newline
+	If \(A_i\) are not mutually disjoint, then a union of such sets are equivalent to a finite union of mutually disjoint finite sets anyways, as shown below:
+	\[\bigcup_{i=1}^n A_i = A_1 \cup \bigcup_{i=2}^n \left(A_i-\bigcup_{k=1}^{i-1} A_k\right)\]
+	Note that each set in the above union is a subset of a finite set and therefore finite by Theorem 0.29 (i). \newline
+	\(\therefore\) A finite union of finite sets is finite.
+	\newline \(\blacksquare\) \newline \newline
+	\textbf{(iii) Proof.} Consider some finite sets \(A_1,A_2,...A_n\).
+	\newline
+	Let \(S=A_1 \times A_2 \times ...\times A_n = \{(x_1,x_2,...x_n)| x_i \in A_i\ \forall i\}\) \newline
+	If any of \(A_i\) are empty, \(S\) is empty, and therefore finite.
+	\newline
+	Otherwise, all \(A_i\) are nonempty.
+	Since each \(A_i\) are finite and nonempty, there exist bijective functions
+	\(f_1,f_2,...f_n\ni\ f_i:\{1,2,...k_i\}\rightarrow A_i\) for some values \(k_i\in \mathbb{Z}_+\)
+	\newline \newline
+	Let \(P = \{2,3,5,...p_n\}\) be the set of the first n primes.
+	\newline
+	Let \(Q = \{y\in \mathbb{Z}_+ | \textup{y has between 1 and } k_i \textup{ factors of }p_i, k_m = 0\textup{ for }m > n\}\) \newline
+	\newline
+	Let \(g: Q \rightarrow S\) where \(g(p_1^{x_1}p_2^{x_2}...p_n^{x_n})=(x_1,x_2,x_3)\)
+	\newline
+	By the Fundamental Theorem of Arithmetic, each n-tuple \((x_1,x_2,...x_n) \in S\) has a unique integer in Q that g maps to it, so g is bijective. \newline \newline
+	Q is a subset of the integers, so it is ordered.
+	\newline
+	Let \(h: \{1,2,...(k_1+k_2+...k_n)\} \rightarrow S\) where \(h(a)\) is the ath smallest element in Q.
+	\newline
+	Every element in Q gets a unique element in \(\{1,2,...(k_1+k_2+...k_n)\}\), that h maps to it, so h is bijective.
+	\newline \newline
+	h and g are both bijective so \(g \circ h : \{1,2,...(k_1+k_2+...k_n)\} \rightarrow S\) is also bijective.
+	\newline
+	Thus, S is finite.
+	\newline
+	\(\therefore\) A product of finite sets is a finite set.
+	\newline \(\blacksquare\) \newline \newline
+	\textbf{(iv) Proof.} Let A be a countable set.
+	\newline
+	If A is finite, any subset of A is also finite by \textbf{(i)} and therefore countable. \newline
+	If A is not finite, there exists a bijective function \(f: \mathbb{Z}_+ \rightarrow A\). \newline
+	f gives a way to order elements in A. \newline
+	Consider some subset S of A. Since S is a subset of A, elements in S can also be ordered by f. \newline \newline
+	Let \(g: \mathbb{Z}_+ \rightarrow S\) where g(a) is the ath smallest element in \(f^{-1}(S)\). \newline
+	Every element in S has a unique element in \(\mathbb{Z}_+\) that g maps to it, so g is bijective. \newline
+	\(\therefore\) A subset of a countable set is a countable set.
+	\newline \(\blacksquare\) \newline \newline
+	\textbf{(v) Proof.} Consider the countable sets \(A_1,A_2,A_3...\)
+	\newline
+	Assume all \(A_i\) are mutally disjoint.
+	\newline \newline
+	There exist bijective functions \(f_1,f_2,f_3... \ni\ f_i: \mathbb{Z}_+ \rightarrow A_i\ \forall i \in \mathbb{Z}_+\)
+	\newline
+	\newline
+	Let \(P = \{2,3,5...p_i...\}\) be the set of all prime numbers.
+	\newline
+	Let \(S = \{2, 2^2, 2^3, 3, 3^2,...107^{67}...\}\) be the set of all prime powers. \newline \newline
+	Let \(g: S \rightarrow \bigcup_{i \geq 1} A_i\) where \(g(p_i^k)=f^{-1}_i(k)\) \newline
+	By the Fundamental Theorem of Arithmetic, and the fact that all \(A_i\) are mutually disjoint, every element in \(\bigcup_{i \geq 1} A_i\) has a unique element in S that g maps to it, so g is bijective. \newline \newline
+	S is a subset of the integers, so can be ordered.
+	\newline
+	Let \(h: \{1,2,...(k_1+k_2+...k_n)\} \rightarrow S\) where \(h(a)\) is the ath smallest element in S.
+	\newline
+	Every element in S gets a unique element in \(\mathbb{Z}_+\), that h maps to it, so h is bijective.
+	\newline \newline
+	h and g are both bijective so \(g \circ h : \mathbb{Z}_+ \rightarrow \bigcup_{i \geq 1} A_i\) is also bijective.
+	\newline So any countable union of mutually disjoint countable sets is countable.
+	\newline \newline
+	Using the same reasoning as \(\textbf{(ii)}\), If \(A_i\) are not mutually disjoint, then a union of such sets is equivalent to a countable union of mutually disjoint countable sets anyways, as shown below:
+	\[\bigcup_{i \geq 1} A_i = A_1 \cup \bigcup_{i \geq 2}\left(A_i-\bigcup_{k=1}^{i-1}\right)\]
+	Note that each set in the above union is a subset of a countable set and therefore countable by Theorem 0.29 (iv). \newline
+	\(\therefore\) A countable union of countable sets is countable.
+	\newline \(\blacksquare\) \newline \newline
+	\textbf{(vi) Proof.} Consider some countable sets \(A_1, A_2,A_3...\).
+	\newline
+	Let \(S = A_1\times A_2...A_n = \{(x_1,x_2,...x_n)|x_i\in A_i\ \forall i\}\)
+	If any of \(A_i\) are empty, \(S\) is empty, and therfore countable.
+	\newline
+	Otherwise, all \(A_i\) are nonempty. Since each \(A_i\) are countable and nonempty, there exist bijective functions \(f_1,f_2,...f_n\ni\ f_i: \mathbb{Z}_+ \rightarrow A_i\ \forall i\)
+	\newline \newline
+	Let \(P = \{2,3,5...p_n\}\) be the set of the first n numbers.
+	\newline
+	Let \(W = \{y \in \mathbb{Z}_+|y \textup{ contains no factors of } p_m \textup{ if } m>n\}\)
+	\newline \newline
+	Let \(g: W \rightarrow S\) where \(g(p_1^{x_1}p_2^{x_2}...p_n^{x_n})=(x_1,x_2,...x_n)\)
+	\newline
+	By the Fundamental Theorem of Arithmetic, each n-tuple \((x_1,x_2,...x_n)\in S\) has a unique integer in W that g maps to it, so g is bijective.
+	\newline \newline
+	W is a subset of the integers, so it is ordered.
+	\newline
+	Let \(h: \mathbb{Z}_+ \rightarrow S\) where \(h(a)\) is the ath smallest element in W.
+	\newline
+	Every element in W gets a unique element in \(\mathbb{Z}_+\), that h maps to it, so h is bijective.
+	\newline \newline
+	h and g are both bijective so \(g \circ h : \{\mathbb{Z}_+ \rightarrow S\) is also bijective.
+	\newline
+	Thus, S is a countable set.
+	\newline
+	\(\therefore\) A product of countable sets is a countable set.
+	\newline \(\blacksquare\)
+	\newpage
+	\textbf{Prove that }\(\mathbb{Q}\) \textbf{ is countable}
+	\newline \newline
+	\textbf{Proof. }
+	\newline
+	Let \(f: \mathbb{Z}_+ \rightarrow \mathbb{Z}_-\) where \(f(a) = -a\).
+	each element in \(\mathbb{Z}_-\) get a unique element in \(\mathbb{Z}_+\) that f maps to it, so f is bijective.
+	\newline
+	Thus, \(\mathbb{Z}_-\) is a countable set.
+	\newline \newline
+	\(\mathbb{Z} = \{0\} \cup \mathbb{Z}_- \cup \mathbb{Z}_+\), being a countable union of countable sets is countable. \newline \newline
+	\(\mathbb{Z}^2 = \mathbb{Z} \times \mathbb{Z}\), being a product of countable sets is countable.
+	\(\{(a,b)\in \mathbb{Z}^2| b \neq 0\} \subseteq \mathbb{Z}^2\), being a subset of a countable set is countable.
+	\newline
+	\newline
+	By definition, \(\mathbb{Q} = \{\frac{a}{b}\in \mathbb{R}|\ (a,b)\in \mathbb{Z}^2, b \neq 0\}\)
+	\newline
+	Let \(g: \{(a,b)\in \mathbb{Z}^2, b \neq 0\} \rightarrow \mathbb{Q}\) where \(g(a,b) = \frac{a}{b}\)
+	\newline
+	each element in \(\mathbb{Q}\) get a unique element in \(\{(a,b)\in \mathbb{Z}^2, b \neq 0\}\) that g maps to it, so g is bijective.
+	\newline \newline
+	Since \(\{(a,b)\in \mathbb{Z}^2, b \neq 0\}\) is countable, can can define a bijection \(h: \mathbb{Z}_+ \rightarrow \{(a,b)\in \mathbb{Z}^2, b \neq 0\}\) \newline \newline
+	h and g are both bijective so \(g \circ h : \{\mathbb{Z}_+ \rightarrow \mathbb{Q}\) is also bijective. \newline
+	\(\therefore\) \(\mathbb{Q}\) is countable.
+	\newline \(\blacksquare\) \newpage
+	\textbf{Prove that }\(\mathbb{R}\) \textbf{ is uncountable}
+	\newline \newline
+	\textbf{Proof.}
+	\newline
+	Recall that any real number \(r \in (0,1)\) can be represented as an infinite series \(r=\sum_{n=1}^{\infty}a_n2^{-n}\), where \(a_n\) is either 0 or -1.
+	\newline \newline
+	Suppose that the closed inteval \((0,1)\) is countable. \newline
+	Then there exists a bijective function \(f: \mathbb{Z}_+ \rightarrow (0,1)\), where f must have the property that \(f(i) = \sum_{n=1}^{\infty}a_n^i2^{-n}\) for some coefficients \(a_n^i\).
+	\newline \newline
+	Let \(x = \sum_{n=1}^{\infty}(1-a_n^n)2^{-n}\) \newline
+	\(x \in (0,1)\) since each coefficient \(1-a_n^n\) is either a 0 or a 1. \newline \newline
+	But \(\sim \exists i \ni f(i) = x\) since the coeffiecient \(1-a_n^n\) is different from \(a_i^i\) for all i. This means f is not onto. That's bad.
+	\newline \newline
+	We assumed that f was bijective, but have shown that it is not onto. This is a contradiction. \newline
+	Thus, \((0,1)\) is uncountable. \newline
+	\((0,1) \subseteq \mathbb{R}\), and supersets of uncountable sets are uncountable. \newline \newline
+	\(\therefore \mathbb{R}\) is uncountable.
+	\newline \(\blacksquare\) \newline \newline
+	The fact that the real numbers in \((0,1)\) can be represented as a sum of negative powers of 2 is shown in a book titled "Digital Logic Design" by Peter J. Ashenden.
 \end{document}

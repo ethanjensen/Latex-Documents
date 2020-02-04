@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1579386486 "Statistics Homework 1-24.tex" "Statistics Homework 1-24.pdf" "Statistics Homework 1-24" 1580419026
-  "Statistics Homework 1-24.aux" 1579386489 638 4f061c1385174811a1ca4a73d912a4db "pdflatex"
-  "Statistics Homework 1-24.tex" 1580419025 7488 e8403ca7394b98bbd18f6d7ecf933acc ""
+["pdflatex"] 1580427442 "Statistics Homework 1-31.tex" "Statistics Homework 1-31.pdf" "Statistics Homework 1-31" 1580427445
+  "Statistics Homework 1-31.aux" 1580427444 548 bc9491c801395bb82336afbe6d3b5662 "pdflatex"
+  "Statistics Homework 1-31.tex" 1580427440 6316 e6ce14d1942d46e10a009cd759422b59 ""
   "c:/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1570774438 3332 103109f5612ad95229751940c61aada0 ""
   "c:/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1570772778 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1570772778 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -10,8 +10,6 @@
   "c:/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1570772778 908 2921f8a10601f252058503cc6570e581 ""
   "c:/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1570772778 940 228d6584342e91276bf566bcf9716b83 ""
   "c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1570773487 1324 c910af8c371558dc20f2d7822f66fe64 ""
-  "c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm" 1570773487 1344 8a0be4fe4d376203000810ad4dc81558 ""
-  "c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm" 1570773487 1332 1fde11373e221473104d6cc5993f046e ""
   "c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1570773487 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1570773487 1524 4414a8315f39513458b80dfc63bff03a ""
   "c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1570773487 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -33,7 +31,6 @@
   "c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1570772778 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1570772778 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1570772778 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
-  "c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1570772778 31764 459c573c03a4949a528c2cc7f557e217 ""
   "c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1570775683 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "c:/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty" 1570775940 7612 729a8cc22a1ee0029997c7f74717ae05 ""
   "c:/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty" 1570774792 7324 2310d1247db0114eb4726807c8837a0e ""
@@ -156,7 +153,9 @@
   "c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1570777960 4787296 d6d74e10f8e57e84d79e53fd8cc2255d ""
   "c:/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1570778110 4289463 d81178ecbce03d734ea9d2bd9c16199e ""
   "c:/texlive/2019/texmf.cnf" 1570777927 673 4ae7b2f49cee444c5343a45b5d0f169c ""
+  "spicy integral 2.PNG" 1580427327 13182 1bc132b1fc0605d110fccb6267193d3a ""
+  "spicy integral.PNG" 1580426599 12619 4051e192837101c0444e8dbe32ebfd87 ""
   (generated)
-  "Statistics Homework 1-24.pdf"
-  "Statistics Homework 1-24.aux"
-  "Statistics Homework 1-24.log"
+  "Statistics Homework 1-31.aux"
+  "Statistics Homework 1-31.pdf"
+  "Statistics Homework 1-31.log"

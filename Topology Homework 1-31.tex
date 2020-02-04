@@ -1,0 +1,146 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{eucal}
+\usepackage{changepage}
+\usetikzlibrary{automata, positioning, shapes}
+\addtolength{\topmargin}{-0.75in}
+\addtolength{\textheight}{1.75in}
+\addtolength{\evensidemargin}{-0.5in}
+
+\title{Topology Homework 02}
+\author{Ethan Jensen, Luke Lemaitre, Kasandra Lassagne}
+\date{January 31, 2020}
+
+\begin{document}
+	\maketitle
+	\noindent
+	\textbf{EXERCISE 1.1.} \textit{Determine all of the possible topologies on} \(X = \{a,b\}\). \newline \newline
+	\(\mathcal{T}_1=\{\varnothing,\ X\}\) \newline
+	\(\mathcal{T}_1=\{\varnothing,\ \{a\},\ X\}\) \newline
+	\(\mathcal{T}_1=\{\varnothing,\ \{b\},\ X\}\) \newline
+	\(\mathcal{T}_1=\{\varnothing,\ \{a\},\ \{a,b\},\ X\}\) \newline
+	\(\mathcal{T}_1=\{\varnothing,\ \{b\},\ \{a,b\},\ X\}\) \newline
+	\(\mathcal{T}_1=\{\varnothing,\ \{a\},\ \{b\},\ \{a,b\},\ X\}\) \newline
+	\newpage
+	\noindent
+	\textbf{EXERCISE 1.3.} \textit{Prove that a topology} \(\mathcal{T}\) \textit{on X is the discrete topology if and only if} \(\{x\}\in\mathcal{T}\) \textit{for all} \(x \in X\). \newline \newline
+	\textbf{Proof.} \newline
+	(\(\rightarrow\)) Assume \(\mathcal{T}\) is the discrete topology of X. \newline
+	Since \(x \in X\), \(\{x\} \subseteq X\) \newline
+	\(\therefore \{x\}\in\mathcal{T}\) \textit{for all} \(x \in X\)
+	\newline \(\square\) \newline
+	(\(\leftarrow\)) Assume \(\{x\}\in\mathcal{T}\) \textit{for all} \(x \in X\) \newline
+	Let A a set such that \(A \subseteq X\).
+	for every point \(x \in A\), we can find a set \(x \in \{x\}\in\mathcal{T}\). \newline
+	By the Union lemma we can say \(A = \bigcup_{x \in A} \{x\}\) \newline
+	Since \(\mathcal{T}\) is a topology, any union of open sets in \(\mathcal{T}\) is an open set in \(\mathcal{T}\). \newline \newline
+	This means A is an open set in \(\mathcal{T}\). \newline
+	Since every subset A is an open set in X, \(\mathcal{T}\) is the discrete topology.
+	\newline \(\square\) \newline
+	\(\therefore\) A topology \(\mathcal{T}\) on X is the discrete topology if and only if \(\{x\}\in\mathcal{T}\) for all \(x \in X\). \newline \(\blacksquare\) \newline
+	\newpage
+	\noindent
+	\textbf{EXERCISE 1.4.} \newline
+	\textbf{(a)} \textit{Give an example of a space where the discrete topology is the same as the finite complement topology.} \newline
+	\textbf{(b)} \textit{Make and prove a conjecture indicating for what class of sets the discrete and finite complement topologies coincide.}
+	\newline \newline
+	\textbf{(a)} In the set \(\varnothing\), both the discrete and finite complement topologies are \(\{\varnothing\}\).
+	\newline \newline
+	\textbf{(b)} Conjecture: The discrete and finite complement topologies for a set are equivalent if and only if the set is finite.
+	\newline \newline
+	\textbf{Proof. } \newline
+	(\(\rightarrow\)) Assume the discrete and finite complement topologies for a set X are equivalent. \newline \newline
+	Consider some \(A \subseteq X\) \newline
+	\(A' \in \mathcal{T}\) since \(\mathcal{T}\) is the discrete topology. \newline
+	Thus, \(A'\) have a finite complement. \newline
+	Thus A is finite. \newline
+	Since every subset of X is finite, X is finite.
+	\newline \(\square\) \newline \newline
+	(\(\leftarrow\)) Let X be some finite set. \newline \newline
+	Consider some \(A \subseteq X\). \newline
+	Obviously, \(A' \subseteq X\). \newline
+	Since \(A'\) is a subset of a finite set, \(A'\) is finite. \newline
+	Thus, \(A\) has a finite complement and is in the finite complement topology. \newline
+	Since every \(A \subseteq X\) is in the finite complement topology and the discrete topology on X, the finite complement topology and the discrete topology are equivalent for the set X.
+	\newline \(\square\) \newline
+	\(\therefore\) The discrete and finite complement topologies for a set are equivalent if and only if the set is finite. \newline
+	\(\blacksquare\)
+	\newpage
+	\noindent
+	\textbf{EXERCISE 1.5.} \textit{Find three topologies on the five point set} \(X=\{a,b,c,d,e\}\) \textit{such that the first is strictly finer than the second and the second strictly finer than the third without using either the trivial or the discrete topology. Find a topology on X that is not comparable to each of the first three you found.}
+	\newline \newline
+	Let \(\mathcal{T}_1=\{\varnothing, \{a\}, \{a,b\}, \{a,b,c\}, X\}\)
+	\newline
+	Let \(\mathcal{T}_2=\{\varnothing, \{a\}, \{a,b\}, X\}\)
+	\newline
+	Let \(\mathcal{T}_3=\{\varnothing, \{a\}, X\}\)
+	\newline \newline
+	It is easy to see that \(\mathcal{T}_3 \subseteq \mathcal{T}_2 \subseteq \mathcal{T}_1\). \newline
+	Thus, \(\mathcal{T}_1\) is strictly finer than \(\mathcal{T}_2\) which is strictly finer than \(\mathcal{T}_3\).
+	\newline \newline
+	Let \(\mathcal{T}_q=\{\varnothing, \{b\}, X\}\) \newline \newline
+	Each \(\mathcal{T}_1,\mathcal{T}_2,\mathcal{T}_3\) contain \(\{a\}\), but \(\{a\} \notin \mathcal{T}_q\). \newline
+	Each \(\mathcal{T}_1,\mathcal{T}_2,\mathcal{T}_3\) does not contain \(\{b\}\), but \(\{b\} \in \mathcal{T}_q\). \newline \newline
+	Thus, \(\mathcal{T}_q\) does not compare to the other topologies.
+	\newline
+	\newpage
+	\noindent
+	\textbf{EXERCISE 1.6.} \textit{Define a topology on }\(\mathbb{R}\)\textit{ (by listing the open sets within it) that contain the open sets} (0,2) \textit{and} (1,3) \textit{and that contain as few open sets as possible.} \newline \newline
+	\(\mathcal{T}=\{\varnothing, (0,2), (1,3), (1,2), (0,3), \mathbb{R}\}\)
+	\newpage
+	\noindent
+	\textbf{EXERCISE 1.7} \textit{Let X be a set and assume }\(p \in X\) \textit{. Show that the collection} \(\mathcal{T}\)\textit{, consisting of} \(\varnothing\) \textit{and all subsets of X containing p, is a topology on X. This topology is called the \textbf{particular point topology} on X, and we denote it by }\(PPX_p\). \newline \newline
+	\textbf{Proof. } \newline
+	\textbf{(1)} By definition, \(\varnothing \in PPX_p\). \newline
+	Additionally, \(p \in X\) so \(X \in PPX_p\).
+	\newline \(\square\) \newline \newline
+	\textbf{(2)} Let \(U_1,U_2,...U_n\) be some finite number of open sets in \(PPX_p\). \newline
+	Consider \(\bigcap_{i=1}^n U_i\). \newline \newline
+	Each \(U_i \subseteq X\) so \(\bigcap_{i=1}^n U_i \subseteq X\) \newline
+	Since each \(U_i\) is an open set in \(PPX_p\) and \(p \in U_i\  \forall i\) we know \(p \in \bigcap_{i=1}^n U_i\)
+	Thus, \(\bigcap_{i=1}^n U_i\) is an open set in \(PPX_p\).
+	\newline \(\therefore \) Any finite intersections of open sets in \(PPX_p\) is open in \(PPX_p\).
+	\newline \(\square\) \newline \newline
+	\textbf{(3)} Let \(U_1, U_2,U_3...\) be some number of open sets in \(PPX_p\). \newline
+	Consider \(\bigcup U_i\). \newline \newline
+	Each \(U_i \subseteq X\) so \(\bigcup U_i \subseteq X\). \newline
+	Since \(U_1\) is an open set in \(PPX_p\), \(p \in U_1\)
+	\newline
+	Thus, \(p \in \bigcup U_i\), which is open in \(PPX_p\). \newline
+	\(\therefore\) Any union of open sets in \(PPX_p\) is open in \(PPX_p\).
+	\newline \(\square\) \newline
+	By definition, \(PPX_p\) follows all three rules of being a topology. \newline \(\therefore PPX_p\) is a topology on X.
+	\newline \(\blacksquare\) \newpage
+	\noindent
+	\textbf{EXERCISE 1.8} \textit{Let X be a set and assume }\(p\in X\)
+	\textit{. Show that the collection} \(\mathcal{T}\) \textit{consisting of X and all subsets of X that exclude p,
+	is a topology on X. This topoogy is called the \textbf{excluded point topology} on X, and we denote it by} \(EPX_p\).
+	\newline \newline
+	\textbf{Proof. } \newline
+	\textbf{(1)} By definition, \(X \in EPX_p\). \newline
+	Additionally, \(p \notin \varnothing\) so \(\varnothing \in EPX_p\).
+	\newline \(\square\) \newline \newline
+	\textbf{(2)} Let \(U_1, U_2,...U_n\) be some finite number of open sets in \(EPX_p\). \newline
+	Consider \(\bigcap_{i=1}^n U_i\). \newline \newline
+	Each \(U_i \subseteq X\) so \(\bigcap_{i=1}^n U_i \subseteq X\) \newline
+	Additionally, since \(p \notin U_1\), it is certainly the case that \(p \notin \bigcap_{i=1}^n U_i\). \newline
+	Thus, \(\bigcap_{i=1}^n U_i\) is an open set in \(EPX_p\). \newline
+	\(\therefore \) Any finite intersection of open sets in \(EPX_p\) is open in \(EPX_p\).
+	\newline \(\square\) \newline \newline
+	\textbf{(3)} Let \(U_1, U_2,U_3...\) be some number of open sets in \(EPX_p\). \newline
+	Consider \(\bigcup U_i\). \newline \newline
+	Each \(U_i \subseteq X\) so \(\bigcup U_i \subseteq X\) \newline
+	There is no set \(U_i\) such that  \(p \in U_i\), so \(p \notin \bigcup U_i\)\newline
+	Thus, \(\bigcup U_i\) is an open set in \(EPX_p\). \newline
+	\(\therefore \) Any union of open sets in \(EPX_p\) is open in \(EPX_p\).
+	\newline \(\square\) \newline
+	By definition, \(EPX_p\) follows all three rules of being a topology.
+	\newline \(\therefore EPX_p\) is a topology on X.
+	\newline \(\blacksquare\) \newpage
+\end{document}
