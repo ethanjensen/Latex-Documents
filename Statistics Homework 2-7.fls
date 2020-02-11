@@ -2,8 +2,8 @@ PWD C:/Users/ethan/Documents/GitHub/Latex-Documents
 INPUT c:/texlive/2019/texmf.cnf
 INPUT c:/texlive/2019/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT Zeta Disjoint Partitions 2.tex
-OUTPUT Zeta Disjoint Partitions 2.log
+INPUT Statistics Homework 2-7.tex
+OUTPUT Statistics Homework 2-7.log
 INPUT c:/texlive/2019/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2019/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2019/texmf-dist/tex/latex/base/size12.clo
@@ -36,6 +36,16 @@ INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
 INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
 INPUT c:/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
 INPUT c:/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT c:/texlive/2019/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 INPUT c:/texlive/2019/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 INPUT c:/texlive/2019/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
@@ -53,16 +63,6 @@ INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/pgf.revision.tex
 INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/pgf.revision.tex
 INPUT c:/texlive/2019/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
 INPUT c:/texlive/2019/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
-INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
-INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
-INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
-INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
-INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
-INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
-INPUT c:/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT c:/texlive/2019/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
 INPUT c:/texlive/2019/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
 INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
@@ -141,8 +141,6 @@ INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandler
 INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
-INPUT c:/texlive/2019/texmf-dist/tex/latex/changepage/changepage.sty
-INPUT c:/texlive/2019/texmf-dist/tex/latex/changepage/changepage.sty
 INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautomata.code.tex
 INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautomata.code.tex
 INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
@@ -151,6 +149,10 @@ INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshap
 INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
 INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
+INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
+INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
 INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
 INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
@@ -173,13 +175,9 @@ INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/ti
 INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex
 INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex
 INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex
-INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
-INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
-INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
-INPUT c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
-INPUT Zeta Disjoint Partitions 2.aux
-INPUT Zeta Disjoint Partitions 2.aux
-OUTPUT Zeta Disjoint Partitions 2.aux
+INPUT Statistics Homework 2-7.aux
+INPUT Statistics Homework 2-7.aux
+OUTPUT Statistics Homework 2-7.aux
 INPUT c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
@@ -241,6 +239,16 @@ INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
-INPUT c:/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
+OUTPUT Statistics Homework 2-7.pdf
+INPUT c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT Statistics Homework 2-7.aux
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb

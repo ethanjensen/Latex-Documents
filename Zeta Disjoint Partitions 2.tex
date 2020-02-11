@@ -10,7 +10,7 @@
 \addtolength{\topmargin}{-0.875in}
 \addtolength{\textheight}{1.75in}
 
-\title{Combinatorics of Space Partitioning}
+\title{Combinatorics of Integer Partitions}
 \author{Ethan Jensen}
 \date{February 1, 2019}
 
@@ -270,7 +270,7 @@ Then by Definition 1.1, just combining elementhood conditions together,
 Compare the MacLaurin series of \(\sinh(x)\) with the Euler product of \(\sinh(x)\).
 \[\sinh(x)=\frac{x}{1!} + \frac{x^3}{3!} + \frac{x^5}{5!} + \frac{x^7}{7!}... =x\left(1+\frac{x}{i\pi}\right)\left(1-\frac{x}{i\pi}\right)\left(1+\frac{x}{2i\pi}\right)\left(1-\frac{x}{2i\pi}\right)...\]
 Thus, by a simple calculation,
-\[\frac{\sinh(\pi x)}{x}=1+\frac{\pi^2x^2}{3!}+\frac{\pi^4x^4}{5!}+\frac{\pi^6x^6}{7!}...=\left(1+\frac{x^2}{1^2}\right)\left(1+\frac{x^2}{2^2}\right)\left(1+\frac{x^2}{3^2}\right)...\]
+\[\frac{\sinh(\pi x)}{\pi x}=1+\frac{\pi^2x^2}{3!}+\frac{\pi^4x^4}{5!}+\frac{\pi^6x^6}{7!}...=\left(1+\frac{x^2}{1^2}\right)\left(1+\frac{x^2}{2^2}\right)\left(1+\frac{x^2}{3^2}\right)...\]
 \newline
 When multiplying a product, to calculate the coefficient on a polynomial of the nth degree, all term combinations resulting in the nth degree of each factor must be determined and subsequently summed. \newline
 \newline
@@ -312,6 +312,18 @@ The set of all \(x_i\) is just the set of positive integers. Thus,
 Notice that because of how the D function is defined, only positive even zeta values can be expressed in terms of the D function.
 \newline \newline
 \textbf{Example 1.3} \newline
+From Theorem 1.5 we can express \(\zeta(4)\) in terms of a D function.
+\[\zeta(4) = D(2)\]
+Using our results from Example 1.2 and Theorem 1.4 we can write
+\[D(1)(1) = D_1(1,1) + D_2(1,1) + D(2)\]
+where \(D_1(1,1)\) and \(D_2(1,1)\) come from the super spicy subsets \(S_1(1,1)\) and \(S_2(1,1)\) respectively.
+\newline \newline
+Since \(D_1(1,1)\) and \(D_2(1,1)\) have the same value, we can write
+\[D(1)(1) = 2D(1,1) + D(2)\]
+From Theorem 1.3, we know that \(D(1)=\frac{\pi^2}{6}\) and \(D(1,1)=\frac{\pi^4}{120}\). \newline
+Plugging in these values and using Theorem 1.2 we have
+\[\frac{\pi^4}{36}=\frac{\pi^4}{60} + D(2)\]
+\[\therefore \zeta(4) = D(2) = \frac{\pi^4}{36}-\frac{\pi^4}{60}=\frac{\pi^4}{90}\]
 
 \newpage
 \section{An Example}
