@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.11)  16 FEB 2020 18:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.10.11)  16 FEB 2020 18:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"Topology Homework 2-7.tex"
-(./Topology Homework 2-7.tex
+**"Statistics Homework 2-17.tex"
+(./Statistics Homework 2-17.tex
 LaTeX2e <2019-10-01>
 (c:/texlive/2019/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
@@ -140,20 +140,7 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \EQ_mathdisplay_box=\box29
 \EQ_tag_box=\box30
 \g_EQ_temprow_int=\count107
-) (c:/texlive/2019/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (c:/texlive/2019/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (c:/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (c:/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks22
-\pgfutil@tempdima=\dimen130
-\pgfutil@tempdimb=\dimen131
- (c:/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex))
-(c:/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box31
- (c:/texlive/2019/texmf-dist/tex/latex/ms/everyshi.sty
-Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-)) (c:/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (c:/texlive/2019/texmf-dist/tex/generic/pgf/pgf.revision.tex)
-Package: pgfrcs 2019/08/03 v3.1.4b (3.1.4b)
-))
-Package: pgf 2019/08/03 v3.1.4b (3.1.4b)
- (c:/texlive/2019/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (c:/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+) (c:/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
  (c:/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2019/07/20 v1.3b Standard LaTeX Graphics (DPC,SPQR)
@@ -166,9 +153,22 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
  (c:/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen132
-\Gin@req@width=\dimen133
-) (c:/texlive/2019/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (c:/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+\Gin@req@height=\dimen130
+\Gin@req@width=\dimen131
+)
+(c:/texlive/2019/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (c:/texlive/2019/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (c:/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (c:/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks22
+\pgfutil@tempdima=\dimen132
+\pgfutil@tempdimb=\dimen133
+ (c:/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (c:/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box31
+ (c:/texlive/2019/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+)) (c:/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (c:/texlive/2019/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2019/08/03 v3.1.4b (3.1.4b)
+))
+Package: pgf 2019/08/03 v3.1.4b (3.1.4b)
+ (c:/texlive/2019/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (c:/texlive/2019/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (c:/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2019/08/03 v3.1.4b (3.1.4b)
  (c:/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks23
@@ -196,12 +196,12 @@ Package: pgfsys 2019/08/03 v3.1.4b (3.1.4b)
 \t@pgf@tokb=\toks27
 \t@pgf@tokc=\toks28
 \pgf@sys@id@count=\count112
- (c:/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+
+(c:/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2019/08/03 v3.1.4b (3.1.4b)
 )
 Driver file for pgf: pgfsys-pdftex.def
-
-(c:/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+ (c:/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
 File: pgfsys-pdftex.def 2019/08/03 v3.1.4b (3.1.4b)
  (c:/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2019/08/03 v3.1.4b (3.1.4b)
@@ -235,8 +235,8 @@ Package: pgfcore 2019/08/03 v3.1.4b (3.1.4b)
 \pgfmath@toks=\toks29
 \pgfmath@stack@operand=\toks30
 \pgfmath@stack@operation=\toks31
-) (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
-(c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+) (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count116
 )) (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (c:/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2019/08/03 v3.1.4b (3.1.4b)
@@ -258,12 +258,12 @@ File: pgfcorepoints.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 File: pgfcorepathconstruct.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \pgf@path@lastx=\dimen159
 \pgf@path@lasty=\dimen160
-) (c:/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+)
+(c:/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \pgf@shorten@end@additional=\dimen161
 \pgf@shorten@start@additional=\dimen162
-)
-(c:/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+) (c:/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \pgfpic=\box33
 \pgf@hbox=\box34
@@ -298,10 +298,10 @@ File: pgfcoreexternal.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \pgfexternal@startupbox=\box36
 )) (c:/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-) (c:/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
-File: pgfcoretransparency.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )
-(c:/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+(c:/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+) (c:/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
 File: pgfcorepatterns.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 ) (c:/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
 File: pgfcorerdf.code.tex 2019/08/03 v3.1.4b (3.1.4b)
@@ -318,13 +318,13 @@ Package: pgfcomp-version-0-65 2019/08/03 v3.1.4b (3.1.4b)
 Package: pgfcomp-version-1-18 2019/08/03 v3.1.4b (3.1.4b)
 )) (c:/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (c:/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (c:/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (c:/texlive/2019/texmf-dist/tex/latex/pgf/math/pgfmath.sty (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (c:/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2019/08/03 v3.1.4b (3.1.4b)
- (c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+
+(c:/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen171
 \pgffor@skip=\dimen172
 \pgffor@stack=\toks32
 \pgffor@toks=\toks33
-))
-(c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+)) (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2019/08/03 v3.1.4b (3.1.4b)
  (c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2019/08/03 v3.1.4b (3.1.4b)
@@ -356,52 +356,41 @@ File: pgfmodulematrix.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \tikz@expandcount=\count128
  (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-))) (c:/texlive/2019/texmf-dist/tex/latex/enumitem/enumitem.sty
-Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip50
-\enit@outerparindent=\dimen182
-\enit@toks=\toks34
-\enit@inbox=\box42
-\enit@count@id=\count129
-\enitdp@description=\count130
-) (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/eucal.sty
-Package: eucal 2009/06/22 v3.00 Euler Script fonts
-LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
-(Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
-) (c:/texlive/2019/texmf-dist/tex/latex/changepage/changepage.sty
-Package: changepage 2009/10/20 v1.0c check page and change page layout
-\c@cp@cntr=\count131
-\cp@tempcnt=\count132
-) (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautomata.code.tex
+))) (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautomata.code.tex
 File: tikzlibraryautomata.code.tex 2019/08/03 v3.1.4b (3.1.4b)
  (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
 File: tikzlibraryshapes.multipart.code.tex 2019/08/03 v3.1.4b (3.1.4b)
  (c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgfnodepartlowerbox=\box43
-\pgfnodeparttwobox=\box44
-\pgfnodepartthreebox=\box45
-\pgfnodepartfourbox=\box46
-\pgfnodeparttwentybox=\box47
-\pgfnodepartnineteenbox=\box48
-\pgfnodeparteighteenbox=\box49
-\pgfnodepartseventeenbox=\box50
-\pgfnodepartsixteenbox=\box51
-\pgfnodepartfifteenbox=\box52
-\pgfnodepartfourteenbox=\box53
-\pgfnodepartthirteenbox=\box54
-\pgfnodeparttwelvebox=\box55
-\pgfnodepartelevenbox=\box56
-\pgfnodeparttenbox=\box57
-\pgfnodepartninebox=\box58
-\pgfnodeparteightbox=\box59
-\pgfnodepartsevenbox=\box60
-\pgfnodepartsixbox=\box61
-\pgfnodepartfivebox=\box62
+\pgfnodepartlowerbox=\box42
+\pgfnodeparttwobox=\box43
+\pgfnodepartthreebox=\box44
+\pgfnodepartfourbox=\box45
+\pgfnodeparttwentybox=\box46
+\pgfnodepartnineteenbox=\box47
+\pgfnodeparteighteenbox=\box48
+\pgfnodepartseventeenbox=\box49
+\pgfnodepartsixteenbox=\box50
+\pgfnodepartfifteenbox=\box51
+\pgfnodepartfourteenbox=\box52
+\pgfnodepartthirteenbox=\box53
+\pgfnodeparttwelvebox=\box54
+\pgfnodepartelevenbox=\box55
+\pgfnodeparttenbox=\box56
+\pgfnodepartninebox=\box57
+\pgfnodeparteightbox=\box58
+\pgfnodepartsevenbox=\box59
+\pgfnodepartsixbox=\box60
+\pgfnodepartfivebox=\box61
 ))) (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-)
-(c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
+) (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+
+(c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\arrowsize=\dimen182
+)) (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
 File: tikzlibraryshapes.code.tex 2019/08/03 v3.1.4b (3.1.4b)
  (c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
 File: tikzlibraryshapes.geometric.code.tex 2019/08/03 v3.1.4b (3.1.4b)
@@ -420,35 +409,35 @@ File: tikzlibraryshapes.arrows.code.tex 2019/08/03 v3.1.4b (3.1.4b)
  (c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
 File: pgflibraryshapes.arrows.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 ))
-(c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex (c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex))) (./Topology Homework 2-7.aux)
-\openout1 = `"Topology Homework 2-7.aux"'.
+(c:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex (c:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex))) (./Statistics Homework 2-17.aux)
+\openout1 = `"Statistics Homework 2-17.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-\Hy@linkcounter=\count133
- ABD: EveryShipout initializing macros (c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+\Hy@linkcounter=\count129
+ (c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count134
+\scratchcounter=\count130
 \scratchdimen=\dimen183
-\scratchbox=\box63
-\nofMPsegments=\count135
-\nofMParguments=\count136
-\everyMPshowfont=\toks35
-\MPscratchCnt=\count137
+\scratchbox=\box62
+\nofMPsegments=\count131
+\nofMParguments=\count132
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count133
 \MPscratchDim=\dimen184
-\MPnumerator=\count138
-\makeMPintoPDFobject=\count139
-\everyMPtoPDFconversion=\toks36
+\MPnumerator=\count134
+\makeMPintoPDFobject=\count135
+\everyMPtoPDFconversion=\toks35
 ) (c:/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
  (c:/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
@@ -484,377 +473,65 @@ Package grfext Info: Graphics extension search list:
 (grfext)             \AppendGraphicsExtensions on input line 456.
  (c:/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 21.
+)) ABD: EveryShipout initializing macros
+LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
  (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 21.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
  (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-./Topology Homework 2-7.tex:31: Missing $ inserted.
-<inserted text> 
-                $
-l.31 	Let x \in
-                \(B_1 \cap B_2\).
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-./Topology Homework 2-7.tex:31: LaTeX Error: Bad math environment delimiter.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.31 	Let x \in \(
-                  B_1 \cap B_2\).
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 22--39
+Underfull \hbox (badness 10000) in paragraph at lines 21--23
 
  []
 
 [1
 
 {c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 40--93
+Underfull \hbox (badness 10000) in paragraph at lines 31--33
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 94--107
+Underfull \hbox (badness 10000) in paragraph at lines 38--50
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--107
+Underfull \hbox (badness 10000) in paragraph at lines 38--50
 
  []
 
 
-Overfull \hbox (19.38211pt too wide) in paragraph at lines 94--107
-\OT1/cmr/m/n/12 other, but both are finer than the stan-dard topol-ogy. This is be-cause $[][][\OML/cmm/m/it/12 x; b\OT1/cmr/m/n/12 ) =
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--107
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--107
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--107
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--107
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--107
+Underfull \hbox (badness 10000) in paragraph at lines 38--50
 
  []
 
 [3]
-LaTeX Font Info:    Trying to load font information for U+eus on input line 112.
- (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/ueus.fd
-File: ueus.fd 2013/01/14 v3.01 Euler Script
-)
-Underfull \hbox (badness 10000) in paragraph at lines 110--133
+Underfull \hbox (badness 10000) in paragraph at lines 52--55
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--133
+Underfull \hbox (badness 10000) in paragraph at lines 58--61
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 110--133
-
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 134--221
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 134--221
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 232--255
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 232--255
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 259--278
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 259--278
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 259--278
-
- []
-
-[6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 279--287
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 287--295
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 287--295
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 297--309
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 297--309
-
- []
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 310--321
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 310--321
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 310--321
-
- []
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 322--330
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 334--348
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 334--348
-
- []
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 349--361
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 349--361
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 349--361
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 349--361
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 349--361
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 349--361
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 349--361
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 349--361
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 349--361
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 349--361
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 349--361
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 349--361
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 349--361
-
- []
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 362--376
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 362--376
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 362--376
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 362--376
-
- []
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 384--421
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 384--421
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 384--421
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 384--421
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 384--421
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 384--421
-
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 422--440
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 422--440
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 422--440
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 422--440
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 422--440
-
- []
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 441--464
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 441--464
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 441--464
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 441--464
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 441--464
-
- []
-
-[15] (./Topology Homework 2-7.aux) ) 
+[4] (./Statistics Homework 2-17.aux) ) 
 Here is how much of TeX's memory you used:
- 16053 strings out of 492166
- 331258 string characters out of 6129146
- 412586 words of memory out of 5000000
- 20095 multiletter control sequences out of 15000+600000
- 12437 words of font info for 49 fonts, out of 8000000 for 9000
+ 16114 strings out of 492166
+ 337620 string characters out of 6129146
+ 406520 words of memory out of 5000000
+ 20167 multiletter control sequences out of 15000+600000
+ 11789 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,9n,71p,433b,739s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symb
-ols/msam10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Topology Homework 2-7.pdf" (15 pages, 175107 bytes).
+ 60i,6n,71p,461b,194s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on "Statistics Homework 2-17.pdf" (4 pages, 98972 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 83 compressed objects within 1 object stream
+ 60 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
