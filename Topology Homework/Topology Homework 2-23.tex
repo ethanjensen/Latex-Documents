@@ -1,0 +1,195 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{eucal}
+\usepackage{changepage}
+\usetikzlibrary{automata, positioning, shapes}
+\addtolength{\topmargin}{-0.75in}
+\addtolength{\textheight}{1.75in}
+\addtolength{\evensidemargin}{-0.5in}
+
+\title{Topology Homework 04}
+\author{Ethan Jensen, Luke Lemaitre, Kasandra Lassagne}
+\date{February 23, 2020}
+
+\begin{document}
+	\maketitle
+	\noindent
+	\textbf{EXERCISE 2.1}
+	Determine Int(A) and Cl(A) in each case.
+	\begin{adjustwidth}{1cm}{0cm}
+		\begin{flushleft}
+			\textbf{(a)} \(A = (0,1]\) in the lower limit topology on \(\mathbb{R}\). \newline
+			\textbf{(b)} \(A = \{a\}\) in \(X = \{a,b,c\}\) with topology \(\{X, \varnothing, \{a\}, \{a,b\}\}\). \newline
+			\textbf{(c)} \(A = \{a,c\}\) in \(X = \{a,b,c\}\) with topology \(\{X, \varnothing, \{a\}, \{a,b\}\}\). \newline
+			\textbf{(d)} \(A = \{b\}\) in \(X = \{a,b,c\}\) with topology \(\{X, \varnothing, \{a\}, \{a,b\}\}\). \newline
+			\textbf{(e)} \(A = (-1,1) \cup \{2\}\) in the standard topology on \(\mathbb{R}\). \newline
+			\textbf{(f)} \(A = (-1,1) \cup \{2\}\) in the lower limit topology on \(\mathbb{R}\). \newline
+			\textbf{(g)} \(A = \{(x,0)\in\mathbb{R}^2|\ x \in \mathbb{R}\}\) in \(\mathbb{R}^2\) with the standard topology. \newline
+			\textbf{(h)} \(A = \{(0,y) \in \mathbb{R}^2|\ y \in \mathbb{R}\}\) in \(\mathbb{R}^2\) with the vertical interval topology. \newline
+			\textbf{(i)} \(A = \{(x,0)\in\mathbb{R}^2|\ x \in \mathbb{R}\}\) in \(\mathbb{R}^2\) with the vertical interval topology.
+	\end{flushleft}
+\end{adjustwidth}
+	\(\ \) \newline
+	\textbf{(a)} \boxed{\textup{Int(A)} = (0,1),\ \textup{Cl(A)} = (0,1]} \newline
+	\textbf{(b)} \boxed{\textup{Int(A)} = \{a\},\ \textup{Cl(A)} = X} \newline
+	\textbf{(c)} \boxed{\textup{Int(A)} = \{a\},\ \textup{Cl(A)} = X} \newline
+	\textbf{(d)} \boxed{\textup{Int(A)} = \varnothing,\ \textup{Cl(A)} = \{c,b\}} \newline
+	\textbf{(e)} \boxed{\textup{Int(A)} = (-1,1),\ \textup{Cl(A)} = [-1,1] \cup \{2\}} \newline
+	\textbf{(f)} \boxed{\textup{Int(A)} = [-1,1),\ \textup{Cl(A)} = [-1,1) \cup \{2\}} \newline
+	\textbf{(g)} \boxed{\textup{Int(A)} = \varnothing,\ \textup{Cl(A)} = A} \newline
+	\textbf{(h)} \boxed{\textup{Int(A)} = A,\ \textup{Cl(A)} = A} \newline
+	\textbf{(i)} \boxed{\textup{Int(A)} = \varnothing,\ \textup{Cl(A)} = A} \newline
+	\newpage
+	\noindent
+	\textbf{EXERCISE 2.2} \textbf{Prove Theorem 2.2, parts (ii), (iv), and (vi):} Let X be a topological space and A and B be subsets of X.
+	\begin{adjustwidth}{1cm}{0cm}
+		\begin{flushleft}
+			\textbf{(a)} If C is a closed set in \(X\) and \(A \subseteq C\) then Cl(A) \(\subseteq C\). \newline
+			\textbf{(b)} If \(A \subseteq B\) then Cl(A) \(\subseteq\) Cl(B). \newline
+			\textbf{(c)} A is closed if and only if \(A =\) Cl(A).
+	\end{flushleft}
+\end{adjustwidth}
+\(\ \)
+\newline
+\textbf{(a) Proof.}
+\newline
+Let C be a closed set in X and \(A \subseteq C\).
+\newline
+By Definition,
+\[\textup{Cl(A)} = \bigcap_{A \subseteq C_i}C_i\]
+Since \(A \subseteq C\)
+\[\bigcap_{A \subseteq C_i}C_i \subseteq C\]
+\(\therefore\) Cl(A) \(\subseteq C\).
+\newline \(\blacksquare\) \newline \newline
+\textbf{(b) Proof.}
+\newline
+Assume \(A \subseteq B\).
+\newline
+Since \(B \subseteq\) Cl(B), \(A \subseteq\) Cl(B).
+By Theorem 2.2 part ii, \newline
+Cl(A) \(\subseteq\) Cl(B).
+\newline \(\blacksquare\) \newline \newline
+\textbf{(c) Proof.}
+\newline
+\((\rightarrow)\) Assume A is closed.
+We know that \(A \subseteq\) Cl(A). \newline
+By Definition,
+\[\textup{Cl(A)} = \bigcap_{A \subseteq C_i}C_i\]
+Since A is a closed set and \(A \subseteq A\),
+\newline
+Cl(A) \(\subseteq A\).
+\newline
+Thus, \(A =\)Cl(A).
+\newline \(\square\) \newline
+\((\leftarrow)\) Assume \(A =\)Cl(A).
+\newline
+A = Cl(A) is an intersection of closed sets and is closed.
+\newline \(\blacksquare\)
+\newpage
+\noindent
+\textbf{EXERCISE 2.4} Consider the particular point topology \(PPX_p\) on a set \(X\). Determine Int(A) and Cl(A) for sets A containing p and for sets A not containing p.
+\newline \newline
+If A contains p, \newline
+Int(A) \(=A\),\ Cl(A) \(=X\).
+\newline
+\newline
+If A does not contain p, \newline
+Int(A) \(=\varnothing\),\ Cl(A) \(=A\).
+\newpage
+\noindent
+\textbf{EXERCISE 2.6} Prove that Cl\((\mathbb{Q})=\mathbb{R}\) in the standard topology on \(\mathbb{R}\).
+\newline \newline
+\textbf{Proof.} \newline
+Let \(\mathcal{T}\) be the standard topology on \(\mathbb{R}\).
+\newline
+Since Cl\((\mathbb{Q})\) is closed,\ \ \(\exists U \in \mathcal{T} \ni \mathbb{R} - \)Cl\((\mathbb{Q})=U\)
+\newline
+Since \(\mathbb{Q} \subseteq\) Cl\((\mathbb{Q})\),\ \ \(U \subseteq \mathbb{R} - \mathbb{Q}\).
+\newline \newline
+So U does not contain any rational numbers. \newline
+But, since \(\mathbb{Q}\) is dense, every open interval contains rational numbers. \newline
+This means \(U = \varnothing\).
+\newline \newline
+\(\mathbb{R} - \)Cl\((\mathbb{Q}) = \varnothing\)
+\newline
+\(\therefore\) Cl\((\mathbb{Q})=\mathbb{R}\).
+\newline \(\blacksquare\)
+\newpage
+\noindent
+\textbf{EXERCISE 2.10} \textbf{Prove Theorem 2.5.} Let X be a topological space, A be a subset of X and y be an element of X. Then \(y \in\) Cl(A) if and only if every open set containing y intersects A. \newline \newline
+\textbf{Proof.} \newline
+\((\rightarrow)\)Let \(y \in\) Cl(A). \newline
+By the defintion of Cl(A),
+\[y \in \bigcap_{\begin{array}{ccc}C \subseteq A \\ \textup{C closed} \end{array}}C\]
+By Demorgan's Law, we have
+\[y \notin \bigcup_{\begin{array}{ccc}U \subseteq X-A \\ \textup{U open} \end{array}}U\]
+Thus, if \(y \in U\), where \(U\) is open, then \(U \nsubseteq X - A\). \newline
+\(\therefore\) Every open set containing y intersects A.
+\newline \(\square\) \newline
+\((\leftarrow)\) Assume every open set containing y intersects A.
+\newline
+Let \(U = X - \)Cl\((A)\).
+\newline
+Since Cl\((A)\) is closed, \(U\) is open.
+\newline
+\(y \notin U\) since U does not intersect A.
+\newline
+Thus, \(y \in X - U\).
+\newline
+\(\therefore y \in \)Cl\((A)\).
+\newline \(\square\) \newline
+\(\therefore\) \(y \in\) Cl(A) if and only if every open set containing y intersects A. \newline \(\blacksquare\)
+\newpage
+\noindent
+\textbf{EXERCISE 2.11} \textbf{Prove Theorems 2.6 parts (ii) and (iv):} For sets A and B in a topological space X, the following hold:
+\begin{adjustwidth}{1cm}{0cm}
+	\begin{flushleft}
+		\textbf{(a)} Cl\((X-A)\) = \(X - \) Int\((A)\) \newline
+		\textbf{(b)} Int\((A) \cap \) Int\((B) = \) Int\((A \cap B)\).
+\end{flushleft}
+\end{adjustwidth}
+\(\ \)
+\newline
+\textbf{(a) Proof.} \newline
+Theorem 2.6 part (i) states that for any \(A \subseteq X\)
+\[Int(X-A) = X - Cl(A)\]
+Substituting \(X-A\) for A we have
+\[Int(A) = X - Cl(X-A)\]
+\(\therefore\) Cl\((X-A)\) = \(X - \) Int\((A)\)
+\newline \(\blacksquare\) \newline
+\textbf{(b) Proof.} \newline
+\((\rightarrow)\)Let \(x \in Int(A) \cap Int(B)\) \newline
+\(x \in Int(A)\) and \(x \in Int(B)\). \newline
+Int\((A) \subseteq A\) and Int\((B) \subseteq B\) \newline
+\(x \in A\) and \(x \in B\). \newline
+\(x \in A \cap B\). \newline \newline
+\(Int(A) \cap Int(B) \subseteq Int(A) \cap B \subseteq A \cap B\).
+\newline
+Also, \(Int(A) \cap Int(B)\) is an intersection of open sets, which is open. \newline
+So x is an element of an open subset of \(A \cap B\). \newline
+Since Int\((A \cap B)\) is the union of open subsets of \(A \cap B\) we can write \newline
+\(x \in\) Int\((A \cap B)\)
+\newline
+\(Int(A) \cap Int(B) \subseteq\) Int\((A \cap B)\)
+\newline \(\square\) \newline
+\((\leftarrow)\)Let \(x \in\) Int\((A \cap B)\).
+\newline
+By Definition, Int\((A \cap B)\) is an open set. \newline
+Int\((A \cap B) \subseteq A \cap B\) \newline
+Int\((A \cap B) \subseteq A\) and Int\((A \cap B) \subseteq B\) \newline \newline
+So x is in an open set in A and x is in an open set in B. \newline
+This means that \(X \in \) Int\((A)\) and \(x \in\) Int\((B)\).
+\newline \newline
+Thus, \(x \in Int(A) \cap Int(B)\). \newline
+Int\((A \cap B) \subseteq Int(A) \cap Int(B)\)
+\newline \(\square\) \newline
+Int\((A) \cap \) Int\((B) = \) Int\((A \cap B)\).
+\newline \(\blacksquare\)
+
+\end{document}

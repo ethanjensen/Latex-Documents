@@ -1,0 +1,114 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning, arrows, shapes}
+\addtolength{\topmargin}{-0.875in}
+\addtolength{\textheight}{1.75in}
+
+
+\title{Course Scheduler Data Flow diagram}
+\author{Algorithm Team}
+\date{October 29th, 2019}
+
+\begin{document}
+	\maketitle
+	\tikzset{
+		->, % makes the edges directed
+		>=triangle 45, % makes the arrow heads bold
+		node distance=3cm, % specifies the minimum distance between two nodes. Change if necessary.
+		every state/.style={thick, fill=gray!10}, % sets the properties for each ’state’ node
+		initial text=$ $, % sets the text that appears on the start arrow
+	}
+	\definecolor{mycolor1}{RGB}{179,255,153}
+	\definecolor{mycolor2}{RGB}{191, 223, 255}
+	\definecolor{mycolor3}{RGB}{255, 191, 255}
+	\definecolor{mycolor4}{RGB}{191, 191, 255}
+\begin{figure}[ht] % ’ht’ tells LaTeX to place the figure ’here’ or at the top of the page
+	\centering % centers the figure
+	\begin{tikzpicture}
+	% tikz code goes here
+	\node[draw,fill = mycolor1,shape = rounded rectangle] (s1) at (-1, 18) {\(\begin{array}{ccc} \textup{Upload} \\ \textup{Spreadsheet}
+		\end{array}\)};
+	\node[draw,fill = mycolor1,shape = rounded rectangle] (s2) at (-1, 16) {Make CSV};
+	\node[draw,fill = mycolor2,shape = rounded rectangle] (s3) at (-1, 14) {Schedule Reader};
+	\node[draw,fill = mycolor2,shape = rounded rectangle] (s4) at (-1, 10) {4-Year Plan Reader};
+	\node[draw,fill = mycolor2,shape = rounded rectangle] (s5) at (-1, 6) {Write Errors to CSV};
+	\node[draw,fill = mycolor3,shape = rounded rectangle] (s6) at (-1, 3) {Display Errors to User};
+	\node[draw,fill = mycolor4,shape = rounded rectangle] (s7) at (6, 16) {Store 4-Year Plan};
+	\node[draw,fill = mycolor2,shape = rounded rectangle] (s8) at (-6, 8) {\(\begin{array}{ccc} \textup{Evaluate Severity} \\ \textup{of Errors}
+		\end{array}\)};
+	\node[rectangle,draw, fill = mycolor1] (s9) at (-7,18) {\textbf{UI Config}};
+	\node[rectangle,draw, fill = mycolor4] (s10) at (6,18) {\textbf{Infastructure}};
+	\node[rectangle,draw, fill = mycolor2] (s11) at (-7,13) {\textbf{Algorithm}};
+	\node[rectangle,draw, fill = mycolor3] (s11) at (-7,4) {\textbf{UI Results}};
+	\draw
+	(s1) edge[right] node{} (s2)
+	(s2) edge[right] node{Parse CSV} (s3)
+	(s3) edge[left] node{No formatting Errors} (s4)
+	(s3) edge[bend left, looseness = 2] node{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Formatting Errors} (s5)
+	(s4) edge[bend right] node{Only Minor Errors\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ } (s8)
+	(s7) edge[right] node{Parse 4-Year Plan} (s4)
+	(s8) edge[bend right] node{} (s5)
+	(s5) edge[left] node{} (s6)
+	(s4) edge[left] node{Fatal Errors} (s5);
+	\end{tikzpicture}
+	\caption{Use Case Diagram}
+	\label{Use Case Diagram}
+\end{figure}
+\newpage
+\section{General Overview}
+The Scheduling Algorithm is composed of 4 main modules that work with each other to perform 2 main goals: \newline
+ - Detect formatting errors \newline
+ - Detect scheduling errors \newline
+\newline
+At any given moment in time, only one of the modules will be working (not in parallel). This means that each modules can be thought of as discrete steps in the algorithm. \newline
+The four modules are: \newline
+ - Schedule Reader \newline
+ - 4-Year Plan Reader \newline
+ - Badpoints Calculator \newline
+ - Error Writer \newline
+ \newline
+\textbf{Schedule Reader}
+\newline
+Reads and parses the schedule from the provided CSV file, checks for any formatting errors. If none are found it generates instances of Class objects. These Class objects will be what the rest of the program uses to interact with the schedule. If formatting errors are found, the algorithm moves on to the Error Writer module to write out all the errors generated from the Schedule Reader. However, if no formatting errors are generated, the algorithm moves to the 4-Year Plan Reader.
+\newline
+\newline
+\textbf{4-Year Plan Reader}
+Reads and parses the 4-year plan from the provided json file, checking for any scheduling errors generated. If Fatal Errors are found, the algorithm moves on to the Error Writer module to write out all the errors generated from the 4-Year Plan Reader. If no fatal errors are found, the algorithm moves on to the Badpoints Calculator module to evaluate the severity of the minor errors produced by the 4-Year Plan Reader.
+\newline
+\newline
+\textbf{Badpoints Calculator}
+The bad points calculator will generate a list of BadCombos. A BadCombo is 2-key, 2-value pair which consists of (class, class, value, value). The first value is a measure of how many bad points are given whenever any one section of the first class overlaps with one section of the second class. The second value is how bad it is for ALL sections of one of the classes to overlap with sections of the other class. A BadCombo object, in essence represents a minor error. If two classes overlap according to the specified 4-year plan, a badcombo object gets activated. Finally, each activated badcombo is sent to the Error Writer to be printed to a CSV file.
+\newline
+\newline
+\textbf{Error Writer}
+Activated BadCombos that get sent in are sorted by greatest to least badpoints to prioritize worse errors. Next, they are printed in order to a CSV file, ready to be read by UI results.
+\newpage
+\section{Types of Errors}
+The Scheduling Algorithm produces three main types of errors: \newline
+ - Formatting errors \newline
+ - Fatal scheduling errors \newline
+ - Minor scheduling errors \newline
+ \newline
+ \textbf{Formatting Errors} \newline
+Formatting errors are generated when the Schedule Reader module is reading and parsing the data in the course schedule csv file. It occurs whenever the module detects a formatting mistake. Examples of formatting mistakes include: \newline
+ - Time in not written in the format XX:XX-XX:XX military time. \newline
+ - Specified "end time" for a class is less than its "start time" \newline
+ - A field that should be filled is left blank \newline
+ - Credit Hours do not match the number of hours listed \newline
+\newline
+\textbf{Fatal Scheduling Errors} \newline
+Fatal Scheduling Errors are generated when the 4-Year Plan Reader is reading and parsing the data in the 4-year plan csv file. It occurs when the module detects a scheduling impossibility. Examples of such mistakes include: \newline
+ - A class listed on the spreadsheet is not listed on the 4-year plan \newline
+ - A professor is scheduled to teach two classes at the same time \newline
+ - A class listed on the 4-year plan is not listed on the spreadsheet \newline
+ - Two classes are being held in the same room at the same time \newline
+\newline
+\textbf{Minor Scheduling Errors} \newline
+Minor Scheduling Errors are generated when the 4-Year Plan Reader is reading and parsing the data in the 4-year plan. These errors
+
+\end{document}

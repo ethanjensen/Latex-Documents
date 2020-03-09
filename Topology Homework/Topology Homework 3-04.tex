@@ -1,0 +1,345 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{eucal}
+\usepackage{changepage}
+\usetikzlibrary{automata, positioning, shapes}
+\addtolength{\topmargin}{-0.75in}
+\addtolength{\textheight}{1.75in}
+\addtolength{\evensidemargin}{-0.5in}
+
+\title{Topology Homework 05}
+\author{Ethan Jensen, Luke Lemaitre, Kasandra Lassagne}
+\date{March 4, 2020}
+
+\begin{document}
+  \maketitle
+  \noindent
+  \textbf{EXERCISE 2.13} Determine the set of limit points of A in each case.
+  \begin{adjustwidth}{1cm}{0cm}
+    \begin{flushleft}
+      \textbf{(a)} \(A = (0,1]\) in the lower limit topology on \(\mathbb{R}\). \newline
+      \textbf{(b)} \(A = \{a\}\) in \(X = \{a,b,c\}\) with topology \(\{X, \varnothing, \{a\}, \{a,b\}\}\). \newline
+      \textbf{(c)} \(A = \{a,c\}\) in \(X = \{a,b,c\}\) with topology \(\{X, \varnothing, \{a\}, \{a,b\}\}\). \newline
+      \textbf{(d)} \(A = \{b\}\) in \(X = \{a,b,c\}\) with topology \(\{X, \varnothing, \{a\}, \{a,b\}\}\). \newline
+      \textbf{(e)} \(A = (-1,1) \cup \{2\}\) in the standard topology on \(\mathbb{R}\). \newline
+      \textbf{(f)} \(A = (-1,1) \cup \{2\}\) in the lower limit topology on \(\mathbb{R}\). \newline
+      \textbf{(g)} \(A = \{(x,0)\in\mathbb{R}^2|\ x \in \mathbb{R}\}\) in \(\mathbb{R}^2\) with the standard topology. \newline
+      \textbf{(h)} \(A = \{(0,y) \in \mathbb{R}^2|\ y \in \mathbb{R}\}\) in \(\mathbb{R}^2\) with the vertical interval topology. \newline
+      \textbf{(i)} \(A = \{(x,0)\in\mathbb{R}^2|\ x \in \mathbb{R}\}\) in \(\mathbb{R}^2\) with the vertical interval topology.
+    \end{flushleft}
+  \end{adjustwidth}
+  \(\ \) \newline
+  Let C be the collection of limit points in each case.
+  \newline
+  \newline
+  \textbf{(a)} \boxed{C = A} \newline
+  \textbf{(b)} \boxed{C = \{b,c\}} \newline
+  \textbf{(c)} \boxed{C = \{b,c\}} \newline
+  \textbf{(d)} \boxed{C = \{c\}} \newline
+  \textbf{(e)} \boxed{C = [-1,1]} \newline
+  \textbf{(f)} \boxed{C = [-1,1)} \newline
+  \textbf{(g)} \boxed{C = A} \newline
+  \textbf{(h)} \boxed{C = A} \newline
+  \textbf{(i)} \boxed{C = \varnothing}
+  \newpage
+  \noindent
+  \textbf{EXERCISE 2.15} Determine the set of limit points of \([0,1]\) in the finite complement topology on \(\mathbb{R}\).
+  \newline \newline
+  Since open sets in the finite complement topology have finite complements and \([0,1]\) contains infinitely many points, every open set intersects with infinitely many points in \([0,1]\).
+  \newline \newline
+  This means that for all points p in \(\mathbb{R}\), every open set containing that point will intersect \([0,1]\) in a point other than p. This means that every point in \(\mathbb{R}\) is a limit point.
+  \newline \newline
+  The set of limit points of \([0,1]\) in the finite complement topology is \(\mathbb{R}\).
+  \newpage
+  \noindent
+  \textbf{EXERCISE 2.18} Determine the set of limit points of \(A = \{\frac{1}{m} + \frac{1}{n} \in \mathbb{R}|\ m,n\in \mathbb{Z}_+\}\) in the standard topology on \(\mathbb{R}\).
+  \newline \newline
+  The set of limit points is \(\{\frac{1}{m}|\ m \in \mathbb{Z}_+\} \cup \{0\}\).
+  \newpage
+  \noindent
+  \textbf{EXERCISE 2.19} Show that if \((x_n)\) is an injective sequence in \(\mathbb{R}\), then \((x_n)\) converges to every point in \(\mathbb{R}\) with the finite complement topology on \(\mathbb{R}\).
+  \newline \newline
+  Consider an open set \(U\) in the finite complement topology with a complement \(F = \mathbb{R} - U\).
+  \newline \newline
+  Since \((x_n)\) is injective in \(\mathbb{R}\), values from F that show up in \((x_n)\) will only show up once (if they show up).
+  \newline \newline
+  Since \(F\) is finite, \(\exists N \in \mathbb{Z}_+ \ni x_n \notin F\) for \(n \geq N\)
+  \newline
+  So \(\exists N \in \mathbb{Z}_+ \ni x_n \in U\) for \(n \geq N\)
+  \newline \newline
+  Therefore, all open sets in \(\mathbb{R}\) will contain the sequence \((x_n)\) after some finite number of terms.
+  \newline \newline
+  For all open sets containing an arbitrary point p, the sequence will eventually appear in that open set after a finite number of terms, so the sequence converges to that point.
+  \newline \newline
+  Thus, every injective sequence converges to \textbf{every point}!
+  \newpage
+  \noindent
+  \textbf{EXERCISE 2.20 Prove Theorem 2.11:} Let A be a subset of \(\mathbb{R}^n\) in the standard topology. If x is a limit point in A, then there is a sequence of points in A that converges to x.
+  \newline \newline
+  \textbf{Proof.}
+  \newline
+  Let A be a subset of \(\mathbb{R}^n\) in the standard topology, and let x be a limit point of A.
+  \newline \newline
+  Consider the sequence of open balls \((B_n)\) defined by \(B_n = B(x, \frac{1}{n})\).
+  \newline \newline
+  Since x is a limit point, every open set around x intersects A at a point other than x.
+  \newline
+  For each open ball \(B_n\), call this point \(y_n\).
+  \newline \newline
+  Then, the sequence \((y_n)\) consisting of all of these points lives in A since each point lives in A.
+  \newline
+  Since each set is nested, for any given \(B_n\), all values of the sequence after \(y_n\) are contained in \(B_n\).
+  \newline \newline
+  Now consider some open ball \(B(q, r)\) that contains x.
+  \newline
+  By definition, \(d(q,x) < r\). \newline
+  Between every two real numbers is a rational number.
+  \newline
+  \(\exists m,n \in \mathbb{Z}_+ \ni 0 \leq \frac{m}{n} \leq r - d(q,x)\)
+  \newline Since \(m \geq 1\), \(\exists n \in \mathbb{Z}_+ \ni d(q,x) + \frac{1}{n} < r\).
+  \newline \newline
+  Consider the open ball \(B_n\). \newline
+  By the triangular property, every point in \(B_n\) is in \(B(q,r)\).
+  \newline
+  So \(B_n \subseteq B(q,r)\).
+  \newline
+  Thus, all values of the sequence after \(y_n\) after n terms are contained in \(B(q,r)\).
+  \newline \newline
+  Thus, any basis element containing x contains all values of the sequence \((y_n)\) after a fixed N terms.
+  \newline
+  Every open set containing x can be written as a union of basis elements. \newline
+  Therefore, every open set containing x contains all values of the sequence \((y_n)\) after a fixed N terms.
+  \newline \newline
+  Thus, the sequence \((y_n)\) is a sequence of points in \(A\) that converges to x.
+  \newline \newline
+  \(\therefore\) If x is a limit point in \(A\), then there is a sequence of points in \(A\) that converges to x.
+  \newline \(\blacksquare\)
+  \newpage
+  \noindent
+  \textbf{EXERCISE 2.21}
+  Determine the set of limit points for the set
+  \[S = \{(x, \sin(\frac{1}{x})) \in \mathbb{R}^2|\ 0 < x \leq 1\}\]
+  as a subset of \(\mathbb{R}^2\) in the standard topology.
+  \newline \newline
+  Let C be the set of all limit points of \(S\).
+  \newline
+  \boxed{C = S \cup (\{0\} \times (-1, 1))}
+  \newpage
+  \noindent
+  \textbf{EXERCISE 2.22}
+  Consider the sequence defined by \(x_n = \frac{(-1)^n}{n}\) in \(\mathbb{R}\) with the standard topology.
+  \newline
+  \begin{adjustwidth}{1cm}{0cm}
+    \begin{flushleft}
+      \textbf{(a)} Prove that every neighborhood of the point 0 contains an open interval \(-\alpha, \alpha\). \newline
+      \textbf{(b)} Prove that for each open interval \((-\alpha, \alpha)\), there exists \(N \in \mathbb{Z}_+\), such that \(x_n \in (-\alpha, \alpha)\) for all \(n \geq N\).
+    \end{flushleft}
+  \end{adjustwidth}
+  \(\ \) \newline
+  \textbf{(a) Proof.} \newline
+  Consider a neighborhood \(U\) of the point 0. \newline
+  In the standard topology, every neighborhood can be expressed as the union of open intervals - the basis elements for the standard topology on \(\mathbb{R}\).\newline \newline
+  So \(\exists B_1, B_2,B_3... \ni U = \bigcup_i B_i\) where each \(B_i\) is an open interval \((a_i, b_i)\).
+  \newline
+  Since \(U\) contains 0, \(\exists B_k \subseteq U \ni 0 \in B_k\), where \(B_k = (a_k, b_k), a_k < 0 < b_k\).
+  \newline \newline
+  Let \(\alpha = \textup{min}\{-a_k, b_k\}\)
+  \newline
+  It is easy to see that \(-\alpha \geq a_k\) and \(\alpha \leq b_k\).
+  \newline
+  So \((-\alpha, \alpha) \subseteq B_k \subseteq U\).
+  \newline
+  So \((-\alpha, \alpha) \subseteq U\).
+  \newline
+  \(\therefore\) Every neighborhood of the point 0 contains an open interval \((-\alpha, \alpha)\).
+  \newline \(\square\) \newline \newline
+  \textbf{(b) Proof.} \newline
+  Consider an open interval \((-\alpha, \alpha)\).
+  \newline \newline
+  Between any two real numbers, there exists a rational number.
+  \newline
+  \(\exists m,N \in \mathbb{Z}_+ \ni 0 < \frac{m}{N} < \alpha\).
+  \newline
+  Since \(m \geq 1\), \(-\alpha, -\frac{1}{N} < 0 < \frac{1}{N} < \alpha\)
+  \newline \newline
+  For all \(n \geq N\), \(-\frac{1}{N} \geq x_n \geq \frac{1}{N}\).
+  \newline
+  Thus, for all \(n \geq N\), \(x_n \in (-\alpha, \alpha)\).
+  \newline
+  \(\therefore\) For each open interval \((-\alpha, \alpha)\), there exists \(N \in \mathbb{Z}_+\), such that \(x_n \in (-\alpha, \alpha)\) for all \(n \geq N\).
+  \newline \(\blacksquare\)
+  \newpage
+  \noindent
+  \textbf{EXERCISE 2.24} Determine \(\partial A\) in each case.
+  \begin{adjustwidth}{1cm}{0cm}
+    \begin{flushleft}
+      \textbf{(a)} \(A = (0,1]\) in the lower limit topology on \(\mathbb{R}\). \newline
+      \textbf{(b)} \(A = \{a\}\) in \(X = \{a,b,c\}\) with topology \(\{X, \varnothing, \{a\}, \{a,b\}\}\). \newline
+      \textbf{(c)} \(A = \{a,c\}\) in \(X = \{a,b,c\}\) with topology \(\{X, \varnothing, \{a\}, \{a,b\}\}\). \newline
+      \textbf{(d)} \(A = \{b\}\) in \(X = \{a,b,c\}\) with topology \(\{X, \varnothing, \{a\}, \{a,b\}\}\). \newline
+      \textbf{(e)} \(A = (-1,1) \cup \{2\}\) in the standard topology on \(\mathbb{R}\). \newline
+      \textbf{(f)} \(A = (-1,1) \cup \{2\}\) in the lower limit topology on \(\mathbb{R}\). \newline
+      \textbf{(g)} \(A = \{(x,0)\in\mathbb{R}^2|\ x \in \mathbb{R}\}\) in \(\mathbb{R}^2\) with the standard topology. \newline
+      \textbf{(h)} \(A = \{(0,y) \in \mathbb{R}^2|\ y \in \mathbb{R}\}\) in \(\mathbb{R}^2\) with the vertical interval topology. \newline
+      \textbf{(i)} \(A = \{(x,0)\in\mathbb{R}^2|\ x \in \mathbb{R}\}\) in \(\mathbb{R}^2\) with the vertical interval topology.
+  \end{flushleft}
+\end{adjustwidth}
+  \(\ \) \newline
+  \textbf{(a)} \boxed{\partial A = \{1\}} \newline
+  \textbf{(b)} \boxed{\partial A = \{b,c\}} \newline
+  \textbf{(c)} \boxed{\partial A = \{b,c\}} \newline
+  \textbf{(d)} \boxed{\partial A = \{b,c\}} \newline
+  \textbf{(e)} \boxed{\partial A = \{-1,1,2\}} \newline
+  \textbf{(f)} \boxed{\partial A = \{2\}} \newline
+  \textbf{(g)} \boxed{\partial A = A} \newline
+  \textbf{(h)} \boxed{\partial A = \varnothing} \newline
+  \textbf{(i)} \boxed{\partial A = A}
+  \newpage
+  \noindent
+  \textbf{EXERCISE 2.26}
+  Determine the boundary of each of the following subsets of \(\mathbb{R}^2\) in the standard topology.
+  \begin{adjustwidth}{1cm}{0cm}
+    \begin{flushleft}
+      \textbf{(a)} \(A = \{(x,x) \in \mathbb{R}^2|\ x \in \mathbb{R}\}\) \newline
+      \textbf{(b)} \(B = \{(x,y) \in \mathbb{R}^2|\ x>0,y \neq 0\}\) \newline
+      \textbf{(c)} \(C = \{(\frac{1}{n}, 0) \in \mathbb{R}^2|\ n \in \mathbb{Z}_+\}\) \newline
+      \textbf{(d)} \(D = \{(x,y) \in \mathbb{R}^2|0\leq x^2 - y^2 < 1\}\)
+    \end{flushleft}
+\end{adjustwidth}
+\(\ \) \newline
+\textbf{(a)} \boxed{\partial A = A} \newline
+\textbf{(b)} \boxed{\partial B = \{(x,y) \in \mathbb{R}^2|\ x\geq 0,y = 0\}} \newline
+\textbf{(c)} \boxed{\partial C = C \cup \{0\}} \newline
+\textbf{(d)} \boxed{\partial D = \{(x,y) \in \mathbb{R}^2|\ x = y \textup{ or } x = -y\}}
+\newpage
+\textbf{EXERCISE 2.28} \textbf{Prove Theorem 2.15:} Let \(A\) be a subset of a topological space X.
+\begin{adjustwidth}{1cm}{0cm}
+  \begin{flushleft}
+    \textbf{(a)} \(\partial A\) is closed. \newline
+    \textbf{(b)} \(\partial A = \textup{Cl}(A) \cap \textup{Cl}(X-A)\) \newline
+    \textbf{(c)} \(\partial A \cap \textup{Int}(A) = \varnothing\) \newline
+    \textbf{(d)} \(\partial A \cup \textup{Int}(A) = \textup{Cl}(A)\) \newline
+    \textbf{(e)} \(\partial A \subseteq A\) if and only if \(A\) is closed. \newline
+    \textbf{(f)} \(\partial A \cap A = \varnothing\) if and only if A is open. \newline
+    \textbf{(g)} \(\partial A = \varnothing\) if and only if \(A\) is both open and closed.
+  \end{flushleft}
+\end{adjustwidth}
+\(\ \) \newline
+\textbf{(a) Proof.} \newline
+\(\partial A = \textup{Cl}(A) - \textup{Int}(A)\).
+\newline
+Because Int\((A)\) is open, there exists a closed set \(C\) such that Int\((A) = X - C\)
+\newline
+So \(\partial A = \textup{Cl}(A) - (X - C) = \textup{Cl}(A) \cap C\). \newline
+The intersection of closed sets is a closed set. \newline
+\(\therefore \partial A\) is closed.
+\newline \(\square\) \newline \newline
+\textbf{(b) Proof.} \newline
+\(\partial A = \textup{Cl}(A) - \textup{Int}(A)\).
+\newline
+By Theorem 2.6, \(\partial A =  \textup{Cl}(A) - (X - \textup{Cl}(A))\)
+\newline
+\(\therefore \partial A =  \textup{Cl}(A) \cap \textup{Cl}(A)\)
+\newline \(\square\) \newline \newline
+\textbf{(c) Proof.} \newline
+\(\partial A = \textup{Cl}(A) - \textup{Int}(A)\).
+\newline
+This means that \(\partial A\) and Int\((A)\) are disjoint.
+\newline
+\(\therefore \partial A \cap \textup{Int}(A) = \varnothing\).
+\newline \(\square\) \newline \newline
+\textbf{(d) Proof.} \newline
+\(\partial A = \textup{Cl}(A) - \textup{Int}(A)\).
+\newline
+\(\partial A \cup \textup{Int}(A) = (\textup{Cl}(A) - \textup{Int}(A))\cup \textup{Int}(A)\)
+\newline
+\(\therefore \partial A \cup \textup{Int}(A) = \textup{Cl}(A)\)
+\newline \(\square\) \newline \newline
+\textbf{(e) Proof.} \newline
+\((\rightarrow)\) Assume \(\partial A \subseteq A\).
+\newline
+Int\((A)\) is also a subset of \(A\).
+\newline
+Thus, \(\partial A \cup \textup{Int}(A) \subseteq A\)
+\newline
+By part (d), we can write \(\textup{Cl}(A) \subseteq A\).
+\newline
+However, we also know that \(A \subseteq \textup{Cl}(A)\).
+\newline
+\(\therefore A = \textup{Cl}(A)\) and \(A\) is closed.
+\newline \newline
+\((\leftarrow)\) Assume A is closed.
+\newline
+This means that \(\textup{Cl}(A) = A\).
+\newline
+\(\partial A = \textup{Cl}(A) - \textup{Int}(A)\).
+\newline
+Since \(\textup{Cl}(A) = A\), \(\partial A = A - \textup{Int}(A)\)
+\newline
+\(\therefore \partial A \subseteq A\)
+\newline \newline
+\(\therefore \partial A \subseteq A\) if and only if \(A\) is closed.
+\newline \(\square\) \newline \newline
+\textbf{(f) Proof.} \newline
+\((\rightarrow)\) Assume \(\partial A \cap A = \varnothing\).
+\newline
+\(\partial A = \textup{Cl}(A) - \textup{Int}(A)\).
+\newline
+\((\textup{Cl}(A) - \textup{Int}(A))\cap A = \varnothing\)
+\newline
+\(\textup{Cl}(A)\cap A - \textup{Int}(A)\cap A = \varnothing\)
+\newline
+Since \(\textup{Int}(A) \subseteq A \subseteq \textup{Cl}(A)\),\ \ \
+\(\textup{Cl}(A)\cap A = A\) and \(\textup{Int}(A)\cap A = \textup{Int}(A)\).
+\newline
+\(A = \textup{Int}(A)\).
+\newline
+\(\therefore A\) is open.
+\newline \newline
+\((\leftarrow)\) Assume A is open.
+\newline
+\(\partial A = \textup{Cl}(A) - \textup{Int}(A)\).
+\newline
+Since A is open, \(\textup{Int}(A) = A\)
+\newline
+\(\partial A = \textup{Cl}(A) - A\).
+\newline
+This means \(\partial A\) and \(A\) are disjoint.
+\newline
+\(\therefore \partial A \cap A = \varnothing\)
+\newline \newline
+\(\therefore \partial A \cap A = \varnothing\) if and only if \(A\) is open.
+\newline \(\square\) \newline \newline
+\textbf{(g) Proof.} \newline
+\((\rightarrow)\) Assume \(\partial A = \varnothing\).
+\newline
+\(\partial A = \textup{Cl}(A) - \textup{Int}(A)\).
+\newline
+\(\textup{Cl}(A) - \textup{Int}(A) = \varnothing\).
+\newline
+Thus, \(\textup{Cl}(A) \subseteq \textup{Int}(A)\).
+\newline
+However, \(\textup{Int}(A) \subseteq A \subseteq \textup{Cl}(A)\).
+\newline
+Thus, \(\textup{Int}(A) = A = \textup{Cl}(A)\).
+\newline
+Since \(\textup{Int}(A)\) is open, and \(\textup{Cl}(A)\) is closed,
+\newline
+\(A\) is both open and closed.
+\newline \newline
+\((\leftarrow)\) Assume \(A\) is both open and closed.
+\newline
+\(\partial A = \textup{Cl}(A) - \textup{Int}(A)\)
+\newline
+Since A is both open and closed, \(\textup{Int}(A) = A = \textup{Cl}(A)\)
+\newline
+\(\partial A = A - A = \varnothing\)
+\newline \(\square\) \newline \newline
+\(\blacksquare\)
+\end{document}

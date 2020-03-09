@@ -1,0 +1,119 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\addtolength{\topmargin}{-0.875in}
+\addtolength{\textheight}{1.75in}
+
+\title{Math 331 A - Probability}
+\author{Ethan Jensen}
+\date{October 25th, 2019}
+
+\begin{document}
+	\maketitle HW p.163 \#20,29,34,37 \ p.174 \#78,80
+	\section[20pt]{p. 163 \#20}
+	Show that the moment-generating function of the geometric distribution is given by
+	\[M_X(t)=\frac{\theta e^t}{1-e^t(1-\theta)}\]
+	\newline
+	By Def. 5.5, the PDF of a geometric distribution is given by
+	\[g(x;\theta)=\theta(1-\theta)^{x-1}\]
+	By Def. 4.6 we have
+	\[M_X(t)=\sum_xe^{tx}g(x;\theta)\]
+	\[M_X(t)=\sum_{x=1}^{\infty}e^{tx}\theta(1-\theta)^{x-1}\]
+	\[M_X(t)=\frac{\theta}{1-\theta}\sum_{x=1}^{\infty}{e^t}^x(1-\theta)^{x}\]
+	\[M_X(t)=\frac{\theta}{1-\theta}\sum_{x=1}^{\infty}(e^t(1-\theta))^{x}\]
+	By the law of convergence of geometric series we have
+	\[M_X(t)=\frac{\theta}{1-\theta}\frac{e^t(1-\theta)}{1-e^t(1-\theta)}\]
+	\boxed{M_X(t)= \frac{\theta e^t}{1-e^t(1-\theta)}}
+	\newpage
+	\maketitle HW p.163 \#20,29,34,37 \ p.174 \#78,80
+	\section[20pt]{p. 163 \#29}
+	When calculating all the value in a Poisson distribution, the work can also be simplfied by first calculating \(p(0;\lambda)\) and then using the recursion formula \[p(x+1;\lambda)=\frac{\lambda}{x+1}p(x;\lambda)\]
+	Verify this formula.
+	\newline
+	\newline
+	By Def. 5.7 the PDF of a Poisson distribution is given by
+	\[p(x;\lambda)=\frac{\lambda^xe^-\lambda}{x!}\]
+	Plugging x+1 in for x, we have
+	\[p(x+1;\lambda)=\frac{\lambda^{x+1}e^-\lambda}{(x+1)!}\]
+	Using the recursive definition for the factorial function, we have
+	\[p(x+1;\lambda)=\frac{\lambda}{x+1}\frac{\lambda^{x}e^-\lambda}{x!}\]
+	Finally, by Def. 5.7 \newline
+	\boxed{p(x+1;\lambda)=\frac{\lambda}{x+1}p(x;\lambda)}
+	\newpage
+	\maketitle HW p.163 \#20,29,34,37 \ p.174 \#78,80
+	\section[20pt]{p. 163 \#34}
+	Show that if the limiting conditions \(n\to\infty,\theta\to 0\) while \(n\theta\) remains constant, are applied to the moment-generating function of the binomial distribution, we get the moment-generating function of the Poisson distribution.
+	\newline\newline
+	By Thm. 5.4 The moment generating function for a binomial distribution is given by
+	\[M_X(t)=[1+\theta(e^t-1)]^n\]
+	Define a new function L(t) as
+	\[L(t)=\underset{n\to\infty}{lim}[1+\theta(e^t-1)]^n\]
+	Since \(n\theta\) is constant, we can define a new variable \(\lambda = n\theta\). Thus, \(\theta=\frac{\lambda}{n}\)
+	\[L(t)=\underset{n\to\infty}{lim}\left[1+\frac{\lambda(e^t-1)}{n}\right]^n\]
+	By the limit definition of \(e^x\) we have
+	\[L(t)=e^{\lambda(e^t-1)}\]
+	By Theorem 5.9, L(t) is the moment-generating function for the Poisson distribution. \newline
+	\(\blacksquare\)
+	\newpage
+	\maketitle HW p.163 \#20,29,34,37 \ p.174 \#78,80
+	\section[20pt]{p. 163 \#37}
+	Use Theorem 5.9 to find the moment-generating function of \(Y=X-\lambda\), where \(X\) is a random variable having the Poisson distribution with the parameter \(\lambda\).
+	\newline
+	\newline
+	By Definition 5.7 we have
+	\[P(X=x)=P(x;\lambda)=\frac{\lambda^xe^{-\lambda}}{x!}, \ \ x = 0,1,2,3...\]
+	\[P(Y=x)=P(X-\lambda=x)=P(X=x+\lambda)\]
+	\[P(Y=x)=\frac{\lambda^{x+\lambda}e^{-\lambda}}{(x+\lambda)!},\ \  x = \lambda, \lambda+1,\lambda+2,...\]
+	By Def. 4.6 we have
+	\[M_Y(t)=\sum_{x=\lambda}^{\infty}e^{tx}\frac{\lambda^{x+\lambda}e^{-\lambda}}{(x+\lambda)!}\]
+	\[M_Y(t)=e^{-\lambda}\sum_{x=\lambda}^{\infty}e^{tx}\frac{\lambda^{x+\lambda}}{(x+\lambda)!}\]
+	Changing the bounds of summation we have
+	\[M_Y(t)=e^{-\lambda}\sum_{x=0}^{\infty}e^{t(x-\lambda)}\frac{\lambda^{x}}{x!}\]
+	\[M_Y(t)=e^{\lambda(-t-1)}\sum_{x=0}^{\infty}e^{tx}\frac{\lambda^{x}}{x!}\]
+	\[M_Y(t)=e^{\lambda(-t-1)}\sum_{x=0}^{\infty}\frac{(\lambda e^t)^{x}}{x!}\]
+	This summation is the Maclaurin series expansion for \(e^{\lambda e^t}\).
+	\[M_Y(t)=e^{\lambda(-t-1)}e^{\lambda e^t}\]
+	\boxed{M_Y(t)=e^{\lambda(e^t-t-1)}}
+	\newpage
+	\maketitle HW p.163 \#20,29,34,37 \ p.174 \#78,80
+	\section[20pt]{p. 174 \#78}
+	The number of monthly breakdowns of a supercomputer is a random variable having a Poisson distribution with \(\lambda=1.8\). Use the formula for the Poisson distribution to find the probabilities that this computer will function \newline
+	\textbf{(a)} without a breakdown \newline
+	\textbf{(b)} with only one breakdown
+	\newline
+	\newline
+	By Def. 5.7 The pdf of a Poisson distribution is
+	\[p(x;\lambda)=\frac{\lambda^xe^{-\lambda}}{x!}\]
+	\textbf{(a)} Plugging in 1.8 for \(\lambda\) and 0 for x we have
+	\[p(0;1.8)=\frac{1.8^0e^{-1.8}}{0!}=e^{-1.8}\approx0.1653\]
+	\boxed{\textup{The probability of 0 breakdowns is about 0.1653 or 16.53\%}}
+	\newline
+	\newline
+	\textbf{(b)} Plugging in 1.8 for \(\lambda\) and 1 for x we have
+	\[p(0;1.8)=\frac{1.8^1e^{-1.8}}{1!}=1.8e^{-1.8}\approx0.2975\]
+	\boxed{\textup{The probability of 1 breakdown is about 0.2975 or 29.75\%}}
+	\newpage
+	\maketitle HW p.163 \#20,29,34,37 \ p.174 \#78,80
+	\section[20pt]{p. 174 \#80}
+	In the inspection of a fabric produced in continuous rolls, the number of imperfections per yard is a random variable having the Poisson distribution with \(\lambda=0.25\). Find the probability that 2 yards of the fabric will have at most one imperfection using \newline
+	\textbf{(a)} Table II; \newline
+	\textbf{(b)} The computer printout of Figure 5.5.
+	\newline
+	\newline
+	\[\lambda = 0.25\textup{ imperfections/yard} \]
+	\[\lambda = 0.5\textup{ imperfections/2 yards}\]
+	Let R.V. X be a random variable that represents the distribution in the question.
+	Since the values of X are natural numbers,
+	\[P(X\leq1) = P(X=1) + P(X=0)\]
+	\textbf{(a)} With Table II we have
+	\[P(X=0)=0.6065,\ \ P(X=1)=0.3033\]
+	\[P(X\leq 1)=0.9098\]
+	\boxed{\textup{The probability of at most one imperfection is 0.9098 or 90.98\%}} \newline
+	\newline
+	\textbf{(b)} With the computer printout we have
+	\[P(X\leq1) = 0.9098\]
+	This validates our answer in \textbf{(a)}.
+\end{document}

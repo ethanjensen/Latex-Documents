@@ -1,0 +1,208 @@
+x\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning, arrows, shapes}
+\addtolength{\topmargin}{-0.875in}
+\addtolength{\textheight}{1.75in}
+
+\title{Math 331 A - Probability}
+\author{Ethan Jensen}
+\date{November 8th, 2019}
+
+\begin{document}
+	\tikzset{
+		->}
+	\maketitle HW p.100 \#78,82 \ p. 139 \#42,46,49,50,54
+	\definecolor{mycolor1}{RGB}{155,155,155}
+	\section[20pt]{p. 100 \#78}
+	With reference to Example 3.22 on page 94, find \newline
+	\textbf{(a)} the conditional density of \(X_2\) given \(X_1=\frac{1}{3}\) and \(X_3=2\); \newline
+	\textbf{(b)} the joint conditional density of \(X_2\) and \(X_3\) given \(X_1=\frac{1}{2}\). \newline \newline
+	From Example 3.22 we have
+	\[f(x_1,x_2,x_3)=\left\{\begin{array}{ccc}
+		(x_1+x_2)e^{-x_3} \textup{ for }0<x_1<1,0<x_2<1,x_3>0\\0 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textup{elsewhere} \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+		\end{array}\right.\]
+	From Def. 3.11 the marginal densities \(h(x_1,x_3)\) and \(g(x_1)\) are
+	\[h(x_1,x_3)=\int_0^1(x_1+x_2)e^{-x_3}dx_2=(x_1+\frac{1}{2})e^{-x_3}\]
+	\[g(x_1)=\int_0^1\int_0^{\infty}(x_1+x_2)e^{-x_3}dx_3\ dx_2=x_1+\frac{1}{2}\]
+	From Def. 3.13, the conditional densities \(f(x_2|x_1,x_3)\) and \(f(x_2,x_3|x_1)\) are
+	\[f(x_2|x_1,x_3)=\frac{f(x_1,x_2,x_3)}{h(x_1,x_3)}\]
+	\[f(x_2|x_1=\frac{1}{3},x_3=2)=\frac{f(\frac{1}{3},x_2,2)}{h(\frac{1}{3},2)}=\frac{(\frac{1}{3}+x_2)e^{-2}}{(\frac{1}{3}+\frac{1}{2})e^{-2}}\]
+	\boxed{\textbf{(a)}\ f(x_2|x_1=\frac{1}{3},x_3=2)=\frac{2+6x_2}{5}} \newline
+	\[f(x_2,x_3|x_1)=\frac{f(x_1,x_2,x_3)}{g(x_1)}\]
+	\[f(x_2,x_3|x_1=\frac{1}{2})=\frac{f(\frac{1}{2},x_2,x_3)}{g(\frac{1}{2})}=\frac{(\frac{1}{2}+x_2)e^{-x_3}}{\frac{1}{2}+\frac{1}{2}}\]
+	\boxed{\textbf{(b)}\ f(x_2,x_3|x_1=\frac{1}{2})=\left(\frac{1}{2}+x_2\right)e^{-x_3}}
+	
+	\newpage
+	\maketitle HW p.100 \#78,82 \ p. 139 \#42,46,49,50,54
+	\section[20pt]{p. 100 \#82}
+	If the independent random variables \(X\) and \(Y\) have the marginal densities
+	\[f(x)=\left\{\begin{array}{ccc}
+	\frac{1}{2}\textup{ for }0<x<2\\0\ \textup{ elsewhere}\ \ \ \ 
+	\end{array}\right.\]
+	\[\pi(y)=\left\{\begin{array}{ccc}
+	\frac{1}{3}\textup{ for }0<y<3\\0\ \textup{ elsewhere}\ \ \ \ 
+	\end{array}\right.\]
+	find \newline
+	\textbf{(a)} the joint probability density of \(X\) and \(Y\); \newline
+	\textbf{(b)} the value of \(P(X^2+Y^2>1)\)
+	\newline \newline
+	By Def. 3.14,since \(X\) and \(Y\) are independent, the joint probability density \(g(x,y)=f(x)\pi(y)\). \newline
+	\boxed{\textbf{(a)}\ g(x,y)=\frac{1}{6} \textup{ for }0<x<2,0<y<3} \newline \newline
+	Finding \(P(X^2+Y^2>1)\) thus becomes trivial. One must only integrate the joint probability density over the correct region. Adding in the restriction \(X^2+Y^2>1\) along with our previous restrictions \(0<x<2,0<y<3\) we have the region of integration R.
+	\begin{figure}[ht]
+		\centering
+		\begin{tikzpicture}
+		\def\mypath{(0,3) -- +(0,-2) arc (90:0:1cm) -- +(1,0) -- +(1,3)}
+		\fill [mycolor1] \mypath;
+
+		\draw
+		(0,0) edge[dashed] (0,4)
+		(0,0) edge[dashed] (3,0);
+		\node[below] (s1) at (1,0) {$1$};
+		\node[below] (s2) at (2,0) {$2$};
+		\node[below] (s3) at (2.5,0) {$x$};
+		\node[left] (s4) at (0,1) {$1$};
+		\node[left] (s5) at (0,2) {$2$};
+		\node[left] (s6) at (0,3) {$3$};
+		\node[left] (s7) at (0,3.5) {$y$};
+		
+		\def\mypath{(5,0) -- +(0,1) arc (90:0:1cm) -- +(0,0)}
+		\fill [mycolor1] \mypath;
+		\draw
+		(5,0) edge[dashed] (5,4)
+		(5,0) edge[dashed] (8,0);
+		\node[below] (s1) at (6,0) {$1$};
+		\node[below] (s2) at (7,0) {$2$};
+		\node[below] (s3) at (7.5,0) {$x$};
+		\node[left] (s4) at (5,1) {$1$};
+		\node[left] (s5) at (5,2) {$2$};
+		\node[left] (s6) at (5,3) {$3$};
+		\node[left] (s7) at (5,3.5) {$y$};
+		
+		\def\mypath{(10,0) -- (10,3) -- (12,3) -- (12,0)}
+		\fill [mycolor1] \mypath;
+		\draw
+		(10,0) edge[dashed] (10,4)
+		(10,0) edge[dashed] (13,0);
+		\node[below] (s1) at (11,0) {$1$};
+		\node[below] (s2) at (12,0) {$2$};
+		\node[below] (s3) at (12.5,0) {$x$};
+		\node[left] (s4) at (10,1) {$1$};
+		\node[left] (s5) at (10,2) {$2$};
+		\node[left] (s6) at (10,3) {$3$};
+		\node[left] (s7) at (10,3.5) {$y$};
+		
+		\node[] (spicy) at (1.5,4) {\textbf{R}};
+		\node[] (spicy) at (5.5,4) {\textbf{A}};
+		\node[] (spicy) at (11.5,4) {\textbf{B}};
+		\end{tikzpicture}
+		\caption{Regions of integration}
+	\end{figure}
+\newline
+To find the integral on region R, we can subtract the integral of \(g(x,y)\) on Region A from the integral of \(g(x,y)\) on Region B. Since \(g(x,y)\) is a probability density, the integral of \(g(x,y)\) on Region B is just 1.
+\[P(X^2+Y^2>1)=1 - \int_0^{\frac{\pi}{2}}\int_0^1\frac{1}{6}rdr\ d\theta = 1 - \frac{\pi}{24}\]
+\boxed{\textbf{(b)}\ P(X^2+Y^2>1)= 1 - \frac{\pi}{24}}
+\newpage
+\maketitle HW p.100 \#78,82 \ p. 139 \#42,46,49,50,54
+\section[20pt]{p. 139 \#42}
+If \(X\) and \(Y\) have the joint probability distribution \(f(x,y) = \frac{1}{4} \textup{ for } (x,y)\in\{(-3,-5),(-1,-1),(1,1),(3,5)\}\), find cov\((X,Y)\).
+\newline \newline
+By Theorem 4.7 we have
+\[\mu_{1,1}'=\sum_{(x,y)}xy\frac{1}{4}\]
+\[\mu_X=\mu_{1,0}=\sum_{(x,y)}x\frac{1}{4}\]
+\[\mu_Y=\mu_{0,1}=\sum_{(x,y)}y\frac{1}{4}\]
+Plugging in our points \((x,y)\) we have
+\[\mu_{1,1}'=\frac{1}{4}(15+1+1+15)=8\]
+\[\mu_X=\frac{1}{4}(-3-1+1+3)=0\]
+\[\mu_Y=\frac{1}{4}(-5-1+1+5)=0\]
+By Thm. 4.11 we have
+\[\sigma_{XY}=\mu_{1,1}'-\mu_X\mu_y\]
+\[\sigma_{XY}=8-0*0\]
+\boxed{\sigma_{XY}=8}
+\newpage
+\maketitle HW p.100 \#78,82 \ p. 139 \#42,46,49,50,54
+\section[20pt]{p. 139 \#46}
+If \(X\) and \(Y\) have the joint probability distribution \(f(-1,0)=0,f(-1,1)=\frac{1}{4},f(0,0)=\frac{1}{6},f(0,1)=0,f(1,0)=\frac{1}{12},f(1,1)=\frac{1}{2}\), show that \newline
+\textbf{(a)}\ cov\((X,Y)=0\); \newline
+\textbf{(b)}\ The two random variables are not independent.
+\newline \newline
+By Theorem 4.7 we have
+\[\mu_{1,1}'=\sum_{(x,y)}xyf(x,y)\]
+\[\mu_X=\mu_{1,0}=\sum_{(x,y)}xf(x,y)\]
+\[\mu_Y=\mu_{0,1}=\sum_{(x,y)}yf(x,y)\]
+Plugging in our points \((x,y)\) we have
+\[\mu_{1,1}'=0-\frac{1}{4}+0+0+\frac{1}{2}=\frac{1}{4}\]
+\[\mu_X=0-\frac{1}{4}+0+0+\frac{1}{12}+\frac{1}{2}=\frac{1}{3}\]
+\[\mu_Y=0+\frac{1}{4}+0+0+0+\frac{1}{2}=\frac{3}{4}\]
+By Thm. 4.11 we have
+\[\sigma_{XY}=\mu_{1,1}'-\mu_X\mu_Y\]
+\[\sigma_{XY}=\frac{1}{4}-\frac{3}{4}\cdot \frac{1}{3}\]
+\boxed{\sigma_{XY}=0} \newline \newline
+By Def. 3.14 X and Y are independent if and only if f(x,y) = g(x)h(y) for every value of x and y in their ranges.
+\[f(0,0)=\frac{1}{6}\]
+\[g(0)=\frac{1}{6}+0=\frac{1}{6}\]
+\[h(0)=0+\frac{1}{6}+\frac{1}{12}=\frac{1}{4}\]
+\[f(0,0)\neq g(0)h(0)\]
+\boxed{\textbf{(b)}\ \textup{The two variables are not independent.}}
+\newpage
+\maketitle HW p.100 \#78,82 \ p. 139 \#42,46,49,50,54
+\section[20pt]{p. 139 \#49}
+If \(X_1\),\(X_2\), and \(X_3\) are independent and have the means 4, 9, and 3 and the variances 3,7, and 5, find the mean and the variance of \newline
+\textbf{(a)}\ \(Y=2X_1-3X_2+4X_3\); \newline
+\textbf{(b)}\ \(Z=X_1+2X_2-X_3\) \newline \newline
+By Theorem. 4.14
+\[\mu_{Y}=2\mu_{X_1}-3\mu_{X_2}+4\mu_{X_3}\]
+\[\mu_{Y}=2\cdot4-3\cdot9+4\cdot3=-7\]
+\newline
+\[\mu_{Z}=\mu_{X_1}+2\mu_{X_2}-\mu_{X_3}\]
+\[\mu_{Z}=4+2\cdot9-3=19\]
+\boxed{\textbf{(a)}\ \mu_Y=-7,\ \mu_Z=19} \newline \newline
+Since \(X_1\),\(X_2\), and \(X_3\) are independent we can use Corollary 4.3
+\[\sigma^2_Y=\sum_{i=1}^na_i^2\sigma^2_{X_i},\ \ \sigma^2_Z=\sum_{i=1}^nb_i^2\sigma^2_{X_i}\]
+\[\sigma^2_Y=2^2\sigma_{X_1}^2+(-3)^2\sigma_{X_2}^2+4^2\sigma_{X_3}^2\]
+\[\sigma^2_Y=4\cdot3+9\cdot7+16\cdot5=155\]
+\newline
+\[\sigma^2_Z=1^2\sigma_{X_1}^2+2^2\sigma_{X_2}^2+(-1)^2\sigma_{X_3}^2\]
+\[\sigma^2_Z=3+4\cdot7+5=36\]
+\boxed{\textbf{(b)}\ \sigma^2_Y=155,\ \sigma^2_Z=36}
+\newpage
+\maketitle HW p.100 \#78,82 \ p. 139 \#42,46,49,50,54
+\section[20pt]{p. 139 \#50}
+Repeat both parts of Exercise 4.49, dropping the assumption of independence and using instead the information that cov\((X_1,X_2)=1\),\ cov\((X_2,X_3)=-2\),\ cov\((X_1,X_3)=-3\). \newline \newline
+Whether \(X_1\),\(X_2\), and \(X_3\) are independent has not bearing on \(\mu_Y\) and \(\mu_Z\). Thus, taking what we know from the previous problem, \newline
+\boxed{\textbf{(a)}\ \mu_Y=-7,\ \mu_Z=19} \newline \newline
+By Theorem 4.14
+\[\sigma^2_Y=\sum_{i=1}^na_i^2\sigma^2_{X_i}+2\sum_{j=1}^n\sum_{i<j}a_ia_j\sigma_{X_iX_j}\]
+\[\sigma^2_Z=\sum_{i=1}^nb_i^2\sigma^2_{X_i}+2\sum_{j=1}^n\sum_{i<j}b_ib_j\sigma_{X_iX_j}\]
+But we know what two of the sums are from \#49.
+\[\sum_{i=1}^na_i^2\sigma^2_{X_i}=155,\ \ \sum_{i=1}^nb_i^2\sigma^2_{X_i}=36\]
+Computing the other sums we have
+\[2\sum_{j=1}^n\sum_{i<j}a_ia_j\sigma_{X_iX_j}=2(2\cdot(-3)\cdot1+(-3)\cdot4\cdot-2+2\cdot4\cdot(-3))=-12\]
+\[2\sum_{j=1}^n\sum_{i<j}b_ib_j\sigma_{X_iX_j}=2(1\cdot(-3)\cdot1+2\cdot4\cdot-2+(-1)\cdot4\cdot(-3))=-14\]
+So in comparison, it looks like the covariance doesn't contribute that much. \newline
+\[\sigma^2_Y=155-12,\sigma^2_Z=36-14\]
+\boxed{\textbf{(b)}\ \sigma^2_Y=143,\ \sigma^2_Z=22}
+
+\newpage
+\maketitle HW p.100 \#78,82 \ p. 139 \#42,46,49,50,54
+\section[20pt]{p. 139 \#54}
+If var\((X_1)=5\),var\((X_2)=4\),var\((X_3)=7\),cov\((X_1,X_2)=3\),cov\((X_1,X_3)=-2\),and \(X_2\) and \(X_3\) are independent, find the covariance of \(Y_1=X_1-2X_2+3X_3\) and \(Y_2=-2X_1+3X_2+4X_3\). \newline
+\newline
+First of all, since \(X_2\) and \(X_3\) are independent, by Thm. 4.14, cov\((X_2,X_3)=0\). \newline
+\newline
+By Theorem 4.15
+\[\sigma_{Y_1Y_2}=\sum_{i=1}^na_ib_i\sigma^2_{X_i}+\sum_{j=1}^n\sum_{i<j}(a_ib_j+a_jb_i)\sigma_{X_iX_j}\]
+Evaluating the first sum we have
+\[\sum_{i=1}^na_ib_i\sigma_{X_i}=(1\cdot(-2)\cdot5)+((-2)\cdot3\cdot4)+(3\cdot4\cdot7)=50\]
+Evaluating the second sum we have
+\[\sum_{j=1}^n\sum_{i<j}(a_ib_j+a_jb_i)\sigma_{X_iX_j}=(1\cdot3+(-2)\cdot(-2))\cdot3+(1\cdot4+(-2)\cdot3)\cdot(-2)+((-2)\cdot4+3\cdot3)\cdot(0)\]
+\[\sum_{j=1}^n\sum_{i<j}(a_ib_j+a_jb_i)\sigma_{X_iX_j}=(7)\cdot3+(-2)\cdot(-2)+0=21+4+0=25\]
+After adding both sums together we arrive at our final answer
+\newline
+\boxed{\sigma_{Y_1Y_2}=75}
+\end{document}

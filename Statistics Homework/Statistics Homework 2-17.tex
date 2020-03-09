@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning, arrows, shapes}
+\addtolength{\topmargin}{-0.875in}
+\addtolength{\textheight}{1.75in}
+
+\title{Math 332 A - Mathematical Statistics}
+\author{Ethan Jensen}
+\date{February 17, 2020}
+
+\begin{document}
+	\maketitle HW p.286 \#1,5,6,13
+	\section[20pt]{p. 286 \#1}
+	If \(X_1,X_2,...,X_n\) constitute a random sample from a population with the mean \(\mu\), what condition must be imposed on the constants \(a_1,a_2,...,a_n\) so that
+	\[a_1X_1 + a_2X_2 + ... + a_nX_n\] is an unbiased estimator of \(\mu\)? \newline \newline
+	Since \(a_1X_1 + a_2X_2 + ... + a_nX_n\) is an unbiased estimator of \(\mu\), we can write
+	\[E(a_1X_1 + a_2X_2 + ... + a_nX_n) = \mu\]
+	Expected Value is a linear operator. We can write
+	\[a_1E(X_1)+ a_2E(X_2)+...+a_nE(X_n) = \mu\]
+	Each \(X_1,X_2,...,X_n\) come from a population with mean \(\mu\) we know that \(E(X_1)=E(X_2)=...=E(X_n)=\mu\) we can factor out a \(\mu\)
+	\[\mu(a_1+a_2+...+a_n) = \mu\]
+	\boxed{\sum_{k=1}^na_k=1}
+	\newpage
+	\section[20pt]{p. 286 \#5}
+	Given a random sample of size n from a population that has a known mean \(\mu\) and the finite variance \(\sigma^2\), show that \[\frac{1}{n} \cdot \sum_{i=1}^n(X_i-\mu)^2\] is an unbiased estimator of \(\sigma^2\). \newline \newline
+	By Definition 8.5, the above sum is exactly \(\sigma^2\).
+	\[\therefore E\left(\frac{1}{n} \cdot \sum_{i=1}^n(X_i-\mu)^2\right) = E(\sigma^2) = \sigma^2\]
+	It is an unbiased estimatior of \(\sigma^2\). \newline
+	\(\blacksquare\)
+	\newpage
+	\section[20pt]{p. 286 \#6}
+	Use the results of Theorem 8.1 on page 233 to show that \(\overline{X}^2\) is an asymptotically unbiased estimator of \(\mu^2\). \newline \newline
+	By Theorem 4.10 we know \newline
+	var\(\overline(X) = E(\overline{X}^2) - (E(\overline{X}))^2\)
+	\newline \newline
+	By Theorem 8.1, var\(\overline{X}=\frac{\sigma^2}{n}\) and \(E(\overline{X})=\mu\)
+	\newline
+	\(\frac{\sigma^2}{n} = E(\overline{X}^2) - \mu^2\)
+	\newline \newline
+	Note that \(E(\overline{X}^2) - \mu^2\) is the bias of the estimator \(\overline{X}^2\). \newline
+	As \(n \rightarrow \infty\) the bias of the estimator goes to 0. \newline
+	\(\therefore \overline{X}^2\) is an asymptotically unbiased estimator of \(\mu^2\). \newline
+	\(\blacksquare\)
+	\newpage
+	\section[20pt]{p. 286 \#13}
+	Show that if \(\hat{\Theta}\) is an unbiased estimator of \(\theta\) and \(\textup{var}(\hat{\Theta}) \neq 0\), then \(\hat{\Theta}^2\) is not an unbiased estimator of \(\theta^2\).
+	\newline \newline
+	By Definition 4.5 we can write
+	\[var(\hat{\Theta})=E((\hat{\Theta}-\theta)^2)=E(\hat{\Theta}^2)-2\theta E(\hat{\Theta}) + \theta^2\]
+	Since \(\hat{\Theta}\) is an unbiased esitmator of \(\theta\), \(E(\hat{\Theta})=\theta\)
+	\[var(\hat{\Theta})=E(\hat{\Theta}^2)-2\theta^2 + \theta^2\]
+	\[E(\hat{\Theta}^2)=var(\hat{\Theta}) + \theta^2\]
+	Since \(var(\hat{\Theta})\) is non-zero, \(E(\hat{\Theta}^2) \neq \theta^2\) \newline \newline
+	\(\therefore \hat{\Theta}^2\) is  a biased estimator of \(\theta^2\). \newline \(\blacksquare\)
+
+\end{document}

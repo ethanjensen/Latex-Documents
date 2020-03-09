@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning, arrows, shapes}
+\addtolength{\topmargin}{-0.875in}
+\addtolength{\textheight}{1.75in}
+
+\title{Math 332 A - Mathematical Statistics}
+\author{Ethan Jensen}
+\date{February 28, 2020}
+
+\begin{document}
+	\maketitle HW p.287 \#16,17 \ p.302 \#64
+	\section[20pt]{p. 287 \#16}
+	If \(\hat{\Theta}_1\) and \(\hat{\Theta}_2\) are independent unbiased estimators of a given parameter \(\theta\) and var\((\hat{\Theta}_1) = 3\)var\((\hat{\Theta}_2)\), find the constants \(a_1\) and \(a_2\) such that \(a_1\hat{\Theta}_1 + a_2\hat{\Theta}_2\) in an unbiased estimator with minimum variance for such a linear combination.
+	\newline \newline
+	Let \(\lambda=\) var\(\hat{\Theta}_2\) and \(C = a_1\hat{\Theta}_1 + a_2\hat{\Theta}_2\)
+	\newline
+	From Theorem 4.14 we have
+	\[\textup{var}(C) = a_1^2\textup{var}(\hat{\Theta}_1) + a_2^2\textup{var}(\hat{\Theta}_2) + a_1a_2\textup{cov}(\hat{\Theta}_1,\hat{\Theta}_2)\]
+	Since the estimators are independent, their covariance is 0.
+	\[\textup{var}(C) = a_1^2\textup{var}(\hat{\Theta}_1) + a_2^2\textup{var}(\hat{\Theta}_2)\]
+	plugging in \(\lambda\) for var\(\hat{\Theta}_2\) we have
+		\[\textup{var}(C) = 3a_1^2\lambda + a_2^2\lambda = (3a_1^2 + a_2^2)\lambda\]
+	For the linear combination to be remain unbiased, \(a_1 + a_2 = 1\). \newline
+	So now we can find the minimum variance.
+	\[\textup{var}(C) =\lambda(3a_1^2 + (1-a_1)^2) = \lambda(4a_1^2 -2a_1+1)\]
+	We take the derivative of \(\textup{var}(C)\) with respect to \(a_1\) and set that equal to 0 to find critical points.
+	\[\frac{d}{da_1}\textup{var}(C) = 8a_1 - 2 = 0\]
+	So there is only one critical point with \(a_1 = \frac{1}{4}\).
+	Since there is only one critical point, we know it must be a local minimum.
+	\newline
+	Calculating for \(a_2\) we have \(a_2 = \frac{3}{4}\).
+	\newline
+	\boxed{a_1 = \frac{1}{4}\ \ \ a_2 = \frac{3}{4}}
+	\newpage
+	\maketitle HW p.287 \#16,17 \ p.302 \#64
+	\section[20pt]{p. 287 \#17}
+	Show that the mean of a random variable of size n from an exponential distribution is a minimum variance estimator of the parameter \(\theta\).
+	\newline \newline
+	We know that the distribution of an exponential random variable with paramter \(\theta\) is given by
+	\[f(x) = \frac{1}{\theta}e^{-x/\theta},\ \ x>0\]
+	\[\ln(f(x)) = -\ln(\theta) -\frac{x}{\theta}\]
+	\[\frac{\partial}{\partial \theta}\ln(f(x)) = -\frac{1}{\theta} + \frac{x}{\theta^2}\]
+	\[\left(\frac{\partial}{\partial \theta}\ln(f(x))\right) = \frac{1}{\theta^2} - \frac{2x}{\theta^3} + \frac{x^2}{\theta^4}\]
+	Because Expected value is a linear operator,
+	\[E\left(\left(\frac{\partial}{\partial \theta}\ln(f(x))\right)\right) = E(\frac{1}{\theta^2}) - E(\frac{2x}{\theta^3}) + E(\frac{x^2}{\theta^4})\]
+	\[E\left(\left(\frac{\partial}{\partial \theta}\ln(f(x))\right)\right)=\frac{1}{\theta^2}-\frac{2}{\theta^3}E(x)+\frac{1}{\theta^4}E(x^2)\]
+	With Theorem 4.6 and Corollary 6.1 we have
+	\[E\left(\left(\frac{\partial}{\partial \theta}\ln(f(x))\right)\right)=\frac{1}{\theta^2}-\frac{2}{\theta^2}+\frac{2}{\theta^2} = \frac{1}{\theta^2}\]
+	In conclusion, it is easy to see that.
+	\[\frac{1}{nE\left(\left(\frac{\partial}{\partial \theta}\ln(f(x))\right)\right)} = \frac{\theta^2}{n}\]
+	The variance of the sample mean of an exponential population is also \(\frac{\theta^2}{n}\). \newline \newline
+	Therefore, by the Cramer Rao inequality, the mean of a random sample of size n from an exponential distribution is a minimum variance estimator of the parameter \(\theta\).
+	\newpage
+	\maketitle HW p.287 \#16,17 \ p.302 \#64
+	\section[20pt]{p. 302 \#64}
+	Given a random sample of size n from a Rayleigh population, find an estimator for its parameter \(\alpha\) by the method of maximum likelihood.
+	\newline \newline
+	A random variable X has a \textbf{Rayleigh distribution} if and only if its probability density is given by
+	\[f(x)=\left\{\begin{array}{ccc}
+	2\alpha xe^{-\alpha x^2}\ \  \textup{for } x>0\\0 \ \ \ \ \ \ \ \textup{elsewhere} \end{array}\right.\]
+	where \(\alpha > 0\). \newline
+	Our samples are independent, so our likelihood function is thus
+	\[L(\alpha) = \prod_{i=1}^n2\alpha x_i e^{-\alpha x_i^2}\ \ \ \textup{for } x>0\]
+	Maximizing the likeliood function is the same as maximizing the logarithm of the likelihood function.
+	\[\ln(L(\alpha)) = \sum_{i=1}^n\ln(2\alpha x_i e^{-\alpha x_i^2})=\sum_{i=1}^n\left(\ln(2\alpha)+\ln(x_i)-\alpha x_i^2\right)\]
+	Next, we differentiate the function with respect to \(\alpha\) and set it to 0 to find critical points.
+	\[\frac{d}{d\alpha}\ln(L(\alpha)) = \frac{n}{\alpha}- \sum_{i=1}^nx_i^2=0\]
+	\[\therefore \alpha = \frac{1}{\frac{1}{n}\sum_{i=1}^nx_i^2}\]
+	\boxed{\hat{\Theta} = \frac{1}{\frac{1}{n}\sum_{i=1}^nx_i^2}}
+\end{document}
