@@ -1,0 +1,233 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{eucal}
+\usepackage{changepage}
+\usetikzlibrary{automata, positioning, shapes, decorations.markings}
+\addtolength{\topmargin}{-0.75in}
+\addtolength{\textheight}{1.75in}
+\addtolength{\evensidemargin}{-0.5in}
+
+\title{Topology Homework 08}
+\author{Ethan Jensen}
+\date{April 18, 2020}
+
+\begin{document}
+  \maketitle
+  \noindent
+  \textbf{EXCERCISE 4.23}
+  \newline
+  Find three different topologies on the tree-point set \(X=\{a,b,c\}\), each consisting of five open sets (including \(X\) and \(\varnothing\)), such that two of the topologies are homeomorphic to each other, but the third is not homeomorphic to the other two.
+  \newline \newline
+  \(\mathcal{T}_1 = \{\varnothing, \{a\}, \{c\}, \{a,c\}, X\}\)
+  \newline
+  \(\mathcal{T}_2 = \{\varnothing, \{b\}, \{c\}, \{b,c\}, X\}\)
+  \newline
+  \(\mathcal{T}_3 = \{\varnothing, \{a\}, \{a,b\}, \{a,c\}, X\}\)
+  \newline
+  \newline
+  Where \(f:X\rightarrow X\) defined by
+  \(f(x) = \left\{ \begin{matrix}
+  b,\ x=a  \\
+  a,\ x=b  \\
+  c,\ x=c
+\end{matrix}\right.\)\ \ is a homeomorphism.
+\newline
+\newline
+\(\mathcal{T}_1\) and \(\mathcal{T}_2\) are homeomorphic, since the homeomorphism f exists. However, there is no homeomorphism between \(\mathcal{T}_1\) and \(\mathcal{T}_3\) or \(\mathcal{T}_2\) and \(\mathcal{T}_3\).
+\newpage
+\noindent
+\textbf{EXERCISE 4.24}
+\newline
+Prove that a bijection \(f: X \rightarrow Y\) is a homeomorphism if and only if \(f\) and \(f^{-1}\) map closed sets to closed sets.
+\newline \newline
+\textbf{Proof.}
+\newline
+\((\rightarrow)\) Let \(f: X \rightarrow Y\) be a homeomorphism.
+\newline
+Consider some closed set \(C \in X\).
+\newline
+\(C = X - U\) for some open set U in X.
+\newline
+\(f(C) = f(X-U) = f(X) - f(U)\) since \(f\) is a bijection.
+\newline
+Since \(f\) is a homeomorphism, \(f(U) = V\), where V is an open set.
+\newline
+So \(f(C) = Y - V\), which is closed in Y.
+\newline \newline
+Consider some closed set \(D \in Y\).
+\newline
+\(D = Y - V\) for some open set V in Y.
+\newline
+\(f^{-1}(D) = f^{-1}(Y-V) = f^{-1}(Y) - f^{-1}(V)\) since \(f\) is a bijection.
+\newline
+Since \(f\) is a homeomorphism, \(f^{-1}(V) = U\), where U is an open set.
+\newline
+So \(f^{-1}(V) = X - U\), which is closed in X.
+\newline
+Thus, \(f\) and \(f^{-1}\) map closed sets to closed sets.
+\newline \(\square\) \newline
+\((\leftarrow)\) Assume that \(f\) and \(f^{-1}\) map closed sets to closed sets.
+\newline
+Consider some closed set \(C \in X\).
+\newline
+\(C = X - U\) for some open set U in X.
+\newline
+\(f(C) = f(X-U) = f(X) - f(U)\) since \(f\) is a bijection.
+\newline
+\(f(C) = Y - f(U)\).
+\newline
+\(f(C)\) is closed in Y.
+\newline
+So \(f(U)\) is open in Y.
+\newline
+Consider some closed set \(D \in Y\).
+\newline
+\(D = Y - V\) for some open set V in Y.
+\newline
+\(f^{-1}(D) = f^{-1}(Y - V) = f^{-1}(Y) - f^{-1}(V)\) since \(f\) is a bijection.
+\newline
+\(f^{-1}(D)\) is closed in X.
+\newline
+So \(f^{-1}(V)\) is open in X.
+\newline
+Thus, \(f\) is a homeomorphism.
+\newline \(\square\) \newline
+\(\therefore\) A bijection \(f: X \rightarrow Y\) is a homeomorphism if and only if \(f\) and \(f^{-1}\) map closed sets to closed sets.
+\newline \(\blacksquare\)
+\newpage
+\noindent
+\textbf{EXERCISE 4.25}
+\newline
+\textbf{(a)} Provide an example of a homeomorphism between \(\mathbb{R}\) and the interval \((-\infty, a)\).
+\newline
+\textbf{(b)} Provide a formula for a homeomorphism between \(\mathbb{R}\) and the interval \((a,b)\), with \(a < b\).
+\newline
+\textbf{(c)} Given the homeomorphism in Example 4.12 and the first two parts of this exercise, prove that if \(I_1\) and \(I_2\) are in collection (i) in Example 4.12, then \(I_1\) and \(I_2\) are topologically equivalent.
+\newline \newline
+\textbf{(a)} Let \(f:\mathbb{R} \rightarrow (-\infty, a)\) where \(f(x) = a - e^{-x}\).
+\newline \(\square\) \newline
+\textbf{(b)} Let \(f:\mathbb{R} \rightarrow (a,b)\) where \(f(x) = a + \frac{b-a}{1+be^-x}\).
+\newline \(\square\) \newline
+\textbf{(c)} Let \(I_1\) and \(I_2\) be in the collection (i) consisting of open intervals: \((a,b), (-\infty,a), (a,\infty), \mathbb{R}\).
+\newline
+So there are four cases for \(I_1\) and \(I_2\).
+\newline \newline
+Case 1: \(I_1 = (a,b)\) for some \(a,b\in \mathbb{R}\) and \(a<b\).
+\newline
+\(I_1\) is homeomorphic to \(\mathbb{R}\) using \(f:\mathbb{R} \rightarrow I_1\) where \(f(x) = a + \frac{b-a}{1+be^-x}\).
+\newline \newline
+Case 2: \(I_1 = (-\infty, a)\) for some \(a \in \mathbb{R}\).
+\newline
+\(I_1\) is homeomorphic to \(\mathbb{R}\) using \(f:\mathbb{R} \rightarrow I_1\) where \(f(x) = a - e^{-x}\).
+\newline \newline
+Case 3: \(I_1 = (a, \infty)\) for some \(a \in \mathbb{R}\).
+\newline
+\(I_1\) is homeomorphic to \(\mathbb{R}\) using \(f:\mathbb{R} \rightarrow I_1\) where \(f(x) = a + e^{x}\).
+\newline \newline
+Case 4: \(I_1 = \mathbb{R}\).
+\newline
+\(I_1\) is homeomorphic to \(\mathbb{R}\) using \(f:\mathbb{R} \rightarrow I_1\) where \(f(x) = x\).
+\newline
+\newline
+In every case, we can find homeomorphisms \(f:\mathbb{R} \rightarrow I_1\) and \(g:\mathbb{R} \rightarrow I_2\)
+\newline \newline
+The function \(g \circ f^{-1} (x): I_1 \rightarrow I_2\) is a homeomorphism, since continuity is maintained through composition.
+\newline
+\(\therefore I_1\) and \(I_2\) are topologically equivalent.
+\newline \(\blacksquare\)
+\newpage
+\noindent
+\textbf{EXERCISE 4.26}
+\newline
+\textbf{(a)} Provide a formula for a homeomorphism between the intervals \([0, \infty)\) and \([a,b)\), with \(a<b\).
+\newline
+\textbf{(b)} Provide a formula for a homeomorphism between the intervals \((-\infty, 0]\) and \((a,b]\), with \(a<b\).
+\newline
+\textbf{(c)} Given the homeomorphisms in Example 4.12 and the first two parts of this exercise, prove that if \(I_1\) and \(I_2\) are intervals in the collection (iii) in Example 4.12, then \(I_1\) and \(I_2\) are topologically equivalent.
+\newline
+\newline
+\textbf{(a)} Let \(f:[0,\infty) \rightarrow [a,b)\) where \(f(x) = a + (b-a)(1-e^{-x})\).
+\newline \(\square\) \newline
+\textbf{(b)} Let \(f:(-\infty, 0] \rightarrow (a,b]\) where \(f(x) = b + (a-b)(1-e^x)\).
+\newline \(\square\) \newline
+\textbf{(c)} Let \(I_1\) and \(I_2\) be in the collection (iii) consisting of open intervals: \([a,b), (a,b], (-\infty,a], [a,\infty)\).
+\newline
+So there are four cases for \(I_1\) and \(I_2\).
+\newline \newline
+Case 1: \(I_1 = [a,b)\) for some \(a,b\in \mathbb{R}\) where \(a<b\).
+\newline
+\(I_1\) is homeomorphic to \([a,b)\) using
+\newline
+\(f:I_1\rightarrow [a,b)\) where \(f(x) = b+a-x\).
+\newline \newline
+Case 2: \(I_1 = (a,b]\) for some \(a,b\in\mathbb{R}\) where \(a<b\).
+\newline
+\(I_1\) is homeomorphic to \([a,b)\) using
+\newline
+\(f:I_1 \rightarrow [a,b)\) where \(f(x) = x\).
+\newline \newline
+Case 3: \(I_1 = (-\infty,a]\) for some \(a \in \mathbb{R}\).
+\newline
+\(I_1\) is homeomorphic to \([a,b)\) using
+\newline
+\(f:I_1 \rightarrow (a,b]\) where \(f(x) = a+(b-a)(1-e^{x-a})\).
+\newline \newline
+Case 4: \(I_1 = [a,\infty)\) for some \(a \in \mathbb{R}\).
+\newline
+\(I_1\) is homeomorphic to \([a,b)\) using
+\newline
+\(f:I_1 \rightarrow [a,b)\) where \(f(x) = a + (b-a)(1-e^{a-x})\).
+\newline \newline
+In every case, we can find homeomorphisms \(f:I_1 \rightarrow [a,b)\) and \(g:I_2 \rightarrow [a,b)\)
+\newline \newline
+The function \(g^{-1} \circ f(x): I_1 \rightarrow I_2\) is a homeomorphism, since continuity is maintained through composition.
+\newline
+\(\therefore I_1\) and \(I_2\) are topologically equivalent.
+\newpage
+\noindent
+\textbf{EXERCISE 4.32}
+\newline
+Show that homeomorphism preserves interior, closure, and boundary as indicated in the following implications:
+\newline
+\textbf{(a)} If \(f: X \rightarrow Y\) is a homeomorphism, then \(f(\textup{Int}(A)) = \textup{Int}(f(A))\) for every \(A \subseteq X\).
+\newline
+\textbf{(b)} If \(f: X \rightarrow Y\) is a homeomorphism, then \(f(\textup{Cl}(A)) = \textup{Cl}(f(A))\) for every \(A \subseteq X\).
+\newline
+\textbf{(c)} If \(f: X \rightarrow Y\) is a homeomorphism, then \(f(\partial(A)) = \partial(f(A))\) for every \(A \subseteq X\).
+\newline \newline
+\textbf{(a)}
+Since f is a homeomorphism, open sets in \(X\) map to open sets in \(Y\). Since homeomorphisms are injective, we know that for all \(U,V \subseteq X\),
+\newline
+\(U \subseteq V \implies f(U) \subseteq f(V)\)
+\newline
+So the biggest open subset of \(A\) maps to the biggest open subset of \(f(A)\).
+\newline
+\(\therefore f(\textup{Int}(A)) = \textup{Int}(f(A))\)
+\newline \(\square\) \newline \newline
+\textbf{(b)}
+Since f is a homeomorphism, closed sets in \(X\) map to closed sets in \(Y\). Since homeomorphisms are injective, we know that for all \(U,V \subseteq X\),
+\newline
+\(U \subseteq V \implies f(U) \subseteq f(V)\)
+\newline
+So the smallest closed superset of \(A\) maps to the smallest closed superset of \(f(A)\).
+\newline
+\(\therefore f(\textup{Cl}(A)) = \textup{Cl}(f(A))\)
+\newline \(\square\) \newline \newline
+\textbf{(c)}
+\(f(\partial A) = f(\textup{Cl}(A) - \textup{Int}(A))\)
+\newline
+Since f is a homeomorphism, and homeomorphisms are injective, we know that for all \(U,V \subseteq X\), \(f(U - V) = f(U) - f(V)\).
+\newline
+\(f(\partial (A)) = f(\textup{Cl}(A)) - f(\textup{Int}(A))\)
+\newline
+From \textbf{(a)} and \textbf{(b)}, \(f(\partial (A)) = \textup{Cl}f((A)) - \textup{Int}f((A))\)
+\newline
+\(\therefore f(\partial (A)) = \partial(f(A))\)
+\newline \(\blacksquare\)
+\end{document}

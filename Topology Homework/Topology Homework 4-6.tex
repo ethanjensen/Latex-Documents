@@ -1,0 +1,406 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{eucal}
+\usepackage{changepage}
+\usetikzlibrary{automata, positioning, shapes, decorations.markings}
+\addtolength{\topmargin}{-0.75in}
+\addtolength{\textheight}{1.75in}
+\addtolength{\evensidemargin}{-0.5in}
+
+\title{Topology Homework 07}
+\author{Ethan Jensen}
+\date{April 6, 2020}
+
+\begin{document}
+  \maketitle
+  \noindent
+  \textbf{EXERCISE 4.1}
+  \newline
+  \textbf{(a)}\ \ Let X have the discrete topology and Y be an arbitrary topological space.
+  \newline Show that every function \(f:X\rightarrow Y\) is continuous.
+  \newline
+  \textbf{(b)}\ \ Let Y have the trivial topology and Y be an arbitrary topological space.
+  \newline Show that every function \(f:X\rightarrow Y\) is continuous.
+  \newline \newline \newline
+  \textbf{(a)} Let X have the discrete topology.
+  \newline
+  Consider some surjective function \(f:X \rightarrow Y\).
+  \newline
+  Consider some open set \(U \subseteq Y\).
+  \newline \newline
+  \(f^{-1}(U) \subseteq X\), which is open, since X has the discrete topology.
+  \newline
+  So for every open set U in Y, \(f^{-1}(U)\) is open in X.
+  \newline
+  \(\therefore\) Every function \(f:X\rightarrow Y\) is continuous.
+  \newline \newline
+  \textbf{(b)} Let Y have the trivial topology.
+  \newline
+  Consider some surjective function \(f:X \rightarrow Y\).
+  \newline
+  The open sets in Y consist of \(\varnothing\) and \(Y\).
+  \newline \newline
+  \(f^{-1}(\varnothing) = \varnothing\) and \(f^{-1}(Y) = X\)
+  \newline
+  \(\varnothing\) and \(X\) are open sets in X.
+  \newline
+  So for every open set U in Y, \(f^{-1}(U)\) is open in X.
+  \newline
+  \(\therefore\) Every function \(f:X\rightarrow Y\) is continuous.
+  \newpage
+  \noindent
+  \textbf{EXERCISE 4.2}
+  \newline
+  \textbf{Prove Theorem 4.8:} Let X and Y be topological spaces. A function \(f:X \rightarrow Y\) is continuous if and only if \(f^{-1}(C)\) is closed in X for every closed set \(C \subseteq Y\).
+  \newline \newline
+  \textbf{Proof.}
+  \newline
+  \((\rightarrow)\) Assume \(f:X \rightarrow Y\) is continuous.
+  \newline
+  Consider some closed set \(C \subseteq Y\).
+  \newline
+  Then \(Y-C\) is open in Y.
+  \newline
+  Since f is continuous, \(f^{-1}(Y-C)\) is open in X.
+  \newline \newline
+  By Theorem 0.22, \(f^{-1}(Y-C) = f^{-1}(Y) - f^{-1}(C)\)
+  \newline
+  So \(f^{-1}(C)\) is the complement of an open set.
+  \newline
+  So \(f^{-1}(C)\) is closed in X.
+  \newline
+  Thus, \(f^{-1}(C)\) is closed in X for every closed set \(C \subseteq Y\).
+  \newline \(\square\) \newline
+  \((\leftarrow)\) Assume \(f^{-1}(C)\) is closed in X for every closed set \(C \subseteq Y\).
+  \newline
+  Consider some open set \(U \subseteq Y\).
+  \newline
+  \(U = Y - C\) for some closed set C in Y.
+  \newline \newline
+  \(f^{-1}(U)=f^{-1}(Y-C) = f^{-1}(Y) - f^{-1}(C)\) By Theorem 0.22.
+  \newline
+  \(f^{-1}(U) = X - f^{-1}(C)\), where \(f^{-1}(C)\) is closed in X.
+  \newline
+  So \(f^{-1}(U)\) the complement of a closed set in X, which is open in X for every set U that is open in Y.
+  \newline
+  Thus, \(f:X \rightarrow Y\) is continuous.
+  \newline \(\square\) \newline
+  \(\therefore\) A function \(f:X \rightarrow Y\) is continuous if and only if \(f^{-1}(C)\) is closed in X for every closed set \(C \subseteq Y\).
+  \newline \(\blacksquare\)
+  \newpage
+  \noindent
+  \textbf{EXERCISE 4.7}
+  \newline
+  Suppose X is a space with topologies \(\mathcal{T}_1\) and \(\mathcal{T}_2\). Let \(id(x) = x\), and assume that the domain X has the topology \(\mathcal{T}_1\) and that the range of X has the topology \(\mathcal{T}_2\). Show that \(id\) is continuous if and only if \(\mathcal{T}_1\) is finer than \(\mathcal{T}_2\).
+  \newline
+  \newline
+  \textbf{Proof.}
+  \newline
+  \((\rightarrow)\) Assume \(id\) is continuous.
+  \newline
+  Consider some open set in \(U \in \mathcal{T}_2\), where \(U \subseteq Y\).
+  \newline
+  \(id^{-1}(U) = U\), so \(U \in \mathcal{T}_1\) since \(id\) is continuous.
+  \newline
+  So \(U \in \mathcal{T}_2 \implies U \in \mathcal{T}_1\).
+  \newline
+  Thus, \(\mathcal{T}_1\) is finer than \(\mathcal{T}_2\).
+  \newline \(\square\) \newline
+  \((\leftarrow)\) Assume \(\mathcal{T}_1\) is finer than \(\mathcal{T}_2\).
+  \newline
+  Consider some open set \(U \in \mathcal{T}_2\), where \(U \subseteq Y\).
+  \newline
+  Since \(\mathcal{T}_1\) is finer than \(\mathcal{T}_2\), \(id^{-1}(U) = U \in \mathcal{T}_2\).
+  \newline
+  In other words, \(id^{-1}(U)\) is also open in X.
+  \newline
+  Thus, \(id\) is continuous.
+  \newline \(\square\) \newline
+  \(\therefore id\) is continuous if and only if \(\mathcal{T}_1\) is finer than \(\mathcal{T}_2\).
+  \newline \(\blacksquare\)
+  \newpage
+  \noindent
+  \textbf{EXERCISE 4.9}
+  \newline
+  Let \(f,g:X\rightarrow Y\) be continuous functions. Assume that Y is Hausdorff and that there exists a dense subset D of X such that \(f(x) = g(x)\) for all \(x \in D\). Prove that \(f(x) = g(x)\) for all \(x \in X\).
+  \newline \newline
+  \textbf{Proof.}
+  \newline
+  Consider some point \(x \in X\).
+  \newline
+  Suppose \(f(x) \neq g(x)\).
+  \newline
+  Since Y is Hausdorff, there exist open sets \(U,V \subseteq Y\) such that \(f(x) \in U,\ g(x) \in V, U \cap V = \varnothing\).
+  \newline \newline
+  Since f and g are continuous functions, there exist two sets \(U_x,V_x \subseteq X \ni f(U_x) = U,\ g(V_x) = V\), where \(U_x \textup{ and } V_x\) are open in X.
+  \newline \newline
+  \(U_x \textup{and} V_x\) are both open sets that contain the point x.
+  \newline
+  So \(U_x \cap V_x\) is a non-empty open set.
+  \newline
+  Since D is a dense subset of X, \(\exists y \in D \ni y \in U_x \cap V_x\).
+  \newline
+  So \(y \in U_x\) and \(y \in V_x\).
+  \newline
+  So \(f(y) \in U\) and \(g(y) \in V\).
+  \newline
+  Since \(y \in D\), \(f(y) = g(y)\), and \(f(y) \in U \cap V\).
+  \newline \newline
+  This is a contradiction since we said \(U \cap V = \varnothing\).
+  \newline
+  \(\therefore f(x) = g(x)\) for all \(x \in X\).
+  \newline \(\blacksquare\)
+  \newpage
+  \noindent
+  \textbf{EXERCISE 4.13}
+  \newline
+  \textbf{(a)}\ Let \(f_1:X\rightarrow Y_1\) and \(f_2:X\rightarrow Y_2\) be continuous functions. Show that \(h: X \rightarrow Y_1 \times Y_2\), defined by \(h(x)=(f_1(x), f_2(x))\), is continuous as well.
+  \newline
+  \textbf{(b)}\ Extend the result of (a) to n functions, for \(n > 2\).
+  \newline \newline
+  \textbf{(a)}\ Let \(U \times V\) be open in \(Y_1 \times Y_2\)
+  \newline
+  \(h^{-1}(U \times V) = \{x|\ f_1(x) \in U \textup{ and } f_2(x) \in V\}\)
+  \newline
+  \(h^{-1}(U \times V) = \{x|\ f_1(x) \in U\} \cap \{x|\ f_2(x) \in V\}\)
+  \newline
+  \(h^{-1}(U \times V) = f_1^{-1}(U) \cap f_2^{-1}(V)\)
+  \newline \newline
+  Since \(f_1, f_2\) are continuous, \(f_1^{-1}(U) \textup{ and } f_2^{-1}(V)\) are both open in X.
+  \newline
+  So \(f_1^{-1}(U) \cap f_2^{-1}(V) = h^{-1}(U \times V)\) is open in X.
+  \newline
+  \(\therefore\) h is continuous as well.
+  \newline \(\blacksquare\) \newline
+  \textbf{(b)}
+  \newline
+  Let \(f_i: X \rightarrow Y_i,\ i = 1,2,...n\) be continuous functions.
+  \newline
+  Let \(h: X \rightarrow Y_1 \times Y_2 \times ... \times Y_n\) defined by \(h(x) = (f_1(x),f_2(x),...,f_n(x))\).
+  \newline \newline
+  Let \(U_1 \times U_2 \times ... \times U_n\) be open in \(Y_1 \times Y_2 \times ... \times Y_n\)
+  \newline
+  \(h^{-1}(U_1 \times U_2 \times ... \times U_n) = \{x|\ f_i(x) \in U_i\ \forall i\}\)
+  \newline
+  \(h^{-1}(U_1 \times U_2 \times ... \times U_n) = \bigcap_{i=1}^nf_i^{-1}(U_i)\)
+  \newline \newline
+  Since \(f_i\) is continuous for all i, \(f_i^{-1}(U_i)\) is open in X for all i.
+  \newline
+  Thus, \(\bigcap_{i=1}^nf_i^{-1}(U_i) = h^{-1}(U_1 \times U_2 \times ... \times U_n)\) is a finite intersection of open sets in X, and thus must also be open in X.
+  \newline
+  \(\therefore\) h is continuous as well.
+  \newline \(\blacksquare\)
+  \newpage
+  \noindent
+  \textbf{EXERCISE 4.14}
+  \newline
+  Show that the addition function, \(f: \mathbb{R}^2 \rightarrow \mathbb{R}\), given by \(f(x,y) = x+y\), is a continuous function.
+  \newline \newline
+  Consider an open interval \((a,b) \subseteq \mathbb{R}\).
+  \newline
+  \(f^{-1}((a,b)) = \{(x,y) \in \mathbb{R}^2|\ a < x+y < b\}\)
+  \newline
+  Now consider some \(p = (x,y)\) where \(p \in f^{-1}((a,b))\).
+  \newline \newline
+  Let \(B_p = B(p, r)\) where \(r = min\left(\frac{x+y-a}{\sqrt{2}},\frac{b-x-y}{\sqrt{2}}\right)\).
+  \newline
+  Now consider some \(q \in B(p, r)\).
+  \newline
+  Let \(m = d(p,q)\), which is less than \(r\).
+  \newline
+  So \(q = (x+m\cos\theta, y + m\sin\theta)\) for some \(\theta\)
+  \newline
+  \[m < r\]
+  \[m < \frac{x+y-a}{\sqrt{2}}\]
+  \[\sqrt{2}m < x+y-a\]
+  Since \(\cos \theta + \sin \theta < \sqrt{2},\ \forall \theta\)
+  \[m(-\cos \theta - \sin \theta)m < x + y - a\]
+  \[m(\cos \theta + \sin \theta)m > - x - y + a\]
+  \[x + y + m\cos \theta + m\sin \theta > a\]
+  \[(x+ m\cos \theta) + (y + m\cos \theta) > a\]
+  Similarly, it can be shown that
+  \[(x+ m\cos \theta) + (y + m\cos \theta) < b\]
+  So \(q \in f^{-1}(a,b)\)
+  \newline
+  So \(B_p \subseteq f^{-1}((a,b))\)
+  \newline
+  \newline
+  By the Union Lemma, \(f^{-1}((a,b)) = \bigcup_{p \in f^{-1}((a,b))}B_p\).
+  \newline
+  \(f^{-1}((a,b))\) is an arbitrary union of open sets in \(\mathbb{R}^2\), which makes it open.
+  \newline
+  So \(f^{-1}((a,b))\) is open for all basis elements \((a,b) \in \mathbb{R}\).
+  \newline \newline
+  Consider an open set \(U \in \mathbb{R}\).
+  \newline
+  \(U = B_1 \cup B_2 \cup B_3...\) where \(B_i\) are basis elements in \(\mathbb{R}\).
+  \newline
+  By Theorem 0.22 \(f^{-1}(U) = f^{-1}(B_1) \cup f^{-1}(B_2) \cup f^{-1}(B_3)...\)
+  \newline \newline
+  \(f^{-1}(U)\) can thus be written as a union of open sets in \(\mathbb{R}^2\).
+  \newline
+  So \(f^{-1}(U)\) is open in \(\mathbb{R}^2\), and indeed is open for all \(U \in \mathbb{R}\)
+  \newline \newline
+  \(\therefore\) The addition function, \(f: \mathbb{R}^2 \rightarrow \mathbb{R}\), given by \(f(x,y) = x+y\), is continuous.
+  \newline \(\blacksquare\)
+  \newpage
+  \noindent
+  \textbf{EXERCISE 4.15}
+  \newline
+  Let \(f\) be the multiplicative function, \(f(x,y) = xy\). Complete the proof of continuity of \(f\) that was outlined in Example 4.6, by doing the following:
+  \newline
+  \textbf{(a)}\ Show that if p and q are both positive, and \(\delta\) is described in the example, then \((p-\delta, p+\delta) \times (q - \delta, q + \delta) \subseteq f^{-1}((a,b))\).
+  \newline
+  \textbf{(b)}\ Consider the rest of the posibilities for p and q being positive or negative, and show that \((p-\delta, p+\delta) \times (q - \delta, q + \delta) \subseteq f^{-1}((a,b))\).
+  \newline
+  \newline
+  \textbf{(a) \ Proof.}
+  Consider an open interval \((a,b) \in \mathbb{R}\).
+  \newline
+  \(f^{-1}((a,b)) = \{(x,y) \in \mathbb{R}^2|\ a < xy < b\}\)
+  \newline
+  Now consider some \(t = (p,q)\) where \(t \in f^{-1}((a,b))\).
+  \newline
+  Let \(m = \textup{min}\{b-pq,pq-a\}\)
+  \newline
+  Let \(B_t = (p - \delta, p + \delta) \times (q - \delta, q + \delta)\)
+  \newline
+  where \(\delta > 0\) is chosen such that \(\delta|p|, \delta|q|, \delta^2\) are all less than \(\frac{m}{3}\).
+  \newline
+  \newline
+  Let \((x',y') \in (p-\delta,p+\delta) \times (q-\delta, q+\delta)\)
+  \newline
+  \[x' < p + \delta,\ y' < q + \delta\]
+  \[x'y' < (p + \delta)(q + \delta)\]
+  \[x'y' < pq + \delta|p|+ \delta|q| + \delta^2\]
+  \[x'y' < pq + m\]
+  \[x'y' < b - m + m\]
+  \[x'y' < b\]
+  \newline
+  \[x' > p - \delta,\ y' > q - \delta\]
+  \[x'y' > pq -|p|\delta -|q|\delta +\delta^2\]
+  \[x'y' > pq - m/3\]
+  \[x'y' > a + m - m/3\]
+  \[x'y' > a\]
+  \(a < x'y' < b\), so \((x',y') \in f^{-1}((a,b))\).
+  \newline
+  So \(B_t \subseteq f^{-1}((a,b))\).
+  \newline
+  \newline
+  By the Union Lemma, \(f^{-1}((a,b)) = \bigcup_{t \in f^{-1}((a,b))}B_t\).
+  \newline
+  \(f^{-1}((a,b))\) is an arbitrary union of open sets in \(\mathbb{R}^2\), which makes it open.
+  \newline
+  So \(f^{-1}((a,b))\) is open for all basis elements \((a,b) \in \mathbb{R}\).
+  \newline \newline
+  Consider an open set \(U \in \mathbb{R}\).
+  \newline
+  \(U = B_1 \cup B_2 \cup B_3...\) where \(B_i\) are basis elements in \(\mathbb{R}\).
+  \newline
+  By Theorem 0.22 \(f^{-1}(U) = f^{-1}(B_1) \cup f^{-1}(B_2) \cup f^{-1}(B_3)...\)
+  \newline \newline
+  \(f^{-1}(U)\) can thus be written as a union of open sets in \(\mathbb{R}^2\).
+  \newline
+  So \(f^{-1}(U)\) is open in \(\mathbb{R}^2\), and indeed is open for all \(U \in \mathbb{R}\)
+  \newline \newline
+  \(\therefore\) For positive p and positive q, the multiplicative function, \(f: \mathbb{R}^2 \rightarrow \mathbb{R}\), given by \(f(x,y) = xy\), is continuous.
+  \newline \(\square\) \newline
+  \textbf{(b) \ Proof.}
+  \newline
+  We must consider the rest of the possibilities for p and q being positive or negative.
+  \newline \newline
+  (1) If both p and q are negative, then the same argument can be given as above since the shape \(f^{-1}((a,b))\) is symmetric about \(y=-x\).
+  \newline
+  (2) The shape of \(f^{-1}((-a,-b))\) is identical to \(f^{-1}((a,b))\), but flipped about the y-axis and the x-axis, allowing one of p and q to be negative, but still allowing the same argument to be used.
+  \newline
+  Flipping and rotation are linear transformations, which are continuous, which makes this argument rigorous.
+  \newline \newline
+  \(\therefore\) in all cases, the multiplicative function, \(f: \mathbb{R}^2 \rightarrow \mathbb{R}\), given by \(f(x,y) = xy\), is continuous.
+  \newline \(\blacksquare\)
+  \newpage
+  \noindent
+  \textbf{EXERCISE 4.16}
+  \newline
+  Use Example 4.6, Exercises 4.13 and 4.14, and Theorem 4.9 to show that the sum and product of a finite number of continuous functions are also continuous functions. That is, assuming that \(f_1,...,f_m: \mathbb{R} \rightarrow \mathbb{R}\) are continuous, prove that \(S: \mathbb{R} \rightarrow \mathbb{R}\) and \(P: \mathbb{R} \rightarrow \mathbb{R}\), defined by \(S(x) = f_1(x)+...+f_m(x)\) and \(P(x) = f_1(x)f_2(x)...f_m(x)\), are continuous.
+  \newline \newline
+  \textbf{Proof.}
+  \newline
+  These proofs will use Mathematical Induction.
+  \newline
+  \textbf{Basis Step:} Let \(S: \mathbb{R} \rightarrow \mathbb{R}\) be defined by \(S(x) = f_1(x)\).
+  \newline
+  Since \(f_1\) is a continuous function, \(S\) is also a continuous function.
+  \newline \(\square\) \newline
+  Likewise, like \(P: \mathbb{R} \rightarrow \mathbb{R}\) be defined by \(P(x) = f_1(x)\).
+  \newline
+  Since \(f_1(x)\) is a continuous function, \(P\) is also a continuous function.
+  \newline \(\square\) \newline \newline
+  \textbf{Induction Hypothesis:} Assume \(S: \mathbb{R} \rightarrow \mathbb{R}\) defined by \(S(x) = f_1(x) + f_2(x) +...f_k(x)\) is continuous, for some \(k \in \mathbb{Z}_+\)
+  \newline
+  Likewise, Assume \(P: \mathbb{R} \rightarrow \mathbb{R}\) defined by \(P(x) = f_1(x)f_2(x)...f_k(x)\) is continuous, for some \(k \in \mathbb{Z}_+\)
+  \newline \newline
+  \textbf{Induction Step:} Consider the function \(S': \mathbb{R} \rightarrow \mathbb{R}\) defined by \(S'(x) = f_1(x) + f_2(x) +...f_k(x) + f_{k+1}(x)\).
+  \newline
+  \(S'(x) = S(x) + f_{k+1}(x)\)
+  \newline
+  By our induction hypothesis, S is continuous.
+  \newline
+  Since S and \(f_{k+1}\) are both continuous, \(A: \mathbb{R} \rightarrow \mathbb{R}^2\) defined by \(A(x) = (S(x),f_{k+1}(x))\) is continuous using our result from Exercise 4.13.
+  \newline
+  The addition function \(B: \mathbb{R}^2 \rightarrow \mathbb{R}\) is also continuous using Exercise 4.14.
+  \newline \newline
+  Notice that the function \(S': \mathbb{R} \rightarrow \mathbb{R} = B \circ A\).
+  \newline
+  \(S'\) is a continuous function by Theorem 4.9.
+  \newline
+  \(\therefore\) \(S: \mathbb{R} \rightarrow \mathbb{R}\), defined by \(S(x) = f_1(x)+...+f_m(x)\) is continuous for all \(m \in \mathbb{Z}_+\), by Mathematical Induction.
+  \newline \(\blacksquare\) \newline
+  Consider the function \(P': \mathbb{R} \rightarrow \mathbb{R}\) defined by \(P'(x) = f_1(x)f_2(x)...f_k(x)f_{k+1}(x)\).
+  \newline
+  \(P'(x) = S(x)f_{k+1}(x)\)
+  \newline
+  By our induction hypothesis, P is continuous.
+  \newline
+  Since P and \(f_{k+1}\) are both continuous, \(A: \mathbb{R} \rightarrow \mathbb{R}^2\) defined by \(A(x) = (S(x),f_{k+1}(x))\) is continuous using our result from Exercise 4.13.
+  \newline
+  The multiplicative function \(B: \mathbb{R}^2 \rightarrow \mathbb{R}\) is continuous using Exercise 4.15.
+  \newline \newline
+  Notice that the function \(P': \mathbb{R} \rightarrow \mathbb{R} = B \circ A\).
+  \newline
+  \(P'\) is a continuous function by Theorem 4.9.
+  \newline
+  \(\therefore\) \(P: \mathbb{R} \rightarrow \mathbb{R}\), defined by \(P(x) = f_1(x)f_2(x)...f_m(x)\) is continuous for all \(m \in \mathbb{Z}_+\), by Mathematical Induction.
+  \newline \(\blacksquare\)
+  \newpage
+  \noindent
+  \textbf{EXERCISE 4.17}
+  Use Exercise 4.16 to show that every polynomial function \(p: \mathbb{R} \rightarrow \mathbb{R}\), given by \(p(x) = a_nx^n + ... + a_1x + a_0\), is continuous.
+  \newline \newline
+  \newline
+  (1) Constant functions defined by \(c(x) = x_0\) are continuous. (Exm. 4.2)
+  \newline
+  (2) The identity function defined by \(id(x) = x\) is continuous (Exm. 4.2)
+  \newline
+  (3) Functions composed of successive addition or multiplication of continuous functions are continuous. (Exr. 4.16)
+  \newline \newline
+  Consider the function \(p: \mathbb{R} \rightarrow \mathbb{R}\), given by \(p(x) = a_nx^n + ... + a_1x + a_0\).
+  \newline
+  Now consider a particular term in the series \(a_kx^k\) for some \(0 \leq k \leq n\).
+  \newline
+  Define a function \(f_k: \mathbb{R} \rightarrow \mathbb{R}\) where \(f_k(x) = a_k(x)\overbrace{id(x)id(x)...id(x)}^k\).
+  \newline
+  From (1), (2), and (3), \(f_k\) is continuous for all k.
+  \newline \newline
+  So \(p(x) = f_n(x) + ... + f_1(x) + f_0(x)\), where each \(f_k\) is continuous.
+  \newline
+  Thus, by (3), p is a continuous function.
+  \newline \newline
+  \(\therefore\) every polynomial function \(p: \mathbb{R} \rightarrow \mathbb{R}\), given by \(p(x) = a_nx^n + ... + a_1x + a_0\), is continuous.
+  \newline \(\blacksquare\)
+\end{document}

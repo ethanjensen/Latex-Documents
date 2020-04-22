@@ -1,0 +1,92 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{tikz}
+\usepackage{changepage}
+\usetikzlibrary{automata, positioning, shapes, arrows}
+\addtolength{\topmargin}{-0.875in}
+\addtolength{\textheight}{1.75in}
+
+\title{Recurrence Relations in Differentiation}
+\author{Ethan Jensen}
+\date{April 17, 2019}
+\begin{document}
+\maketitle
+\tikzset{
+  ->, % makes the edges directed
+  >=triangle 45, % makes the arrow heads bold
+  node distance=3cm, % specifies the minimum distance between two nodes. Change if necessary.
+  every state/.style={thick, fill=gray!10}, % sets the properties for each ’state’ node
+  initial text=$ $, % sets the text that appears on the start arrow
+}
+\bibliographystyle{ieeetran}
+\noindent
+\textbf{Abstract.} This paper shows how dynamic programming can be used to easily compute the derivatives of rational functions of polynomials of \(e^x\). Computing these derivatives allows us to determine various interesting identities using the generating function for the Bernoulli numbers.
+\section{Introduction to Bernoulli numbers}
+\textbf{Definition 0.1.}\ \
+The Bernoulli numbers \(B_i\) are defined recursively by
+\[\sum_{i=0}^n\binom{n+1}{i}B_i=n+1,\ \ B_0 = 1\]
+The first few Bernoulli numbers are \(1, \frac{1}{2}, \frac{1}{6}, 0, \frac{-1}{30}, 0, \frac{1}{42}...\)
+\newline
+\textbf{Definition 0.2.}
+\[\textup{Define } S_k(n) = \sum_{i=0}^ni^k\]
+which is called a power sum. Some power sum formulas are given below.
+\[S_0(n) = \sum_{i=0}^ni^0 = n\]
+\[S_1(n) = \sum_{i=1}^ni^1 = \frac{1}{2}n^2 + \frac{1}{2}n\]
+\[S_2(n) = \sum_{i=1}^ni^2 = \frac{1}{3}n^3 + \frac{1}{2}n^2 + \frac{1}{6}n\]
+\[S_3(n) = \sum_{i=1}^ni^3 = \frac{1}{4}n^4 + \frac{1}{2}n^3 + \frac{1}{4}n^2\]
+\[S_4(n) = \sum_{i=1}^ni^4 = \frac{1}{5}n^5 + \frac{1}{2}n^4 + \frac{1}{3}n^3 -\frac{1}{30}n\]
+These power sum formulas are used to efficiently compute sums of powers.
+\newpage
+\noindent
+\textbf{Theorem 0.1.}
+\newline
+\[S_k(n) = \frac{1}{k+1}\sum_{j=0}^k\binom{k+1}{j}B_jx^j\]
+\textbf{Proof.}\cite{arakawa2014bernoulli}
+\newline
+Using telescoping series, \(S_k(n+1) - S_k(n) = (n+1)^k\)
+\[S_k'(x+1) - S_k'(x) = k(x+1)^{k-1}\]
+\[\sum_{x=0}^{n-1}S_k'(x+1) - S_k'(x) = \sum_{x=0}^{n-1}k(x+1)^{k-1}\]
+Using telescoping series,
+\[S_k'(n) - S_k'(0) = kS_{k-1}(n)\]
+\[S_k'(x) = kS_{k-1}(x) + S_k'(0)\]
+\(S_k'(0)\) is just some constant. Call it \(a_k\).
+\newline
+\boxed{S_k'(x) = kS_{k-1}(x) + a_k}
+\newline \(\square\) \newline
+From this formula we have
+\[S_k'(0) = kS_{k-1}(0) + a_k\]
+Since \(S_k(0) = 0 \forall k\)
+\[S_k'(0) = a_k\]
+\[S_k''(0) = kS_{k-1}'(0) = ka_{k-1}\]
+\[S'''(0) = kS''(k-1)(0) = k(k-1)a_{k-2}\]
+And in general, \newline
+\boxed{S^{(j)}(0) = k(k-1)(k-2)...(k-j+2)a_{k-j+1}}
+\newline \(\square\) \newline
+Using Taylor series,
+\[S_k(x) = \sum_{j=0}^{k+1}\frac{S_k^{(j)}(0)}{j!}x^j\]
+From the above formula we have
+\[S_k(x) = \sum_{j=0}^{k+1}\frac{k!}{(k-j+1)!j!}a_{k-j+1}x^j\]
+\[S_k(x) = \frac{1}{k+1}\sum_{j=0}^{k+1}\binom{k+1}{j}a_{k+1-j}x^j\]
+\[S_k(x) = \frac{1}{k+1}\sum_{j=0}^{k+1}\binom{k+1}{j}a_jx^{k+1-j}\]
+Now we must determine the constants \(a_k\). Plugging in 1 for x, we have
+\[S_k(1) = \frac{1}{k+1}\sum_{j=0}^{k+1}\binom{k+1}{j}a_j\]
+\[k+1 = \sum_{j=0}^{k+1}\binom{k+1}{j}a_j\]
+So \(a_j = B_j\) are the Bernoulli numbers by the recursive definition.
+\[\therefore S_k(n) = \frac{1}{k+1}\sum_{j=0}^k\binom{k+1}{j}B_jx^j\]
+\(\blacksquare\)
+\newline
+The power sum formula for k = 10 is
+\[S_{10}(n) = \sum_{i=1}^ni^{10} = \frac{1}{11}n^{11} + \frac{1}{2}n^{10} + \frac{5}{6}n^9 -n^7 + n^5 -\frac{1}{2}n^3 + \frac{5}{66}n\]
+Plugging in n = 1000 we have
+\[1^{10} + 2^{10} + ... + 1000^{10} = \frac{1}{11}1000^{11} + \frac{1}{2}1000^{10} + \frac{5}{6}1000^9 -1000^7 + 1000^5 -\frac{1}{2}1000^3 + \frac{5}{66}1000\]
+\[ = 91409924241424243424241924242500\]
+\textbf{Theorem 0.2.}
+\newline
+\[B_{2n+1} = 0, \textup{ for } n > 0\]
+\newpage
+\bibliography{References}
+\end{document}

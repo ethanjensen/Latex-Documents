@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{changepage}
+\usetikzlibrary{automata, positioning, arrows, shapes}
+\addtolength{\topmargin}{-0.875in}
+\addtolength{\textheight}{1.75in}
+\title{Math 332 A - Mathematical Statistics}
+\author{Ethan Jensen}
+\date{March 6, 2020}
+
+\begin{document}
+	\maketitle HW p.329 \#44,50 \ p.339 \#6,8
+  \section[20pt]{p. 329 \#44}
+	In a random sample of 300 persons eating lunch at a department store cafeteria, only 102 had dessert. if we use \(\frac{102}{300}=0.34\) as an estimate for the true proportion, with what confidence can we asset that our error is less than 0.05?
+	\newline \newline
+	Since each measurement is a Bernoulli trial, we can assert that our random sample comes from a binomial distribution with paramter \(\theta\).
+	\newline \newline
+	By Theorem 11.7, our error term is \(z_{\alpha/2}\sqrt{\frac{\hat{\theta}(1-\hat{\theta})}{n}}\)
+	\newline
+	We want to find \(\alpha\) such that \(z_{\alpha/2}\sqrt{\frac{\hat{\theta}(1-\hat{\theta})}{n}} = 0.05\).
+	\[z_{\alpha/2}\sqrt{\frac{0.34(0.56)}{300}} = 0.05\]
+	\[z_{\alpha/2} = 1.9847\].
+	\newline
+	Referencing Table 3 we have
+	\[\alpha/2 = 0.0236\]
+	\[1 - \alpha = 0.9528\]
+	\newline
+	\boxed{\textup{We can say with 95.28\% confidence that our error is less than 0.05.}}
+	\newpage
+	\section[20pt]{p. 329 \#50}
+	Among 500 marriage license applications chosen at random in a given year, there were 48 in which the woman was at least one year older than the man, and among 400 marriage license applications chosen at random six years later, there were 68 in which the woman was at least one year older than the man. Construct a 99\% confidence interval for the difference between the corresponding true proportions of marriage license applications in which the woman was at least one year older than the man.
+	\newline \newline
+	Let \(\hat{\theta_1} = \frac{68}{400} = 0.17\) and \(\hat{\theta_2} = \frac{48}{500} = 0.096\)
+	\newline \newline
+	By Theorem 11.8, the center of our confidence interval will be \(\hat{\theta_1}-\hat{\theta_2} = 0.17 - 0.096 = 0.074\).
+	\newline
+	By Theorem 11.8, our error term will be
+	\[E = z_{\alpha/2}\cdot \sqrt{\frac{\hat{\theta_1}(1-\hat{\theta_1})}{n_1} + \frac{\hat{\theta_2}(1-\hat{\theta_2})}{n_2}}\]
+	\[E = z_{0.005}\cdot \sqrt{\frac{0.17(0.83)}{400} + \frac{0.096(0.904)}{500}}\]
+	\[E = z_{0.005}\cdot 0.02294\]
+	\[E = 2.575\cdot 0.02294 = 0.0591\]
+	\newline
+	\boxed{\textup{The 99\% confidence interval for the difference between the true proportions is }(0.0149, 0.1131)}
+	\newpage
+	\section[20pt]{p. 339 \#6}
+	A single observation of a random variable having an exponential distribution is used to test the null hypothesis that the mean of the distribution is \(\theta = 2\) against the alternative that it is \(\theta = 5\). If the null hypothesis is accepted if and only if the observed value of the random variable is less than 3, find the probabilities of a type I and type II errors.
+	\newline \newline
+	The probability density of an exponential distribution is given by
+	\[f(x) = \frac{1}{\theta}e^{-x/\theta},\ 0 < x < \infty\]
+	The probability \(\alpha\) of a type one error is thus
+	\[\alpha = \int_{3}^{\infty}\frac{1}{2}e^{-x/2}dx\]
+	\boxed{\alpha = 0.2231}
+	\newline
+	The probability \(\beta\) of a type two error is thus
+	\[\beta = \int_{0}^3\frac{1}{5}e^{-x/5}dx\]
+	\boxed{\beta = 0.4512}
+	\newpage
+	\section[20pt]{p. 339 \#8}
+	A single observation of a random variable having a uniform density with \(\alpha = 0\) is used to test the null hypothesis \(\beta = \beta_0\) against the alternative hypothesis \(\beta = \beta_0 + 2\). If the null hypothesis is rejected if and only if the random variable takes on a value greater than \(\beta_0 + 1\), find the probabilities of type I and type II errors.
+	\newline \newline
+	The probability density of a uniform distribution is given by
+	\[f(x) = \frac{1}{\beta - \alpha},\ \alpha < x < \beta\]
+	The probability \(\alpha\) of a type one error is thus
+	\[\alpha = \int_{\beta_0 + 1}^{\beta_0 + 2}\frac{1}{\beta_0}dx\]
+	\boxed{\alpha = \frac{1}{\beta_0}}
+	\newline
+	The probability \(\beta\) of a type two error is thus
+	\[\beta = \int_{0}^{\beta_0 + 1}\frac{1}{\beta_0 + 2}dx\]
+	\boxed{\beta = 1 - \frac{1}{\beta_0 + 2}}
+\end{document}

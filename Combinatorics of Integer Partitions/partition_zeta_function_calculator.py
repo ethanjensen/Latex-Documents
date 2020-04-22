@@ -159,12 +159,39 @@ def addFractions(fracList):
         outputfraction = (int(n/math.gcd(n,d)), int(d/math.gcd(n,d)))
     return outputfraction
 
+def computePartitionZeta(partition):
+    if len(list(partition.values())) == 1 and list(partition.values())[0] == 1:
+        return zetaValues[list(partition.keys())[0]-1]
+    else:
+        allCombos = getRecombinationList(partition)
+        fracList = [getFractionFor((allCombos[0][0],1))]
+        multiplier = allCombos[0][1]
+        del allCombos[0]
+        for pair in allCombos:
+            fraction = computePartitionZeta(pair[0])
+            fraction = (-fraction[0]*pair[1], fraction[1])
+            fracList.append(fraction)
+        outputFraction = addFractions(fracList)
+        outputFraction = (outputFraction[0], outputFraction[1]*multiplier)
+        return outputFraction
+
 zetaValues = [(1,6)]
+def computeAllZeta(n):
+    for i in range(2,n+1):
+        zetaValues.append(getEvenZeta(i))
 
-n = int(input("Calculate Zeta(2n). Select a value for n> "))
-for i in range(2,n+1):
-    zetaValues.append(getEvenZeta(i))
+n = int(input("Calculate Zeta partitions of size n. Select a value for n> "))
 
-print(zetaValues[n-1][0],"/",zetaValues[n-1][1],"* pi^",2*n,sep='')
+def computeAllPartitionZeta(n):
+    computeAllZeta(n)
+    comboList = []
+    partitions = getRecombinations({1:n})
+    for partition in partitions:
+        comboList.append((partition, computePartitionZeta(partition)))
+    return comboList
 
-# print(addFractions([(1,53760*2),(-1,729000*2)]))
+print(computeAllPartitionZeta(n))
+fracList = []
+for pair in computeAllPartitionZeta(n):
+    fracList.append(pair[1])
+print(addFractions(fracList))

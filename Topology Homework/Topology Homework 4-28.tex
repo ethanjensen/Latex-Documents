@@ -1,0 +1,262 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{eucal}
+\usepackage{changepage}
+\usetikzlibrary{automata, positioning, shapes, decorations.markings}
+\addtolength{\topmargin}{-0.75in}
+\addtolength{\textheight}{1.75in}
+\addtolength{\evensidemargin}{-0.5in}
+
+\title{Topology Homework 5.1}
+\author{Ethan Jensen}
+\date{April 28, 2020}
+
+\begin{document}
+  \maketitle
+  \noindent
+  \textbf{EXERCISE 5.1}
+  Show that the taxicab metric on \(\mathbb{R}^2\) satisfies the properties of a metric.
+  \newline \newline
+  The taxicab metric on \(\mathbb{R}^2\) is defined by
+  \[d_T(p,q) = |p_1-q_1|+|p_2-q_2|\]
+  \newline
+  \textbf{(1)} \((\rightarrow)\) Let \(d_T(p,q) = 0\).
+  \newline
+  \(|p_1-q_1| + |p_2-q_2| = 0\)
+  \newline
+  Since \(|x| = 0 \implies x = 0,\ \ p_1 - q_1 = 0 \textup{ and } p_2 - q_2 = 0\)
+  \newline
+  So \(p_1 = q_1,\ p_2 = q_2, \textup{ and } p = q\).
+  \newline \newline
+  \((\leftarrow)\) Let p = q.
+  \newline
+  So \(p_1 = q_1 \textup{ and } p_2 = q_2\)
+  \newline
+  So \(d_T(p,q) = |p_1-q_1|+|p_2-q_2| = 0+0 = 0\)
+  \newline
+  Thus, \(d_T(p,q) = 0 \textup{ if and only if } p = q\)
+  \newline \(\square\) \newline
+  \textbf{(2)} \(d_T(p,q) = |p_1 - q_1| + |p_2 - q_2| = |q_1 - p_1| + |q_2 - p_2| = d_T(q,p)\)
+  \newline \(\square\) \newline
+  \textbf{(3)} Consider \(d_T(p,q) + d_T(q,r)\)
+  \newline
+  \(d_T(p,q) + d_T(q,r) = |p_1-q_1| + |p_2-q_2| + |q_1-r_1| + |q_2-r_2|\)
+  \newline
+  \(|x| + |y| \geq |x+y|\ \forall x,y\)
+  \newline
+  \[d_T(p,q) + d_T(q,r) \geq |p_1-q_1 + q_1-r_1| + |p_2-q_2 + q_2-r_2|\]
+  \[d_T(p,q) + d_T(q,r) \geq |p_1-r_1| + |p_2-r_2|\]
+  \[d_T(p,q) + d_T(q,r) \geq d_T(p,r)\]
+  \(\square\)
+  \newline
+  \(\therefore\) The taxicab metric on \(\mathbb{R}^2\) satisfies the properties of a metric.
+  \newline \(\blacksquare\)
+  \newpage
+  \noindent
+  \textbf{EXERCISE 5.2}
+  \newline
+  \textbf{(a)} Show that the max metric on \(\mathbb{R}^2\) satisfies the properties of a metric.
+  \newline
+  \textbf{(b)} Explain why \(d(p,q) = \textup{min}\{|p_1-q_1|,|p_2-q_2|\}\) does not define a metric on \(\mathbb{R}^2\).
+  \newline \newline
+  The max metric on \(\mathbb{R}^2\) is defined by
+  \[d_M(p,q) = \textup{max}\{|p_1-q_1|+|p_2-q_2|\}\]
+  \newline
+  \textbf{(a) (1)} \((\rightarrow)\) Let \(d_M(p,q) = 0\)
+  \newline
+  \(\textup{max}\{|p_1-q_1|+|p_2-q_2|\} = 0\)
+  \newline
+  So \(p_1-q_1 = 0 \textup{ and } p_2-q_2 = 0\)
+  \newline
+  So \(p_1 = q_1,\ p_2 = q_2\) and \(p = q\)
+  \newline \newline
+  \((\leftarrow)\) Let \(p = q\)
+  \newline
+  So \(p_1 = q_1\) and \(p_2 = q_2\)
+  \newline
+  So \(d_M(p,q) = \textup{max}\{|p_1-q_1|,|p_2-q_2|\} = \textup{max}\{0,0\} = 0\)
+  \newline
+  Thus, \(d_M(p,q) = 0\) if and only if \(p = q\).
+  \newline \(\square\) \newline
+  \textbf{(2)} \(d_M(p,q) = \textup{max}\{|p_1-q_1|,|p_2-q_2|\} = \textup{max}\{|q_1-p_1|,|q_2-p_2|\} = d_M(q,p)\)
+  \newline \(\square\) \newline
+  \textbf{(3)} Consider \(d_M(p,q) + d_M(q,r)\).
+  \newline
+  \(d_M(p,q) + d_M(q,r) = \textup{max}\{|p_1-q_1|,|p_2-q_2|\} + \textup{max}\{|q_1-r_1|,|q_2-r_2|\}\)
+  \newline
+  \(\textup{max}\{a,b\} + \textup{max}\{c,d\} \geq \textup{max}\{a+c, b+d\} \forall a,b,c,d\)
+  \newline
+  \[d_M(p,q) + d_T(q,r) \geq \textup{max}\{|p_1-q_1| + |q_1-r_1|, |p_2-q_2| + |q_2-r_2|\}\]
+  \(|x| + |y| \geq |x+y|\ \forall x,y\)
+  \[d_M(p,q) + d_T(q,r) \geq \textup{max}\{|p_1-q_1 + q_1-r_1|, |p_2-q_2 + q_2-r_2|\}\]
+  \[d_M(p,q) + d_T(q,r) \geq \textup{max}\{|p_1 - r_1|, |p_2 - r_2|\}\]
+  \[d_M(p,q) + d_M(q,r) \leq d_M(p,r)\]
+  \(\square\)
+  \newline
+  \(\therefore\) The max metric on \(\mathbb{R}^2\) satisfies the properties of a metric.
+  \newline \(\blacksquare\) \newline \newline
+  \textbf{(b)} Consider the function \(d(p,q) = \textup{min}\{|p_1-q_1|,|p_2-q_2|\}\).
+  \newline \newline
+  Consider the points \(p = (0,0),\ q = (0,2),\ r = (1,2)\)
+  \newline
+  By our definition, \(d(p,q) = 0,\ d(q,r) = 0,\ d(p,r) = 1\)
+  \newline \newline
+  So it is not the case that \(d(p,q) + d(q,r) \geq d(p,r)\ \forall p,q,r\)
+  \newline \newline
+  This function is not a metric because it violates the 3rd property for a metric.
+  \newline \(\blacksquare\)
+  \newpage
+  \noindent
+  \textbf{EXERCISE 5.3} For points \(p = (p_1,p_2)\) and \(q = (q_1,q_2)\) in \(\mathbb{R}^2\) define
+  \[d_V(p,q) = \left\{\begin{array}{ccc}1 \ \ \ \ \ \ \ \ \ \textup{ if } p_1 \neq q_1 \textup{ or } |p_2 - q_2|\geq 1\ \ \\ |p_2-q_2| \textup{ if } p_1 = q_1 \textup{ and } |p_2-q_2| < 1\end{array}\right.\]
+  \newline
+  \textbf{(a)} Show that \(d_V\) is a metric.
+  \newline
+  \textbf{(b)} Describe open balls in the metric \(d_V\).
+  \newline \newline
+  \textbf{(a) (1)} \((\rightarrow)\) Let \(d_V(p,q) = 0\)
+  \newline
+  \(d_V(p,q) \neq 1\) so \(d_V = |p_2-q_2| \textup{ and } p_1 = q_1\)
+  \newline
+  So \(|p_2-q_2| = 0\) and \(p_2 = q_2\)
+  \newline
+  Thus, \(p = q\)
+  \newline \newline
+  \((\leftarrow)\) Let p = q.
+  \newline
+  So \(p_1 = q_1 \textup{ and } p_2 = q_2\)
+  \newline
+  So \(|p_2 - q_2| = 0 < 1\)
+  Thus, \(d_V(p,q) = |p_2 - q_2| = 0\)
+  \newline \(\square\) \newline
+  \textbf{(2)} Since equality and inequality is symmetric and \(|-x| = |x|\ \forall x\),
+  \newline
+  \(d_V(q,p) =  \left\{\begin{array}{ccc}1 \ \ \ \ \ \ \ \ \ \textup{ if } q_1 \neq p_1 \textup{ or } |q_2 - p_2|\geq 1\ \ \\  |q_2-p_2| \textup{ if } q_1 = p_1 \textup{ and } |q_2-p_2| < 1\end{array}\right. = d_V(p,q)\)
+  \newline \(\square\) \newline
+  \textbf{(3)}
+  Case 1: Either \(d_V(p,q)\) or \(d_V(q,r)\) is 1.
+  \newline
+  \(d_V(p,q) \leq 1\ \forall p,q\)
+  \newline
+  \(d_V(p,q) + d_V(q,r) \geq d_V(p,r)\)
+  \newline \newline
+  Case 2: \(p_1 = q_1\), \(q_1 = r_1\), and \(|p_2-q_2| < 1\) and \(|q_2-r_2| < 1\).
+  \newline
+  This means \(p_1 = r_1\), by the transitive property of equality.
+  \newline
+  \(d_V(p,r) \geq |p_2 - r_2|\)
+  \newline
+  \(|p_2-q_2| + |q_2-r_2| \geq |(p_2-q_2) + (q_2-r_2)| = |p_2 - r_2|\)
+  \newline
+  So \(|p_2-q_2| + |q_2-r_2| \geq d_V(p,r)\)
+  \newline
+  Thus, \(d_V(p,q) + d_V(q,r) \geq d_V(p,r)\)
+  \newline \newline
+  In all cases, \(d_V(p,q) + d_V(q,r) \geq d_V(p,r)\)
+  \newline \(\square\) \newline
+  \(d_V(p,q)\) satisfies all three conditions for a metric.
+  \newline \(\blacksquare\) \newline
+  \textbf{(b)} The shape of open balls centered at some point p depends on the radius.
+  \newline \newline
+  If \(r \leq 1\), then \(B_V(p,r) = \{q:\ p_1 = q_1 \textup{ and }|p_2-q_2| < r\}\) looks like a vertical open interval centered at p, with a width equal to 2r.
+  \newline \newline
+  If \(r > 1\), then \(B_V(p,r) = \mathbb{R}\)
+  \newpage
+  \noindent
+  \textbf{EXERCISE 5.9}
+  \newline
+  Let \((X,d)\) be a metric space. A set \(U \subseteq X\) is open in the topology induced by d if and only if for each \(y \in U\), there is a \(\delta > 0\) such that \(B_d(y,\delta) \subseteq U\).
+  \newline
+  \newline
+  \textbf{Proof.}
+  \newline
+  \((\rightarrow)\)
+  Let \(U \subseteq X\) be open in the topology on X induced by d. And let \(y \in U\)
+  \newline \newline
+  Since U is open in (X,d), U can be written as a union of open balls.
+  \newline
+  So, \(\exists B_d(p,r) \subseteq U \ni y \in B_D(p,r)\)
+  \newline \newline
+  Let \(\delta = r - d(p,y)\).
+  \newline
+  \(\delta > 0\) since \(y \in B_D(p,r)\).
+  \newline
+  Consider \(B_d(y,\delta) = \{q:\ d(y,q) < r - d(p,y)\}\)
+  \newline \newline
+  \(\forall q \in B_d(y, \delta),\ d(p,y) + d(y,q) \geq d(p,q)\) since d is a metric.
+  \newline
+  So \(d(p,q) < d(p,y) + r - d(p,y)\) and thus, \(d(p,q) < r\)
+  \newline
+  So \(q \in B_d(p,r)\ \forall q \in B_d(y,\delta)\)
+  \newline
+  Thus, \(B_d(y,\delta) \subseteq B_d(p,r) \subseteq U\)
+  \newline \(\square\) \newline
+  \((\leftarrow)\) Consider some open \(U \subseteq X\) where for each \(y \in U\), there is a \(\delta > 0\) such that \(B_d(y,\delta) \subseteq U\).
+  \newline
+  By the Union lemma, \(U = \bigcup_{y \in U}B_d(y,\delta_y)\)
+  \newline
+  Each \(B_d(y, \delta_y)\) is a basis element in the metric space defined by d.
+  \newline
+  So U is a union of basis elements, which makes it open in the topology induced by d.
+  \newline \(\square\) \newline
+  \(\therefore\) A set \(U \subseteq X\) is open in the topology induced by d if and only if for each \(y \in U\), there is a \(\delta > 0\) such that \(B_d(y,\delta) \subseteq U\).
+  \newline \(\blacksquare\)
+  \newpage
+  \noindent
+  \textbf{EXERCISE 5.15}
+  \newline
+  Let \((X,d)\) be a metric space and assume that \(A \subseteq X\). Prove that \(x \in \textup{Cl}(A)\) if and only if there exists a sequence in A converging to x.
+  \newline \newline
+  \textbf{Proof.}
+  \newline
+  \((\rightarrow)\) Assume \(x \in \textup{Cl}(A)\).
+  \newline
+  Then, every open set containing x intersects A at a point other than x.
+  \newline \newline
+  Consider the sequence of open balls \(B_d(x, \frac{1}{n})\) where \(n \in \mathbb{Z}_+\).
+  \newline
+  Then let \(q_n \neq x\) be the point of intersection between \(b_d(x, \frac{1}{n})\) and A.
+  \newline
+  Then define \(\{q_n\}\) as the sequence of the points \(q_n\).
+  \newline \newline
+  Consider some open set U where \(x \in U\).
+  \newline
+  Then by Theorem 5.6, \(\exists B_d(x,\delta) \subseteq U\).
+  \newline
+  Since the set of rational numbers is dense, \(\exists a,b \in \mathbb{Z}_+ \ni 0 < \frac{a}{b} < \delta\).
+  \newline
+  So \(\exists b \in \mathbb{Z}_+ \ni 0 < \frac{1}{b} < \delta\)
+  \newline
+  So \(\exists b \in \mathbb{Z})_+ \ni B_d(x, \frac{1}{n}) \subseteq B_d(x, \delta) \subseteq U\) for all \(n \geq b\).
+  \newline
+  Thus, \(q_n \in U\) for all \(n \geq b\).
+  \newline \newline
+  So for every open set U containing x, \(\exists b \in \mathbb{Z}_+ \ni q_n \in U\) for all \(n \geq b\).
+  \newline
+  So the sequence \(\{q_n\}\) converges to x.
+  \newline \(\square\) \newline
+  \((\leftarrow)\) Assume that there exists a sequence \(\{a_n\}\) in A converging to x.
+  \newline
+  Let U be an open set containing x.
+  \newline
+  If \(x \in A\), then \(x \in \textup{Cl}(A)\).
+  \newline
+  Otherwise, since the sequence \(\{a_n\} \subseteq A\), U intersects A at one of the sequence values, all of which cannot be equal to x, since \(x \notin A\).
+  \newline \newline
+  So every open set containing X intersects A at a point other than x.
+  \newline
+  So x is a limit point of A.
+  \newline
+  Thus, \(x \in \textup{Cl}(A)\).
+  \newline
+  In all cases, \(x \in \textup{Cl}(A)\).
+  \newline \(\square\) \newline
+  \(\therefore x \in \textup{Cl}(A)\) if and only if there exists a sequence in A converging to x.
+  \newline \(\blacksquare\)
+\end{document}

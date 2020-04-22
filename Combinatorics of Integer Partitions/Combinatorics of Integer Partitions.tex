@@ -1,0 +1,270 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{tikz}
+\usepackage{changepage}
+\usetikzlibrary{automata, positioning, shapes, arrows}
+\addtolength{\topmargin}{-0.875in}
+\addtolength{\textheight}{1.75in}
+
+\title{Combinatorics of Integer Partitions}
+\author{Ethan Jensen}
+\date{March 8, 2019}
+\begin{document}
+	\maketitle
+	\tikzset{
+		->, % makes the edges directed
+		>=triangle 45, % makes the arrow heads bold
+		node distance=3cm, % specifies the minimum distance between two nodes. Change if necessary.
+		every state/.style={thick, fill=gray!10}, % sets the properties for each ’state’ node
+		initial text=$ $, % sets the text that appears on the start arrow
+	}
+\bibliographystyle{ieeetran}
+\definecolor{mycolor1}{RGB}{230,230,230}
+\definecolor{mycolor2}{RGB}{210,210,210}
+\definecolor{mycolor3}{RGB}{190,190,190}
+\textbf{Abstract.} This paper examines the connection between combinatorics and positive even values of the Riemann Zeta function. This paper expands on work done by Euler in 1734 in solving the Basel problem. We show how the combinatorics of partitions generalizes his method, producing a recursive algorithm to compute subsequent even zeta values.
+\section{Introduction}
+A partition \(\lambda\) of a number n is a way of expressing n as a sum of positive integers. Two partitions are considered equal if and only if they contain the same summands. Let \(\lambda = (\lambda_1, \lambda_2, \lambda_3...)\) denote a generic partition. Let \(|\lambda|\) be the sum of the parts of \(\lambda\), \(N(\lambda)\) be the norm or product of parts of \(\lambda\), and \(l(\lambda)\) be the length or number of parts of \(\lambda\). Let \(\lambda \vdash n\) mean \(\lambda\) is a partition of n.
+\newline
+Consider the collection of all partions of 4.
+\[\{\lambda|\ \lambda \vdash 4\}=\{(1,1,1,1),(1,1,2),(1,3),(2,2),(4)\}\]
+We can generalise this idea further. We can say that \(\lambda' \vdash \lambda\) if the elements of \(\lambda'\) can be grouped such that the sum of each set of elements corresponds to a corresponding element in \(\lambda\).
+For example,
+\[\{\lambda|\ \lambda \vdash (2,3)\} = \{(1,1,1,1,1),(1,1,1,2),(1,1,3),(1,2,2),(2,3)\}\]
+\[\{\lambda|\ (1,1,2) \vdash \lambda\} = \{(1,1,2),(1,3),(2,2),(4)\}\]
+For any two partitions \(\lambda\) and \(\lambda'\), \(\lambda\) is said to be \textbf{coarser} than \(\lambda'\) if and only if \(\lambda' \vdash \lambda\). \(\lambda\) is said to be \textbf{finer} than \(\lambda'\) if \(\lambda \vdash \lambda'\). \newline \newline
+Let \(\lambda_1|\lambda_2\) be the \textit{concatenation} of \(\lambda_1\) and \(\lambda_2\).
+\newline
+\textbf{Definition 0.1} \newline
+Let \(n \in \mathbb{Z}_+\), and let \(a_n,b_n\), and \(c_n\) be the number of copies of n in \(\lambda_1,\lambda_2\), and \(\lambda'\), respectively. Then, \(\lambda_1|\lambda_2 = \lambda'\) if and only if \(a_n+b_n=c_n,\ \forall n\).
+\newline \newline
+Let \(r(\lambda, \lambda')\) be the number of ways \(\lambda\) can be recombined into \(\lambda'\).
+\newline \newline
+This combinatorial problem is analagous to determining all the possible ways a given set of blocks can be placed in a given set of holes. We call this problem the \textbf{Blocks and Holes Problem}.
+\newpage
+\section{Blocks and Holes}
+	\textbf{Example.} Determine the number of ways the blocks \((1,1,2)\) can be distributed into the holes \((1,3)\).
+\begin{figure}[ht]
+	\centering % centers the figure
+	\begin{tikzpicture}[inner sep=3mm]
+\node[draw,fill=mycolor1] (B1) at (0,0) {};
+\node[draw,fill=mycolor1] (B2) at (1,0) {};
+\node[draw,fill=mycolor1] (B3) at (2,0) {};
+\node[draw,fill=mycolor1] (B4) at (2,0.6) {};
+\node[] (L1) at (0,-0.6) {$B_1$};
+\node[] (L1) at (1,-0.6) {$B_2$};
+\node[] (L1) at (2,-0.6) {$B_3$};
+\node[] (L1) at (1,1.8) {Blocks};
+\node[] (L1) at (4.5,1.8) {Holes};
+\node[] (L1) at (4,0) {$H_1$};
+\node[] (L1) at (5,0) {$H_2$};
+\node[draw,fill=mycolor2,dashed] (H1) at (4,-0.6) {};
+\node[draw,fill=mycolor2,dashed] (H2) at (5,-0.6) {};
+\node[draw,fill=mycolor2,dashed] (H3) at (5,-1.2) {};
+\node[draw,fill=mycolor2,dashed] (H4) at (5,-1.8) {};
+\end{tikzpicture}
+	\caption{Blocks and Holes Scenario (1)}
+\end{figure}
+\begin{figure}[ht]
+	\centering % centers the figure
+	\begin{tikzpicture}[inner sep=3mm]
+	\node[draw,fill=mycolor1] (B1) at (0,0) {};
+	\node[draw,fill=mycolor1] (B2) at (1.5,0) {};
+	\filldraw[fill=mycolor1] (1.8,-0.3) rectangle (1.2,-1.5);
+	\node[] (L1) at (0.6,0) {$B_1$};
+	\node[] (L1) at (2.1,0) {$B_2$};
+	\node[] (L1) at (2.1,-0.6) {$B_3$};
+	\node[] (L1) at (1,1) {1};
+	\node[] (L1) at (4.5,1) {2};
+
+	\node[draw,fill=mycolor1] (B1) at (3.5,0) {};
+	\node[draw,fill=mycolor1] (B2) at (5,0) {};
+	\filldraw[fill=mycolor1] (5.3,-0.3) rectangle (4.7,-1.5);
+	\node[] (L1) at (4.1,0) {$B_2$};
+	\node[] (L1) at (5.6,0) {$B_1$};
+	\node[] (L1) at (5.6,-0.6) {$B_3$};
+
+	\end{tikzpicture}
+	\caption{Blocks and Holes Solution (1)}
+\end{figure}
+\newline
+So \(r((1,1,2), (3)) = 2\).
+\newline
+\textbf{Lemma 1.1.} \textit{for} \(k \geq 0\) we have
+\[\{\lambda|\ \overbrace{(1,1,1...)}^k \vdash \lambda\} = \{\lambda|\ \lambda \vdash k\}\]
+\textbf{Proof.} \newline
+It is easy to see that both sets are equal to \(\{\lambda|\ |\lambda| = k\}\)
+\newline \(\blacksquare\) \newline
+\textbf{Lemma 1.2} \textit{Let} \(\lambda\) \textit{be a partition,} \(|\lambda| = nk\) \textit{, and} \(x|n\ \forall x \in \lambda\) \textit{. then,}
+\[r((\overbrace{k,k,k,...})^n,\lambda) = \frac{k!}{\prod_{x \in \lambda}\left(\frac{x}{n}\right)!}\]
+\textbf{Proof.} \newline
+By the multinomial theorem,
+\[r((\overbrace{1,1,1,..}^k), \lambda) = \frac{k!}{\prod_{x \in \lambda}x!}\]
+Scaling each element in \(\lambda\) by n, we have \[r((\overbrace{n,n,n,..}^k), \lambda') = \frac{k!}{\prod_{x \in \lambda'}\left(\frac{x}{n}\right)!}\]
+\(\blacksquare\)
+\newpage
+\section{Partition Zeta Functions}
+\textbf{Definition 1.1}
+\[S(\lambda) = \{x \in \mathbb{Z}_+^{|\lambda|}|\ \exists q \in \mathbb{Z}_+^{l(\lambda)} \ni x \newline \textup{ contains } \lambda_i \textup{ copies of } q_i \forall i\}\]
+\[S'(\lambda) = \{x' \in \mathbb{Z}_+^{|\lambda|}|\ \exists q \in \mathbb{Z}_+^{l(\lambda)} \ni x' \newline \textup{ contains } \lambda_i \textup{ copies of } q_i,\ q_i < q_{i+1} \forall i\}\]
+For all \(x_1,x_2 \in S(\lambda)\), \(x_1 = x_2\) if any only if \((x_1)_i = (x_2)_i\ \forall i\). \newline
+For all \(x_1',x_2' \in S'(\lambda)\), \(x_1' = x_2'\) if and only if \(x_1\) is a permutation of \(x_2\).
+\newline
+In \(S(\lambda)\), elements are treated as tuples, while elements in \(S'(\lambda)\) are treated as tuples that are equivalent up to permutation.
+\newline
+\textbf{Definition 1.2}
+\[\zeta_s(\lambda) = \sum_{x \in S(\lambda)}\frac{1}{N(x)^s}\]
+\[\zeta_s'(\lambda) = \sum_{x \in S'(\lambda)}\frac{1}{N(x)^s}\]
+\textbf{Theorem 1.1}
+\[\zeta_s(\lambda_1|\lambda_2) = \zeta_s(\lambda_1)\zeta_s(\lambda_2)\]
+\textbf{Proof.}
+\newline
+By Definition 1.2.
+\[\zeta_s(\lambda_1|\lambda_2) = \sum_{x \in S(\lambda_1|\lambda_2)}\frac{1}{N(x)^s}\]
+\(x = x_1|x_2\) where \(x_1\in S(\lambda_1), x_2 \in S(\lambda_2)\)
+\[\zeta_s(\lambda_1|\lambda_2) = \sum_{x_1|x_2}\frac{1}{N(x_1|x_2)^s}\]
+\[\zeta_s(\lambda_1|\lambda_2) = \sum_{x_1 \in S(\lambda_1)}\sum_{x_2 \in S(\lambda_2)}\frac{1}{N(x_1)^sN(x_2)^s}\]
+\[\zeta_s(\lambda_1|\lambda_2) = \sum_{x_1 \in S(\lambda_1)}\frac{1}{N(x_1)^s}\sum_{x_2 \in S(\lambda_2)}\frac{1}{N(x_2)^s}\]
+\[\therefore \zeta_s(\lambda_1|\lambda_2) = \zeta_s(\lambda_1)\zeta_s(\lambda_2)\]
+\(\blacksquare\) \newline
+\textbf{Theorem 1.2}
+\[\zeta_s(\lambda) = \sum_{\lambda',\ \lambda \vdash \lambda'} r(\lambda,\lambda')\zeta_s'(\lambda')\]
+\textbf{Proof.}
+\newline
+By Definition 1.1.
+\[S(\lambda) = \{x \in \mathbb{Z}_+^{|\lambda|}|\ \exists q \in \mathbb{Z}_+^{l(\lambda)} \ni x \newline \textup{ contains } \lambda_i \textup{ copies of } q_i \forall i\}\]
+Consider the generating tuple, q, for \(S(\lambda)\) and \(S'(\lambda)\). In \(S(\lambda)\), q can contain duplicate elements. Each way in which q can have duplicate elements corresponds to a new recombination, \(\lambda'\), of \(\lambda\). In this way, \(S(\lambda)\) can be disjointly partitioned into smaller sets, whose elements are in some \(S'(\lambda')\), or are permutations of a tuple in some \(S'(\lambda')\).
+\newline \newline
+The sum over a set is equal to the sum over the partion of that set. Since partitions are equivalent up to permutation, the multiplicity of smaller sets is captured by \(r(\lambda, \lambda')\).
+\[\therefore \zeta_s(\lambda) = \sum_{\lambda',\ \lambda \vdash \lambda'} r(\lambda,\lambda')\zeta_s'(\lambda')\]
+\(\blacksquare\)
+\textbf{Theorem 1.3}
+\[\zeta_s(k) = \zeta(sk)\]
+\textit{Where }\(\zeta(s)\)\textit{ is the Riemann Zeta function.}
+\newline
+\textbf{Proof.}
+\newline
+By Definition 1.1 we have
+\[S(k) = \{x\in Z_+^k|\ \exists q \in Z_+ \ni x \textup{ contains k copies of } q_0\}\]
+\[\zeta_s(k) = \sum_{q_0 \in \mathbb{Z}_+}\left(\prod_{n=1}^kq_0\right)^{-s}\]
+\[\zeta_s(k)=\sum_{q_0\in \mathbb{Z}_+}q^{-ks}=\sum_{n=1}^{\infty}\frac{1}{n^{sk}}\]
+\[\therefore \zeta_s(k) = \zeta(ks)\]
+\(\blacksquare\) \newline
+Indeed, we see \(\zeta_s(\lambda)\) is a generalization of the Riemann Zeta function.
+\newline
+\textbf{Theorem 1.4}
+\[\zeta_2'(\overbrace{1,1,1,...}^n) = \frac{\pi^{2n}}{(2n+1)!}\]
+\textbf{Proof.}
+\newline
+Comparing the Maclaurin series with the Euler product of sinh(x)\cite{gardiner2002understanding}, we have
+\[\frac{\sinh(\pi x)}{\pi x} = 1 + \frac{\pi^2x^2}{3!} + \frac{\pi^4x^4}{5!} + \frac{\pi^6x^6}{7!} +...=\left(1+\frac{x^2}{1^2}\right)\left(1+\frac{x^2}{2^2}\right)\left(1+\frac{x^2}{3^2}\right)...\]
+In the Maclaurin expansion we see that the coefficient of \(x^{2n}\) is \(\frac{\pi^{2n}}{(2n+1)!}\).
+\newline
+Turning the product of sums on the left into a sum of products, we can determining the coefficients of \(x^{2n}\) individually.
+\[\frac{\pi^{2n}}{(2n+1)!} = \sum_xN(x)^{-2},\ \ \textup{where each element of x is distinct.}\]
+\[\frac{\pi^{2n}}{(2n+1)!} = \sum_xN(x)^{-2},\ \ x \in S'(\overbrace{1,1,...}^n)\]
+\[\therefore \zeta_2'(\overbrace{1,1,1,...}^n) = \frac{\pi^{2n}}{(2n+1)!}\]
+\(\blacksquare\)
+\newline
+\textbf{Theorem 1.5} Let \(|\lambda| = n\). for \(n = 1,2,3...\)\ Then,
+\[\zeta_2(\lambda) = \pi^{2n} \times \textup{\textit{rational number}}.\]
+\textbf{Proof.}
+\newline
+\(\zeta_2(1) = \frac{\pi^2}{6}\) by Theorem 1.4.
+\newline
+The property holds for n = 1.
+\newline \(\square\) \newline
+\textbf{Induction Hypothesis:} Assume \(\zeta_2(\lambda) = \pi^{2n} \times \textup{\textit{rational number}}\) holds for \(|\lambda| = n\), and for n = 1,2,3,...k. for some k.
+\newline
+\textbf{Induction step:} Consider \(\zeta_2(\overbrace{1,1,1,...}^k+1)\).
+\newline
+By Theorem 1.2, we have
+\[\zeta_2(\overbrace{1,1,1,...}^{k+1}) = \sum_{\lambda \vdash k+1}r((\overbrace{1,1,1...}^{k+1}, \lambda)\zeta_s'(\lambda)\]
+For each \(\lambda \vdash k+1\), we can construct a similar linear equation using Theorem 1.2.
+\newline \newline
+Except for the equation \(\zeta_2(k+1) = \zeta_2'(k+1)\), each term \(\zeta_2(\lambda)\) appearing on the left hand side can be decomposed via Theorem 1.1. Each part in the decomposition is a rational multiple of \(\pi^{2(k+1)}\) by the Induction Hypothesis.
+\newline \newline
+We also know the value of \(\zeta_2(\overbrace{1,1,1...}^{k+1})\), which by Theorem 1.4 is also a rational multiple of \(\pi^{2(k+1)}\).
+\newline \newline
+Thus, we have a collection of linearly independent linear equations, with the same number of equations as unknowns.
+\newline Thus, by closure, every term appearing in these equations is a rational multiple of \(\pi^{2(k+1)}\).
+\newline \(\square\)
+\[\therefore \zeta_2(\lambda) = \pi^{2n} \times \textup{\textit{rational number} for }|\lambda| = n,\textup{ and for }n = 1,2,3,...\]
+\(\blacksquare\) \newline
+\textbf{Corollary 1.1}
+\[\zeta(2n) = \pi^{2n} \times \textup{\textit{rational number}}\]
+This easily follows from Theorems 1.3 and 1.5.
+\newline \(\blacksquare\) \newline
+Theorem 1.5 demonstrates the power that comes from exploring the connection between multiplication and addition. One equation (the one described in Theorem 1.4) encodes all the information of the partition zeta functions of order 2. Using a computer algorithm, several of the rational coefficients of the partition zeta values of order 2 are generated.
+\newpage
+\begin{align*}
+	& \zeta_2'(1) = \frac{\pi^2}{6} \\ \\
+	& \zeta_2'(1,1) = \frac{\pi^4}{120}\ \ \zeta_2'(2) = \frac{\pi^4}{90} \\ \\
+	& \zeta_2'(1,1,1) = \frac{\pi^6}{5040}\ \ \zeta_2'(1,2) = \frac{\pi^6}{1260}\ \ \zeta_2'(3) = \frac{\pi^6}{945} \\ \\
+	& \zeta_2'(1,1,1,1) = \frac{\pi^8}{362880}\ \ \zeta_2'(1,1,2) = \frac{\pi^8}{45360}\ \ \zeta_2'(1,3) = \frac{\pi^8}{14175} \\ & \zeta_2'(2,2) = \frac{\pi^8}{113400}\ \ \zeta_2'(4) = \frac{\pi^8}{9450} \\ \\
+	& \zeta_2'(1,1,1,1,1) = \frac{\pi^{10}}{39916800}\ \ \zeta_2'(1,1,1,2) = \frac{\pi^{10}}{2993760}\ \ \zeta_2'(1,2,2) = \frac{\pi^{10}}{2494800} \\ & \zeta_2'(1,1,3) = \frac{\pi^{10}}{935550}\ \ \zeta_2'(1,4) = \frac{13\pi^{10}}{1871100}\ \ \zeta_2'(2,3) = \frac{\pi^{10}}{534600}\ \ \zeta_2'(5) = \frac{\pi^{10}}{93555}
+	\\ \\
+	& \zeta_2'(1,1,1,1,1,1) = \frac{\pi^{12}}{6227020800} \ \ \zeta_2'(1,1,1,1,2) = \frac{\pi^{12}}{311351040} \\
+	& \zeta_2'(1,1,2,2) = \frac{\pi^{12}}{129729600} \ \ \zeta_2'(1,1,1,3) = \frac{\pi^{12}}{36486450} \ \ \zeta_2'(1,2,3) = \frac{2\pi^{12}}{42567525} \\
+	& \zeta_2'(1,1,4) = \frac{373\pi^{12}}{2043241200} \ \ \zeta_2'(1,5) = \frac{893\pi^{12}}{1277025750} \ \ \zeta_2'(2,2,2) = \frac{\pi^{12}}{681080400} \\
+	& \zeta_2'(2,4) = \frac{239\pi^{12}}{2554051500} \ \ \zeta_2'(3,3) = \frac{8\pi^{12}}{425675250} \ \ \zeta_2'(6) = \frac{691\pi^{12}}{638512875}
+\end{align*}
+\section{Special Sums of Partition Zeta Functions}
+\lefteqn{\textup{Let } \zeta_{\mathcal{P}}(\{s\}^k) = \sum_{l(\lambda)=k}\frac{1}{N(\lambda)^s}
+}
+\lefteqn{\zeta_{\mathcal{P}}(\{s\}^k)=\sum_{\lambda \vdash k}\zeta_s'(\lambda)}
+Then, we have the obvious generating function for \(\zeta_{\mathcal{P}}(\{s\}^k)\).\cite{Schneider_2020}
+\[\prod_{n=1}^{\infty}(1-zn^{-s})^{-1}=\sum_{k=0}^{\infty}\zeta_{\mathcal{P}}(\{s\}^k)z^k\]
+This is very similar to Euler's amazing product form of \(\zeta(s)\).
+\[\prod_{\textup{p prime}}(1-p^{-s})^{-1} = \zeta(s)\]
+Referring to Theorem 1.4., comparing the Maclaurin series of \(\sinh(x)\) with its Euler product generated the exact form for all partition zeta values of order 2. It is promising that further relationships involving parition zeta numbers can be found by considering similar relationships.
+\newline
+\textbf{Theorem 2.1}
+\[\frac{\pi^{2n}}{2^{k-1}(2n+k)!}\sum_{i=0}^{i<k/2}(-1)^i\binom{k}{i}(k-2i)^{2n+k}=\sum_{
+\lambda \vdash n}\zeta_2'(\lambda)\prod_{x \in \lambda}\binom{k}{x}\]
+Where \(n \in \mathbb{N},k \in \mathbb{Z}_+\) and \(x \leq k\ \forall x \in \lambda\)
+\newline
+\textbf{Proof.}
+Consider the proof of k = 2.
+\[\sinh^2(x) = \left(\frac{e^x - e^{-x}}{2}\right)^2 = \frac{e^{2x}-2+e^{-2x}}{4} = \frac{1}{2}(\cosh(2x) - 1)\]
+\[\frac{1}{2}(\cosh(2\pi x) - 1) = \sinh^2(\pi x)\]
+Comparing the Maclaurin expansion of the left with the Euler product of the right, we have
+\[\frac{1}{2}\left(1+\frac{2^2\pi^2x^2}{2!}+\frac{2^4\pi^4x^4}{4!}+\frac{2^6\pi^6x^6}{6!}+...-1\right) = x^2\left(1+\frac{x^2}{1^2}\right)^2\left(1+\frac{x^2}{2^2}\right)^2\left(1+\frac{x^2}{3^2}\right)^2...\]
+\[1 + \frac{2^3\pi^2x^2}{4!} + \frac{2^5\pi^4x^4}{6!} + \frac{2^7\pi^6x^6}{8!}... = \left(1+\frac{x^2}{1^2}\right)^2\left(1+\frac{x^2}{2^2}\right)^2\left(1+\frac{x^2}{3^2}\right)^2...\]
+Now the number of ways of choosing terms from factors has grown to two. Turning the product of sums on the left into a sum of products, we can again determine coefficients of \(x^{2n}\) individually.
+\[\therefore \frac{2^{2n+1}\pi^{2n}}{(2n+2)!} = \sum_{\lambda \vdash n}\zeta_2'(\lambda)\prod_{x \in \lambda}\binom{2}{x}\]
+Where \(x \leq 2\ \forall x \in \lambda\) - corresponding to the fact that the most amount of \(x^2\) terms one can select from a squared factor is 2. For example, if we let n = 5, we have
+\[\frac{2^{11}\pi^{10}}{12!}=2^5\zeta_2'((1,1,1,1,1))+2^3\zeta_2'(1,1,1,2)+2\zeta_2'(1,2,2)\]
+\[\frac{2\pi^{10}}{467775} = \frac{2^5\pi^{10}}{39916800} + \frac{2^3\pi^{10}}{2993760} + \frac{2\pi^{10}}{2494800}\]
+Which, in fact, is correct.
+\newline
+For k = 5 we follow the same process.
+\[\left(\frac{e^x-e^{-x}}{2}\right)^5=\frac{e^{5x}-5e^{3x}+10e^x-10e^{-x}+5e^{-3x}-e^{-5x}}{32}\]
+\[\sinh^5(\pi x)=\frac{1}{16}(\sinh(5\pi x)-5\sinh(3x) + 10\sinh(x))\]
+\[1 + \frac{(5^7 -5\cdot 3^7 + 10)x^2\pi^2}{16\cdot 7!}+\frac{(5^9 -5\cdot 3^9 + 10)x^4\pi^4}{16\cdot 9!}...=\left(1+\frac{x^2}{1^2}\right)^5\left(1+\frac{x^2}{2^2}\right)^5\left(1+\frac{x^2}{3^2}\right)^5...\]
+\[\therefore \frac{(5^{2n+5} - 5\cdot 3^{2n+5} + 10\cdot 1^{2n+5})\pi^{2n}}{16 \cdot (2n+5)!} = \sum_{\lambda \vdash n}\zeta_2'(\lambda)\prod_{x \in \lambda}\binom{5}{x}\]
+Where \(x \leq 5\ \forall x \in \lambda\).
+\newline
+\newline
+The coefficients of \(5^{2n+5},\ 3^{2n+5},\ 1^{2n+5}\) are subsequent binomial coefficients - resulting from the binomial expansion of \(\sinh^k(x)\). With this information, the master formula for all values of k is obvious.
+\[\frac{\pi^{2n}}{2^{k-1}(2n+k)!}\sum_{i=0}^{i<k/2}(-1)^i\binom{k}{i}(k-2i)^{2n+k}=\sum_{
+\lambda \vdash n}\zeta_2'(\lambda)\prod_{x \in \lambda}\binom{k}{x}\]
+Where \(n \in \mathbb{N},k \in \mathbb{Z}_+\) and \(x \leq k\ \forall x \in \lambda\)
+\newline \(\blacksquare\) \newline
+It is easy to see that letting k = 1 results in the formula from Theorem 1.4.
+\[\frac{\pi^{2n}}{(2n+1)!} = \zeta_2'(\overbrace{1,1,1,...}^n)\]
+By letting n = 0, we have
+\[\sum_{i=0}^{i<k/2}(-1)^i\frac{(k-2i)^k}{(k-i)!i!} = 2^{k-1}\]
+By letting n = 1, we have
+\[\sum_{i=0}^{i<k/2}(-1)^i\frac{(k-2i)^{k+2}}{(k-i)!i!}=2^{k-1}\binom{k+2}{k-1}\]
+Subsequent interesting summation formulas exist for n > 1.
+\newline
+\newline
+The formula from Theorem 2.1 might explain why large numbers often appear in the numerator of partition zeta values whose partition contains elements greater than 2 or 3, and not for the finer partitions.
+\newpage
+\bibliography{References}
+\end{document}

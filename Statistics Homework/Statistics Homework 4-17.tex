@@ -1,0 +1,188 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{changepage}
+\usetikzlibrary{automata, positioning, arrows, shapes}
+\addtolength{\topmargin}{-0.875in}
+\addtolength{\textheight}{1.75in}
+\title{Math 332 A - Mathematical Statistics}
+\author{Ethan Jensen}
+\date{April 17, 2020}
+\begin{document}
+\maketitle HW p.380 \#80,\#82\ \ p.378 \#42,\ \ p.448 \#18
+	\section[20pt]{p. 380 \#80}
+Four coins were tossed 160 times and 0,1,2,3, or 4 heads showed, respectively, 19, 54, 58, 23, and 6 times. Use the 0.05 level of significance te suppose that the coins are balanced and randomly tossed.
+\newline \newline
+\(H_0: \textup{The population is binomial with } \theta = 0.5, n = 4\).
+\newline
+\(H_1: \textup{The population is not binomial with } \theta = 0.5, n = 4\).
+\newline
+\(\alpha = 0.05\)
+\newline
+\begin{tabular}{|p{3cm}|p{2cm}|}
+    \hline
+    \textbf{Num. heads} & \textbf{Totals} \\
+    \hline
+    \(0\) & 19 \\
+    \hline
+    \(1\) & 54 \\
+    \hline
+    \(2\) & 58 \\
+    \hline
+    \(3\) & 23 \\
+    \hline
+    \(4\) & 6 \\
+    \hline
+\end{tabular}
+\newline
+The expected values for a binomial population with \(\theta = 0.5, n = 4\) and a sample size of 160 is:
+\newline
+\begin{tabular}{|p{3cm}|p{2cm}|}
+    \hline
+    \textbf{Num. heads} & \textbf{Totals} \\
+    \hline
+    \(0\) & 10 \\
+    \hline
+    \(1\) & 40 \\
+    \hline
+    \(2\) & 60 \\
+    \hline
+    \(3\) & 40 \\
+    \hline
+    \(4\) & 10 \\
+    \hline
+\end{tabular}
+\newline
+\(\sum_{i=0}^4\frac{(f_i-e_i)^2}{e_i} = 18.89167\)
+\newline
+However, the value of \(\chi^2_{\alpha = 0.05, 4} = 9.488\), which is less than our sum.
+\newline
+Thus, we must reject the null hypothesis.
+\newline
+\newline
+\boxed{\textup{The coins are not equally weighted.}}
+\newpage
+	\section[20pt]{p. 380 \#82}
+Each day, Monday through Saturday, a baker bakes three large chocolate cakes, and those not sold on the same day are given away to a food bank. Use the data shown in the following table to test at the 0.05 level of significance whether they may be looked upon as values of a binomial random variable:
+\newline
+\begin{tabular}{|p{2.5cm}|p{2cm}|}
+    \hline
+    \textbf{Number of cakes sold} & \textbf{Number of days} \\
+    \hline
+    \(0\) & 1 \\
+    \hline
+    \(1\) & 16 \\
+    \hline
+    \(2\) & 55 \\
+    \hline
+    \(3\) & 228 \\
+    \hline
+\end{tabular}
+\newline
+The total number of days is 300. The toal number of cakes sold is 810.
+\newline
+Thus, the expected number of cakes sold per day is 2.7 cakes.
+\newline
+Thus, we test the population against a binomial population with \(\theta = 2.7/3 = 0.9\).
+\newline
+The expected values for a binomial population with \(\theta = 0.0, n = 3\) and a sample size of 300 is:
+\newline
+\begin{tabular}{|p{2.5cm}|p{2cm}|}
+    \hline
+    \textbf{Number of cakes sold} & \textbf{Number of days} \\
+    \hline
+    \(0\) & 0.3 \\
+    \hline
+    \(1\) & 8.1 \\
+    \hline
+    \(2\) & 72.9 \\
+    \hline
+    \(3\) & 218.7 \\
+    \hline
+\end{tabular}
+\newline
+\(\sum_{i=0}^3\frac{(f_i-e_i)^2}{e_i} = 14.12894019\)
+\newline
+However, the value of \(\chi^2_{\alpha = 0.05, 3} = 7.815\), which is less than our sum.
+\newline
+Thus, we must reject the null hypothesis.
+\newline
+\newline
+\boxed{\textup{The cakes sold are not binomially distributed.}}
+\newpage
+  \section[20pt]{p. 378 \#42 (part 1)}
+To compare two kinds of front-end designs, six of each kind were installed on a certain make of compact car. Then each car was run into a concrete wall at 5 miles per hour, and the following are the costs of repairs (in dollars):
+\newline \newline
+\ \ \ \ \textit{Design 1:}\ 127\ \ 168\ \ 143\ \ 165\ \ 122\ \ 139
+\newline
+\ \ \ \ \textit{Design 2:}\ 154\ \ 135\ \ 132\ \ 171\ \ 153\ \ 149
+\newline \newline
+Use the four steps of page 354 to test at the 0.01 level of significance whether the difference between means of these two samples is significant.
+\newline \newline
+\(H_0: \mu_1 = \mu_2\)
+\newline
+\(H_1: \mu_1 \neq \mu_2\)
+\newline
+\(\alpha = 0.01\)
+\newline
+\newline
+By some simple calculations,
+\(\overline{x}_1 = 144,\ \overline{x}_2 = 149,\ s_1^2 = 302.67,\ s_2^2 = 168.33,\ s_p^2 = 235.5\)
+\newline
+We will perform a two tailed test with t as our test statistic.
+\[t = \frac{\overline{x}_2 - \overline{x}_2}{s_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}} = \frac{149 - 144}{15.346\sqrt{\frac{1}{6}+\frac{1}{6}}} = 0.564332\]
+\[t_{0.005,10}=3.169\]
+Since \(0.564332 < 3.169\), we accept the null hypothesis.
+\newpage
+  \section[20pt]{p. 378 \#42 (part 2)}
+\ \ \ \ \textit{Design 1:}\ 127\ \ 168\ \ 143\ \ 165\ \ 122\ \ 139
+\newline
+\ \ \ \ \textit{Design 2:}\ 154\ \ 135\ \ 132\ \ 171\ \ 153\ \ 149
+\newline \newline
+\(H_0: \mu_1 = \mu_2\)
+\newline
+\(H_1: \mu_1 \neq \mu_2\)
+\newline
+\(\alpha = 0.01\)
+\newline
+\newline
+By some simple calculations,
+\(\overline{x}_1 = 144,\ \overline{x}_2 = 149,\ SS(Tr) = 75, SSE = 2826\)
+\newline
+\(MS(Tr) = 75.\ MSE = 282.6\)
+\newline
+We will perform a one tailed test with f as our test statistic.
+\[f = \frac{MS(Tr)}{MSE} = 0.26539\]
+\[f_{0.01,1,5}=16.3\]
+Since \(0.26539 < 16.3\), we accept the null hypothesis.
+\newpage
+  \section[20pt]{p. 448 \#18}
+  Three groups of siz guinea pigs each were injected, respectively, with 0.5 milligram, 1.0 milligram, and 1.5 milligrams of a new tranquilizer, and the following are the number of minutes it took them to fall asleep:
+  \newline \newline
+  0.5 mg: 21, 23, 19, 24, 25, 23
+  \newline
+  1.0 mg: 19, 21, 20, 18, 22, 20
+  \newline
+  1.5 mg: 15, 10, 13, 14, 11, 15
+  \newline \newline
+  Test at the 0.05 level of significance whether the null hypothesis that differences in dosage have no effect can be rejected. Also, estimate the parameters \(\mu, \alpha_1, \alpha_2\), and \(\alpha_3\) of the model used in the analysis.
+  \newline \newline
+  I finally decided to use an online ANOVA calculator.
+  \newline
+  The result from the calculator gives a test-statistic value of
+  \(f_{0.05, 2, 15} = 39.32432\), which has an extremely small p-value (less than 0.0001).
+  \newline
+  The null hypothesis can certainly be rejected since the p-value is smaller than 0.05.
+  \newline
+  \newline
+  Also, by some simple calculations -
+  \[\mu = \overline{\overline{x}} = 18.5\]
+  \[\alpha_1 = \overline{x}_1-\mu = 4\]
+  \[\alpha_2 = \overline{x}_2-\mu = 1.5\]
+  \[\alpha_3 = \overline{x}_3-\mu = -5.5\]
+\end{document}
